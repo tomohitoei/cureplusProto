@@ -7,14 +7,16 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{50482F62-0491-C992-7D84-99B332CBC1FE}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <AssemblyName>Assembly-CSharp</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.1.1f1</UnityVersion>
@@ -57,12 +59,6 @@
     </Reference>
     <Reference Include="UnityEngine.Analytics">
       <HintPath>Library\UnityAssemblies\UnityEngine.Analytics.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -170,9 +166,11 @@
     <Compile Include="Assets\JOKER\Scripts\Novel\Unity\MessageArea.cs" />
     <Compile Include="Assets\JOKER\Scripts\Novel\Unity\MessageFrame.cs" />
     <Compile Include="Assets\JOKER_GAME\Plugins\PluginComponent.cs" />
+    <Compile Include="Assets\Resources\Scripts\MailController.cs" />
+    <Compile Include="Assets\Resources\Scripts\MailItemButtonController.cs" />
+    <Compile Include="Assets\Resources\Scripts\TextRendererController.cs" />
     <Compile Include="Assets\ScenarioDebugger\Scripts\Opening.cs" />
     <Compile Include="Assets\ScenarioDebugger\Scripts\SelectScenarioButton.cs" />
-    <Compile Include="Assets\Scripts\TextRendererController.cs" />
     <Compile Include="Assets\WellFired\shared\Uncompiled\Runtime\Platform Specific\IO\OtherIOHelper.cs" />
     <Compile Include="Assets\WellFired\shared\Uncompiled\Runtime\Platform Specific\IO\WebPlayerIOHelper.cs" />
     <Compile Include="Assets\WellFired\shared\Uncompiled\Runtime\Platform Specific\IO\WindowsAppStoreIOHelper.cs" />
@@ -228,6 +226,9 @@
     <None Include="Assets\WellFired\urecord\changelist.txt" />
     <None Include="Assets\WellFired\urecord\upgradenotes.txt" />
     <None Include="Assets\WellFired\urecord\version.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="happylagoon.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
 </Project>

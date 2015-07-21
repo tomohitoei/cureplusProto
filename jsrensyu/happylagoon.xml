@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Mails>
+  
+  <Mail Author="ひめ" Subject="聞いて聞いて" Icon="02_021_ひめ_アイコン">
+    <Content>
+      本文
+    </Content>
+    <Replies>
+      <Reply Subject="返信1">
+        <Content>返信１本文</Content>
+      </Reply>
+    </Replies>
+  </Mail>
+
+  <Mail Author="白い人" Subject="メールのタイトル" Icon="MailTitleButtonBG">
+    <Content>本文</Content>
+    <Replies>
+      <Reply Subject="返信1">
+        <Content>返信１本文</Content>
+      </Reply>
+    </Replies>
+  </Mail>
+
+</Mails>
