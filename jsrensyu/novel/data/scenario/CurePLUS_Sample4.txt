@@ -1,0 +1,69 @@
+; 行の先頭にセミコロンでその行はコメントになります
+
+@call file=wide/libs/utils
+
+
+;背景設定
+[bg_new name="background" storage="公園"]
+[bg_show name="background"]
+
+
+;メッセージ表示（メッセージを表示するシーンでは必須です）
+[showmessage]
+[call file=wide/system target="*system_setting_buttons"]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-150 val="" color="000000" fontsize=14 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name"] 
+
+
+;---------------キャラ定義
+@tag_default tag="chara"
+[chara_new name="setsuna" storage="_04_031_せつな立ち絵微笑みs" jname="せつな" scale=1.8 jcolor=BB77FF]
+@reset_tag_default
+
+;せつなの表情登録
+[chara_face name="setsuna" face="smile" storage="_04_031_せつな立ち絵笑顔s" ]
+[chara_face name="setsuna" face="confused" storage="_04_031_せつな立ち絵きょとんs" ]
+
+@chara_pos name="setsuna" x=0 y=-3.0
+
+@show name=setsuna
+
+#説明
+
+スクリプト記述のサンプル（画像の表示：キャラクターの表情）[p]
+
+キャラクターの画像を入れ替えて表情を作るために[r]
+最初にchara_faceコマンドで各表情の画像を作成します。[r]
+各表情の定義で表情にfaceで名前をつけておきます。[p]
+
+[chara_mod name="setsuna" face="smile"]
+
+定義した名称を使ってchara_modコマンドで[r]
+表情を入れ替えることができます[l][r]
+
+[chara_mod name="setsuna" face="confused"]
+
+chara_newで指定した表情に戻すにはfaceに「default」を指定します[l][r]
+
+[chara_mod name="setsuna" face="default"]
+
+[p]
+
+[anim name="setsuna" x=-3 type="easeInOutCirc"]
+
+キャラクターの表示位置はanimコマンドで行います[l][r]
+
+[anim name="setsuna" x=0 y=-2 scale=1.3 type="easeInOutCubic" time=3.0]
+[anim name="setsuna" x=0 y=-3 scale=1.8 type="easeInOutCubic" time=1.0]
+
+また、表示しているキャラクターを消すには[r]
+hideコマンドを使用します[r]
+
+[hide name="setsuna"]
+
+[p]
+
+; 開発中のスクリプトの最後には，ファイル選択に戻るために以下の記載をするようにしてください
+[scene file="ScenarioDebugger" ]
+
+

@@ -1,0 +1,62 @@
+; 行の先頭にセミコロンでその行はコメントになります
+
+@call file=wide/libs/utils
+
+
+
+;メッセージ表示（メッセージを表示するシーンでは必須です）
+[showmessage]
+[call file=wide/system target="*system_setting_buttons"]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-150 val="" color="000000" fontsize=14 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name"] 
+
+
+#説明
+
+スクリプト記述のサンプル（選択肢と分岐）[p]
+
+行の先頭に\*がある行は「ラベル」になり、jump命令や[r]
+選択肢の分岐先となります。[r]
+
+[jump target="skip"]
+
+ここの部分は上のjumpコマンドで下のラベルに飛ぶため実行されません
+
+*skip
+
+ラベルは一つのファイル内で重複しないように定義してください[p]
+
+選択肢はselect_newコマンドで作成します[r]
+
+[select_new text="選択肢１" target=*select_a1 ]
+[select_new text="選択肢２" target=*select_a2 ]
+[select_new text="選択肢３" target=*select_a3 ]
+
+[select_show sound=click ]
+
+[s]
+
+*select_a1
+選択肢１が押されました[p]
+@jump target=*a_common
+
+*select_a2
+選択肢２が押されました[p]
+@jump target=*a_common
+
+*select_a3
+選択肢３が押されました[p]
+@jump target=*a_common
+
+*a_common 
+textで選択内容を、targetでその選択肢が選択されたときに[r]
+移る先を指定します[r]
+select_showコマンドで選択肢を表示した後に\[s\]コマンドで[r]
+ゲームを停止し、選択肢が選ばれるまでコマンドの実行が[r]
+止まり、いずれかが選択されることで分岐が発生して先に進みます[p]
+
+
+; 開発中のスクリプトの最後には，ファイル選択に戻るために以下の記載をするようにしてください
+[scene file="ScenarioDebugger" ]
+
+

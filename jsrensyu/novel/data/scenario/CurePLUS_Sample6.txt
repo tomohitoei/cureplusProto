@@ -1,0 +1,63 @@
+; 行の先頭にセミコロンでその行はコメントになります
+
+@call file=wide/libs/utils
+
+
+
+;メッセージ表示（メッセージを表示するシーンでは必須です）
+[showmessage]
+[call file=wide/system target="*system_setting_buttons"]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-150 val="" color="000000" fontsize=14 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name"] 
+
+
+#説明
+
+スクリプト記述のサンプル（変数と条件分岐）[p]
+スクリプトでは状態を記憶することができる変数が使用できます[r]
+変数を使用することでゲーム本体とスクリプトの間で[r]
+プレイヤー情報等必要なデータのやり取りが可能となります[p]
+
+「f.」に続けて任意の変数名を指定し、[r]
+代入や四則演算を行えます[p]
+
+[calc exp="f.test=500"]
+[calc exp="f.test2=400"]
+[calc exp="f.test2={f.test}*3"]
+変数の内容：{f.test2}[r]
+
+変数名を中括弧で括ると変数の内容を取り出すことができます[p]
+
+[calc exp="f.PlayerName=えりか"]
+
+プレイヤー名：{f.PlayerName}[r]
+変数には文字列も格納可能です[p]
+
+また、変数を使って条件分岐も記述できます[p]
+
+ifコマンドはexpの条件が成立すると直後の命令を[r]
+不成立でelseコマンドの下の命令を実行します[r]
+
+[calc exp="f.count=1"]
+
+*loop
+
+{f.count}回目
+
+; {f.count}が3未満の間ループします
+[if exp="{f.count}<3"]
+[calc exp="f.count={f.count}+1"]
+　もう一回[r]
+[jump target="loop"]
+[endif]
+
+ループを抜けました[p]
+
+分岐が多くなるとスクリプトの見通しが悪くなります[r]
+使用は必要最小限の使用で済むように設計しましょう[p]
+
+
+; 開発中のスクリプトの最後には，ファイル選択に戻るために以下の記載をするようにしてください
+[scene file="ScenarioDebugger" ]
+
+

@@ -1,0 +1,24 @@
+; 行の先頭にセミコロンでその行はコメントになります
+
+; マクロ定義等の呼び出し（スクリプトに含めておいてください）
+@call file=wide/libs/utils
+
+;メッセージ表示（メッセージを表示するシーンでは必須です）
+[showmessage]
+[call file=wide/system target="*system_setting_buttons"]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-150 val="" color="000000" fontsize=14 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name"] 
+
+#説明
+
+スクリプト記述のサンプル（エラーを含むスクリプト）[p]
+
+[matigatta_command]
+
+名前を間違ったコマンドを記載した場合、その行は無視されます[p]
+
+
+; 開発中のスクリプトの最後には，ファイル選択に戻るために以下の記載をするようにしてください
+[scene file="ScenarioDebugger" ]
+
+

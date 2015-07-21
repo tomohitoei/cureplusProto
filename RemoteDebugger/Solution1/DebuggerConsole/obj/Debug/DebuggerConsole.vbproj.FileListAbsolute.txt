@@ -1,0 +1,12 @@
+D:\unity\RemoteDebugger\Solution1\DebuggerConsole\bin\Debug\DebuggerConsole.exe.config
+D:\unity\RemoteDebugger\Solution1\DebuggerConsole\bin\Debug\DebuggerConsole.exe
+D:\unity\RemoteDebugger\Solution1\DebuggerConsole\bin\Debug\DebuggerConsole.pdb
+D:\unity\RemoteDebugger\Solution1\DebuggerConsole\bin\Debug\DebuggerConsole.xml
+D:\unity\RemoteDebugger\Solution1\DebuggerConsole\bin\Debug\HLRemoting.dll
+D:\unity\RemoteDebugger\Solution1\DebuggerConsole\bin\Debug\HLRemoting.pdb
+D:\unity\RemoteDebugger\Solution1\DebuggerConsole\obj\Debug\DebuggerConsole.vbprojResolveAssemblyReference.cache
+D:\unity\RemoteDebugger\Solution1\DebuggerConsole\obj\Debug\DebuggerConsole.Resources.resources
+D:\unity\RemoteDebugger\Solution1\DebuggerConsole\obj\Debug\DebuggerConsole.vbproj.GenerateResource.Cache
+D:\unity\RemoteDebugger\Solution1\DebuggerConsole\obj\Debug\DebuggerConsole.exe
+D:\unity\RemoteDebugger\Solution1\DebuggerConsole\obj\Debug\DebuggerConsole.xml
+D:\unity\RemoteDebugger\Solution1\DebuggerConsole\obj\Debug\DebuggerConsole.pdb

@@ -1,0 +1,56 @@
+; 行の先頭にセミコロンでその行はコメントになります
+
+@call file=wide/libs/utils
+
+
+;背景設定
+[bg_new name="background" storage="公園"]
+[bg_show name="background"]
+
+
+;メッセージ表示（メッセージを表示するシーンでは必須です）
+[showmessage]
+[call file=wide/system target="*system_setting_buttons"]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-150 val="" color="000000" fontsize=14 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name"] 
+
+
+;---------------キャラ定義
+@tag_default tag="chara"
+[chara_new name="hibiki" storage="hibiki_normal" jname="響" scale=1.8 jcolor=FF77FF]
+@reset_tag_default
+
+@chara_pos name="hibiki" x=0 y=-3.0
+
+#説明
+
+スクリプト記述のサンプル（画像の表示：基本）[p]
+
+注意：画像だけでなくスクリプト内から指定するファイル名に、[r]
+拡張子は指定できません。[r]
+ファイル名が同じで異なる拡張子のファイルが[r]
+同一フォルダに存在する場合、[r]
+ファイル名順で最初のものが選択されます。[p]
+
+背景はbg_newとbg_showの二つのコマンドを使って表示します。[p]
+
+キャラクタはchara_newコマンドで画像の読み込みを行い、[r]
+\@chara_posで位置の調整をし、\@showで表示します[r]
+
+@show name=hibiki
+
+この際，chara_newコマンドのnameで設定した名称を使って[r]
+各所で調整や表示等の操作を行います[p]
+
+#hibiki
+キャラクターが喋っているように表示する場合は、[r]
+\#で名称を指定することでchara_newで指定した[r]
+jcolorの色でメッセージ欄に名前が表示されます。[r]
+キャラクターごとに色分けしておくと見分けやすくなります。[p]
+
+
+
+; 開発中のスクリプトの最後には，ファイル選択に戻るために以下の記載をするようにしてください
+[scene file="ScenarioDebugger" ]
+
+

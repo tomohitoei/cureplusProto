@@ -1,0 +1,54 @@
+; 行の先頭にセミコロンでその行はコメントになります
+
+@call file=wide/libs/utils
+
+
+;背景設定
+[bg_new name="background" storage="公園"]
+[bg_show name="background"]
+
+
+;メッセージ表示（メッセージを表示するシーンでは必須です）
+[showmessage]
+[call file=wide/system target="*system_setting_buttons"]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-150 val="" color="000000" fontsize=14 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name"] 
+
+
+;---------------キャラ定義
+@tag_default tag="chara"
+[chara_new name="hibiki" storage="hibiki_normal" jname="響" scale=1.8 jcolor=FF77FF]
+@reset_tag_default
+
+@chara_pos name="hibiki" x=0 y=-3.0
+
+@show name=hibiki
+
+#説明
+
+スクリプト記述のサンプル（画像の表示：背景の切り替え）[p]
+
+いったん表示した背景を非表示にするには[r]
+bg_hideコマンドを使います。[p]
+
+[bg_hide]
+
+背景やキャラクターを扱うコマンドにはtimeで[r]
+切り替わる時間を指定できます。[p]
+
+[bg_show name="background" time=0.5]
+
+背景の切り替えはbg_modコマンドで行います。[r]
+
+[bg_mod storage="映画館1"]
+
+[l]
+
+[bg_mod storage="神社" time=2.0]
+
+[p]
+
+; 開発中のスクリプトの最後には，ファイル選択に戻るために以下の記載をするようにしてください
+[scene file="ScenarioDebugger" ]
+
+
