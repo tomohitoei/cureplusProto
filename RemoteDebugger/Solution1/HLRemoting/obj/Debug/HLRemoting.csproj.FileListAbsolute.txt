@@ -7,3 +7,8 @@ D:\unity\ScriptDebugger\1\RemoteDebugger\Solution1\HLRemoting\bin\Debug\HLRemoti
 D:\unity\ScriptDebugger\1\RemoteDebugger\Solution1\HLRemoting\obj\Debug\HLRemoting.csprojResolveAssemblyReference.cache
 D:\unity\ScriptDebugger\1\RemoteDebugger\Solution1\HLRemoting\obj\Debug\HLRemoting.dll
 D:\unity\ScriptDebugger\1\RemoteDebugger\Solution1\HLRemoting\obj\Debug\HLRemoting.pdb
+C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\HLRemoting\obj\Debug\HLRemoting.csprojResolveAssemblyReference.cache
+C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\HLRemoting\obj\Debug\HLRemoting.dll
+C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\HLRemoting\obj\Debug\HLRemoting.pdb
+C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\HLRemoting\bin\Debug\HLRemoting.dll
+C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\HLRemoting\bin\Debug\HLRemoting.pdb

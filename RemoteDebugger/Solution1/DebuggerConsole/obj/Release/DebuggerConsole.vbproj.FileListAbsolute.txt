@@ -1,0 +1,12 @@
+C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\DebuggerConsole\bin\Release\DebuggerConsole.exe.config
+C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\DebuggerConsole\bin\Release\DebuggerConsole.exe
+C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\DebuggerConsole\bin\Release\DebuggerConsole.pdb
+C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\DebuggerConsole\bin\Release\DebuggerConsole.xml
+C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\DebuggerConsole\bin\Release\HLRemoting.dll
+C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\DebuggerConsole\bin\Release\HLRemoting.pdb
+C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\DebuggerConsole\obj\Release\DebuggerConsole.vbprojResolveAssemblyReference.cache
+C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\DebuggerConsole\obj\Release\DebuggerConsole.Resources.resources
+C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\DebuggerConsole\obj\Release\DebuggerConsole.vbproj.GenerateResource.Cache
+C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\DebuggerConsole\obj\Release\DebuggerConsole.exe
+C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\DebuggerConsole\obj\Release\DebuggerConsole.xml
+C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\DebuggerConsole\obj\Release\DebuggerConsole.pdb

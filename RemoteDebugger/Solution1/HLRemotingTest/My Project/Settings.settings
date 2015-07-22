@@ -1,0 +1,13 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="MailContent" Type="System.String" Scope="User">
+      <Value Profile="(Default)">
+   メール本文
+あいうえお
+
+  かきくけこ[hare]さしすせそ[ame][ame]た[kumori]ち[yuki]つ[[て[]となにぬねのはひふへほ</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

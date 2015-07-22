@@ -17,7 +17,7 @@ public class TextRendererController : MonoBehaviour {
     // Use this for initialization
 	void Start () {
         _r = new HLRemoting.MyTextRenderer(FontName, FontSize);
-        var il = _r.hoge(Content);
+        var il = _r.GetGryphs(Content);
         System.Collections.Generic.List<Sprite> sl = new System.Collections.Generic.List<Sprite>();
         float x = StartPosition;
         var mt = GetComponent<RectTransform>() as RectTransform;

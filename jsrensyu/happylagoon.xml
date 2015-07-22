@@ -1,9 +1,53 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Mails>
   
-  <Mail Author="ひめ" Subject="聞いて聞いて" Icon="02_021_ひめ_アイコン">
+  <Mail Author="ひめ" Subject="メール本文の書式" Icon="02_021_ひめ_アイコン" Stamp="hime-ko" Adventure="hime_01_01">
     <Content>
-      本文
+本文[hare][ame][kumori]
+最初の改行は無視します
+定義の改行と同じ位置で表示も改行します
+現時点で使用できる絵文字は
+[[hare][hare]
+[[ame][ame]
+[[kumori][kumori]
+の三つです
+無効な絵文字を指定した場合はそのまま表示します
+[mukounaemoji]
+突貫で作っているので本文が長いと表示に時間がかかります
+    </Content>
+    <Replies>
+      <Reply Subject="返信1">
+        <Content>返信１本文</Content>
+      </Reply>
+      <Reply Subject="返信2">
+        <Content>このようにして定義はできますが，返信は現在未対応です．余裕があれば対応</Content>
+      </Reply>
+    </Replies>
+  </Mail>
+
+  <Mail Author="せつな" Subject="メールの各属性" Icon="04_031_せつな_アイコン">
+    <Content>
+Mailタグの各属性で指定できるものは以下です
+Author:差出人名
+Subject:メールタイトル
+Icon:一覧に表示するアイコン
+Stamp:メール末尾に表示するスタンプ（未定義／空白で非表示）
+Adventure:アドベンチャーパートボタン（未定義／空白で非表示）
+※アドベンチャーパートとの連動は未対応
+</Content>
+    <Replies>
+      <Reply Subject="返信1">
+        <Content>返信１本文</Content>
+      </Reply>
+    </Replies>
+  </Mail>
+
+  <Mail Author="響" Subject="返信について" Icon="01_011_響_アイコン">
+    <Content>
+プリキュアメールに対する返信は
+Repliesタグの中にReplyタグを使って定義します
+
+ただし現在のバージョンでは未対応です
     </Content>
     <Replies>
       <Reply Subject="返信1">
@@ -12,8 +56,92 @@
     </Replies>
   </Mail>
 
-  <Mail Author="白い人" Subject="メールのタイトル" Icon="MailTitleButtonBG">
-    <Content>本文</Content>
+  <Mail Author="ひめ" Subject="アイコンで指定できるもの" Icon="02_021_ひめ_アイコン" Stamp="hime-ko" Adventure="">
+    <Content>
+02_021_ひめ_アイコン
+04_031_せつな_アイコン
+01_011_響_アイコン
+    </Content>
+    <Replies>
+      <Reply Subject="返信1">
+        <Content>返信１本文</Content>
+      </Reply>
+    </Replies>
+  </Mail>
+
+  <Mail Author="ひめ" Subject="スタンプで指定できるもの" Icon="02_021_ひめ_アイコン" Stamp="hime-yorokobu" Adventure="">
+    <Content>
+hime-iya
+hime-kanasii
+hime-ko
+hime-love
+hime-okoru
+hime-tanosii
+hime-yorokobu
+    </Content>
+    <Replies>
+      <Reply Subject="返信1">
+        <Content>返信１本文</Content>
+      </Reply>
+    </Replies>
+  </Mail>
+
+  <Mail Author="ひめ" Subject="メール1" Icon="02_021_ひめ_アイコン" Stamp="hime-iya" Adventure="">
+    <Content></Content>
+    <Replies>
+      <Reply Subject="返信1">
+        <Content>返信１本文</Content>
+      </Reply>
+    </Replies>
+  </Mail>
+
+  <Mail Author="ひめ" Subject="メール2" Icon="02_021_ひめ_アイコン" Stamp="hime-kanasii" Adventure="">
+    <Content></Content>
+    <Replies>
+      <Reply Subject="返信1">
+        <Content>返信１本文</Content>
+      </Reply>
+    </Replies>
+  </Mail>
+
+  <Mail Author="ひめ" Subject="メール3" Icon="02_021_ひめ_アイコン" Stamp="hime-ko" Adventure="">
+    <Content></Content>
+    <Replies>
+      <Reply Subject="返信1">
+        <Content>返信１本文</Content>
+      </Reply>
+    </Replies>
+  </Mail>
+
+  <Mail Author="ひめ" Subject="メール4" Icon="02_021_ひめ_アイコン" Stamp="hime-love" Adventure="">
+    <Content></Content>
+    <Replies>
+      <Reply Subject="返信1">
+        <Content>返信１本文</Content>
+      </Reply>
+    </Replies>
+  </Mail>
+
+  <Mail Author="ひめ" Subject="メール5" Icon="02_021_ひめ_アイコン" Stamp="hime-okoru" Adventure="">
+    <Content></Content>
+    <Replies>
+      <Reply Subject="返信1">
+        <Content>返信１本文</Content>
+      </Reply>
+    </Replies>
+  </Mail>
+
+  <Mail Author="ひめ" Subject="メール6" Icon="02_021_ひめ_アイコン" Stamp="hime-tanosii" Adventure="">
+    <Content></Content>
+    <Replies>
+      <Reply Subject="返信1">
+        <Content>返信１本文</Content>
+      </Reply>
+    </Replies>
+  </Mail>
+
+  <Mail Author="ひめ" Subject="メール7" Icon="02_021_ひめ_アイコン" Stamp="hime-yorokobu" Adventure="">
+    <Content></Content>
     <Replies>
       <Reply Subject="返信1">
         <Content>返信１本文</Content>

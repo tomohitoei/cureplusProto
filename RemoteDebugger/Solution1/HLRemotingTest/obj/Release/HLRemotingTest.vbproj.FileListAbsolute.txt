@@ -1,0 +1,12 @@
+C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\HLRemotingTest\bin\Release\HLRemotingTest.dll.config
+C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\HLRemotingTest\bin\Release\HLRemotingTest.dll
+C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\HLRemotingTest\bin\Release\HLRemotingTest.pdb
+C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\HLRemotingTest\bin\Release\HLRemotingTest.xml
+C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\HLRemotingTest\bin\Release\HLRemoting.dll
+C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\HLRemotingTest\bin\Release\HLRemoting.pdb
+C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\HLRemotingTest\obj\Release\HLRemotingTest.Resources.resources
+C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\HLRemotingTest\obj\Release\HLRemotingTest.vbproj.GenerateResource.Cache
+C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\HLRemotingTest\obj\Release\HLRemotingTest.dll
+C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\HLRemotingTest\obj\Release\HLRemotingTest.xml
+C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\HLRemotingTest\obj\Release\HLRemotingTest.pdb
+C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\HLRemotingTest\obj\Release\HLRemotingTest.vbprojResolveAssemblyReference.cache

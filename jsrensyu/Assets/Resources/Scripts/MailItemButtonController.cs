@@ -6,6 +6,10 @@ public class MailItemButtonController : MonoBehaviour {
     public string Name = "ひめ";
     public string Subject = "聞いて聞いて";
     public UnityEngine.Sprite Icon = null;
+    [Multiline()]public string Content = "本文";
+    public UnityEngine.Sprite Stamp = null;
+    public string AdventurePart = string.Empty;
+    public int Key = 0;
 
     public UnityEngine.UI.Text NameField = null;
     public UnityEngine.UI.Text SubjectField = null;
