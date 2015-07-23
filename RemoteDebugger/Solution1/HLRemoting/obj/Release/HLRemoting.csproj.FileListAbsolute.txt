@@ -2,3 +2,4 @@ C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\HLRemoting\b
 C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\HLRemoting\bin\Release\HLRemoting.pdb
 C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\HLRemoting\obj\Release\HLRemoting.dll
 C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\HLRemoting\obj\Release\HLRemoting.pdb
+C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\HLRemoting\obj\Release\HLRemoting.csprojResolveAssemblyReference.cache

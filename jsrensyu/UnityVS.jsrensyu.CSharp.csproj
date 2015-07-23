@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.1.1f1</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -42,9 +40,6 @@
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="HLRemoting">
-      <HintPath>Assets\Plugins\HLRemoting.dll</HintPath>
-    </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="System" />
     <Reference Include="System.XML" />
@@ -70,6 +65,9 @@
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="HLRemoting">
+      <HintPath>Assets\Plugins\HLRemoting.dll</HintPath>
     </Reference>
     <Reference Include="ScriptDebugger">
       <HintPath>Assets\Plugins\ScriptDebugger.dll</HintPath>
@@ -171,9 +169,12 @@
     <Compile Include="Assets\JOKER\Scripts\Novel\Unity\MessageArea.cs" />
     <Compile Include="Assets\JOKER\Scripts\Novel\Unity\MessageFrame.cs" />
     <Compile Include="Assets\JOKER_GAME\Plugins\PluginComponent.cs" />
+    <Compile Include="Assets\Resources\Scripts\AdventurePartButtonController.cs" />
     <Compile Include="Assets\Resources\Scripts\ContentImageController.cs" />
     <Compile Include="Assets\Resources\Scripts\MailController.cs" />
     <Compile Include="Assets\Resources\Scripts\MailItemButtonController.cs" />
+    <Compile Include="Assets\Resources\Scripts\SelectReplyButtonController.cs" />
+    <Compile Include="Assets\Resources\Scripts\ShowReplyButtonController.cs" />
     <Compile Include="Assets\Resources\Scripts\TextRendererController.cs" />
     <Compile Include="Assets\ScenarioDebugger\Scripts\Opening.cs" />
     <Compile Include="Assets\ScenarioDebugger\Scripts\SelectScenarioButton.cs" />

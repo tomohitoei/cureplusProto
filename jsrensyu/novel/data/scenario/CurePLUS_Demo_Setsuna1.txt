@@ -1,0 +1,34 @@
+; 行の先頭にセミコロンでその行はコメントになります
+
+; マクロ定義等の呼び出し（スクリプトに含めておいてください）
+@call file=wide/libs/utils
+
+;背景設定
+[bg_new name="background" storage="公園"]
+[bg_show name="background"]
+
+;メッセージ表示（メッセージを表示するシーンでは必須です）
+[showmessage]
+[call file=wide/system target="*system_setting_buttons"]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-150 val="" color="000000" fontsize=14 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name"] 
+
+;---------------キャラ定義
+@tag_default tag="chara"
+[chara_new name="setsuna" storage="_04_031_せつな立ち絵微笑みs.png" jname="せつな" scale=1.8 jcolor=FF77FF]
+@reset_tag_default
+
+@chara_pos name="setsuna" x=0 y=-3.0
+
+@show name=setsuna
+
+
+#説明
+
+スクリプトの内容はすでにリリースしているスクリプトデバッガ準拠です[p]
+
+
+; 開発中のスクリプトの最後には，メール-パートに戻るために以下の記載をするようにしてください
+[scene file="MailPart" ]
+
+

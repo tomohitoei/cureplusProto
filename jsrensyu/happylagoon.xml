@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Mails>
   
-  <Mail Author="ひめ" Subject="メール本文の書式" Icon="02_021_ひめ_アイコン" Stamp="hime-ko" Adventure="hime_01_01">
+  <Mail Author="ひめ" Subject="メール本文の書式" Icon="02_021_ひめ_アイコン" Stamp="hime-ko" Adventure="CurePLUS_Demo_Hime1">
     <Content>
 本文[hare][ame][kumori]
 最初の改行は無視します
@@ -25,7 +25,7 @@
     </Replies>
   </Mail>
 
-  <Mail Author="せつな" Subject="メールの各属性" Icon="04_031_せつな_アイコン">
+  <Mail Author="せつな" Subject="メールの各属性" Icon="04_031_せつな_アイコン" Adventure="CurePLUS_Demo_Setsuna1">
     <Content>
 Mailタグの各属性で指定できるものは以下です
 Author:差出人名
@@ -42,7 +42,7 @@ Adventure:アドベンチャーパートボタン（未定義／空白で非表�
     </Replies>
   </Mail>
 
-  <Mail Author="響" Subject="返信について" Icon="01_011_響_アイコン">
+  <Mail Author="響" Subject="返信について" Icon="01_011_響_アイコン" Adventure="CurePLUS_Demo_Hibiki1">
     <Content>
 プリキュアメールに対する返信は
 Repliesタグの中にReplyタグを使って定義します

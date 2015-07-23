@@ -25,6 +25,8 @@ namespace HLRemoting
             _measure.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
         }
 
+        private System.Collections.Generic.Dictionary<string, Image> _gryphDic = new Dictionary<string, Image>();
+
         public Image[] GetGryphs(string moji)
         {
             var il = new List<Image>();
@@ -69,16 +71,24 @@ namespace HLRemoting
                         }
                     }
                 }
-                var sr = TextRenderer.MeasureText(_measure, c, _font, new Size(1024, 1024), TextFormatFlags.NoPadding);
-                total += sr.Width;
-                height = Math.Max(height, sr.Height);
-                var bmp = new Bitmap((int)sr.Width+1, (int)sr.Height+1, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
-                var g = Graphics.FromImage(bmp);
-                g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-                g.FillRectangle(new SolidBrush(Color.FromArgb(254, 255, 255)), -1, -1, sr.Width + 2, sr.Height + 2);
-                TextRenderer.DrawText(g, c, _font, new Point(0, 0), Color.FromArgb(0, 0, 0), TextFormatFlags.NoPadding);
-                bmp.MakeTransparent(Color.FromArgb(254,255,255));
-                il.Add(bmp);
+                if (_gryphDic.ContainsKey(c))
+                {
+                    il.Add(_gryphDic[c]);
+                }
+                else
+                {
+                    var sr = TextRenderer.MeasureText(_measure, c, _font, new Size(1024, 1024), TextFormatFlags.NoPadding);
+                    total += sr.Width;
+                    height = Math.Max(height, sr.Height);
+                    var bmp = new Bitmap((int)sr.Width+1, (int)sr.Height+1, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+                    var g = Graphics.FromImage(bmp);
+                    g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                    g.FillRectangle(new SolidBrush(Color.FromArgb(254, 255, 255)), -1, -1, sr.Width + 2, sr.Height + 2);
+                    TextRenderer.DrawText(g, c, _font, new Point(0, 0), Color.FromArgb(0, 0, 0), TextFormatFlags.NoPadding);
+                    bmp.MakeTransparent(Color.FromArgb(254,255,255));
+                    il.Add(bmp);
+                    _gryphDic.Add(c, bmp);
+                }
 
             label:
                 var xx = i;
@@ -107,7 +117,8 @@ namespace HLRemoting
             {
                 if (_imageDic.ContainsKey(key)) return _imageDic[key];
             }
-
+            var log=new System.IO.StreamWriter("d:\\log.txt",true);
+            log.WriteLine(string.Format("1:{0}.{1}",DateTime.Now.Second, DateTime.Now.Millisecond));
             var targets = moji.Trim(new Char[] { '\r', '\n' });
             System.IO.StringReader sr = new System.IO.StringReader(targets);
             var lines = new List<List<Image>>();
@@ -140,6 +151,7 @@ namespace HLRemoting
             nextLine:
                 lines.Add(line);
             }
+            log.WriteLine(string.Format("2:{0}.{1}",DateTime.Now.Second, DateTime.Now.Millisecond));
 
             //
             Image ii = new Bitmap((int)(width*mp), (int)(_font.Size * (lines.Count + 0.5f) * spc));
@@ -160,6 +172,8 @@ namespace HLRemoting
             {
                 _imageDic.Add(key,ii);
             }
+            log.WriteLine(string.Format("3:{0}.{1}",DateTime.Now.Second, DateTime.Now.Millisecond));
+            log.Close();
             return ii;
         }
     }

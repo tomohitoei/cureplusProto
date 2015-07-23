@@ -85,7 +85,7 @@ MonoBehaviour:
   m_IgnoreLayout: 0
   m_MinWidth: -1
   m_MinHeight: -1
-  m_PreferredWidth: 270
+  m_PreferredWidth: -1
   m_PreferredHeight: 60
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
@@ -252,6 +252,7 @@ MonoBehaviour:
   Content: "\u672C\u6587"
   Stamp: {fileID: 0}
   AdventurePart: 
+  Key: 0
   NameField: {fileID: 11427280}
   SubjectField: {fileID: 11464876}
   IconObject: {fileID: 11410148}
@@ -373,7 +374,7 @@ Prefab:
         type: 3}
     - target: {fileID: 0}
       propertyPath: m_PreferredWidth
-      value: 270
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_PreferredHeight

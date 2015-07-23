@@ -70,7 +70,8 @@ public class MailController : MonoBehaviour {
         foreach (XmlNode n in xd.DocumentElement.ChildNodes)
         {
             var o = Instantiate(prefab);
-            o.transform.parent = MailList.transform;
+            var rt = o.GetComponent<RectTransform>();
+            o.transform.SetParent(MailList.transform, false);
             var c = o.GetComponent<MailItemButtonController>();
             c.Key = key;
             foreach (XmlAttribute a in n.Attributes)
@@ -153,7 +154,8 @@ public class MailController : MonoBehaviour {
         var bo = ContentPanel.transform.FindChild("GotoAdventure");
         if (!string.IsNullOrEmpty(mic.AdventurePart))
         {
-            bo.transform.FindChild("Text").gameObject.GetComponent<UnityEngine.UI.Text>().text = mic.AdventurePart;
+            bo.transform.FindChild("Text").gameObject.GetComponent<UnityEngine.UI.Text>().text = string.Format("デートに行く({0})",mic.AdventurePart);
+            bo.GetComponent<AdventurePartButtonController>().AdventurePartFile = mic.AdventurePart;
             bo.GetComponent<UnityEngine.UI.LayoutElement>().preferredHeight = 30;
         }
         else
