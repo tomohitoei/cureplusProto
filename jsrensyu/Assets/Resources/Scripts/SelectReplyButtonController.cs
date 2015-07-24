@@ -8,6 +8,9 @@ public class SelectReplyButtonController : MonoBehaviour {
 
     private Vector3 _pv;
 
+    public TimePauser Pauser = null;
+    public UnityEngine.UI.ScrollRect[] srList = null;
+
 	// Use this for initialization
 	void Start () {
         _pv = Parent.transform.position;
@@ -22,6 +25,10 @@ public class SelectReplyButtonController : MonoBehaviour {
     public void Clicked()
     {
         Parent.transform.position = _pv;
-        MainPanel.SetActive(true);
+        Pauser.Resume();
+        for (int i = 0; i < srList.Length; i++)
+        {
+            srList[i].enabled = true;
+        }
     }
 }

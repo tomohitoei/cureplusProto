@@ -9,9 +9,12 @@ public class MailController : MonoBehaviour {
     public UnityEngine.UI.Text ContentName = null;
     public UnityEngine.UI.Text ContentTitle = null;
     public GameObject ContentPanel = null;
+    public ShowReplyButtonController SRC = null;
 
     public int FontSize = 24;
     public int MailContentWidth = 512;
+
+    public ReplyButtonController[] Replies;
 
     public static MailController Instance = null;
 
@@ -88,15 +91,36 @@ public class MailController : MonoBehaviour {
                 {
                     c.Content = child.InnerText;
                 }
-                else if (child.Name.Equals("Repries"))
+                else if (child.Name.Equals("Replies"))
                 {
-
+                    c.ReplyTitles = new System.Collections.Generic.List<string>();
+                    c.Replies = new System.Collections.Generic.List<string>();
+                    foreach (XmlNode rc in child.ChildNodes)
+                    {
+                        if (rc.Name.Equals("Reply"))
+                        {
+                            foreach (XmlAttribute ra in rc.Attributes)
+                            {
+                                if (ra.Name.Equals("Subject"))
+                                {
+                                    c.ReplyTitles.Add(ra.Value);
+                                    break;
+                                }
+                            }
+                            c.Replies.Add(rc.InnerText);
+                            if (c.ReplyTitles.Count < c.Replies.Count) c.ReplyTitles.Add("Subjectが設定されていません");
+                        }
+                    }
                 }
             }
             key += 1;
         }
 
-        
+        _emoji = new System.Collections.Generic.Dictionary<string, System.Drawing.Image>();
+        _emoji.Add("hare", LoadImage("emoji/hare"));
+        _emoji.Add("ame", LoadImage("emoji/ame"));
+        _emoji.Add("kumori", LoadImage("emoji/kumori"));
+
 
         //for (int i = 0; i < 15; i++)
         //{
@@ -113,6 +137,17 @@ public class MailController : MonoBehaviour {
 	
 	}
 
+    private System.Collections.Generic.Dictionary<string, System.Drawing.Image> _emoji = null;
+    public UnityEngine.Sprite MakeImage(string content, int width)
+    {
+        var mi = _tr.MakeImage(0, content, width, 1.5f);
+        var ms = new System.IO.MemoryStream();
+        mi.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+        Texture2D t = new Texture2D(mi.Width, mi.Height);
+        t.LoadImage(ms.GetBuffer());
+        return UnityEngine.Sprite.Create(t, new Rect(0, 0, mi.Width, mi.Height), new Vector2(0, 0));
+    }
+
     public void SetItem(MailItemButtonController mic)
     {
         ContentName.text = mic.Name;
@@ -121,12 +156,7 @@ public class MailController : MonoBehaviour {
         GameObject ci = (GameObject)Resources.Load("Prefabs/ContentImage");
         // 本文
         {
-            var emoji = new System.Collections.Generic.Dictionary<string, System.Drawing.Image>();
-            emoji.Add("hare", LoadImage("emoji/hare"));
-            emoji.Add("ame", LoadImage("emoji/ame"));
-            emoji.Add("kumori", LoadImage("emoji/kumori"));
-
-            _tr.EMoji = emoji;
+            _tr.EMoji = _emoji;
             var mi = _tr.MakeImage(mic.Key, mic.Content, MailContentWidth, 1.5f);
             var ms =new System.IO.MemoryStream();
             mi.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
@@ -161,6 +191,29 @@ public class MailController : MonoBehaviour {
         else
         {
             bo.GetComponent<UnityEngine.UI.LayoutElement>().preferredHeight = 0;
+        }
+
+        for (int i = 0; i < Replies.Length; i++)
+        {
+            Replies[i].Title = string.Empty;
+            Replies[i].Content = string.Empty;
+            Replies[i].GetComponent<UnityEngine.UI.Button>().interactable = false;
+        }
+
+        for (int i = 0; i < mic.ReplyTitles.Count; i++)
+        {
+            Replies[i].GetComponent<UnityEngine.UI.Button>().interactable = true;
+            Replies[i].Title = mic.ReplyTitles[i];
+            Replies[i].Content = mic.Replies[i];
+        }
+        if (mic.ReplyTitles==null){
+            SRC.GetComponent<UnityEngine.UI.Button>().interactable = false;
+        }
+        else if (mic.ReplyTitles.Count == 0)
+        {
+            SRC.GetComponent<UnityEngine.UI.Button>().interactable = false;
+        }else{
+            SRC.GetComponent<UnityEngine.UI.Button>().interactable = true;
         }
     }
 

@@ -10,6 +10,8 @@ public class MailItemButtonController : MonoBehaviour {
     public UnityEngine.Sprite Stamp = null;
     public string AdventurePart = string.Empty;
     public int Key = 0;
+    public System.Collections.Generic.List<string> ReplyTitles = null;
+    public System.Collections.Generic.List<string> Replies = null;
 
     public UnityEngine.UI.Text NameField = null;
     public UnityEngine.UI.Text SubjectField = null;

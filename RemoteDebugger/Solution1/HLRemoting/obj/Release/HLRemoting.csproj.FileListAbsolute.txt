@@ -3,3 +3,7 @@ C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\HLRemoting\b
 C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\HLRemoting\obj\Release\HLRemoting.dll
 C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\HLRemoting\obj\Release\HLRemoting.pdb
 C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\HLRemoting\obj\Release\HLRemoting.csprojResolveAssemblyReference.cache
+C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\HLRemoting\bin\Release\UnityEngine.dll
+C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\HLRemoting\bin\Release\UnityEngine.UI.dll
+C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\HLRemoting\bin\Release\UnityEngine.xml
+C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\HLRemoting\bin\Release\UnityEngine.UI.xml

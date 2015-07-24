@@ -17,7 +17,9 @@
     </Content>
     <Replies>
       <Reply Subject="返信1">
-        <Content>返信１本文</Content>
+        <Content>
+返信１本文
+        </Content>
       </Reply>
       <Reply Subject="返信2">
         <Content>このようにして定義はできますが，返信は現在未対応です．余裕があれば対応</Content>
@@ -79,19 +81,11 @@ hime-okoru
 hime-tanosii
 hime-yorokobu
     </Content>
-    <Replies>
-      <Reply Subject="返信1">
-        <Content>返信１本文</Content>
-      </Reply>
-    </Replies>
   </Mail>
 
   <Mail Author="ひめ" Subject="メール1" Icon="02_021_ひめ_アイコン" Stamp="hime-iya" Adventure="">
     <Content></Content>
     <Replies>
-      <Reply Subject="返信1">
-        <Content>返信１本文</Content>
-      </Reply>
     </Replies>
   </Mail>
 

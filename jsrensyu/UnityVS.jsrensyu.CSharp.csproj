@@ -173,6 +173,7 @@
     <Compile Include="Assets\Resources\Scripts\ContentImageController.cs" />
     <Compile Include="Assets\Resources\Scripts\MailController.cs" />
     <Compile Include="Assets\Resources\Scripts\MailItemButtonController.cs" />
+    <Compile Include="Assets\Resources\Scripts\ReplyButtonController.cs" />
     <Compile Include="Assets\Resources\Scripts\SelectReplyButtonController.cs" />
     <Compile Include="Assets\Resources\Scripts\ShowReplyButtonController.cs" />
     <Compile Include="Assets\Resources\Scripts\TextRendererController.cs" />
