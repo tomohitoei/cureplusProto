@@ -16,12 +16,13 @@ public class ReplyButtonController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         GetComponentInChildren<UnityEngine.UI.Text>().text = Title;
-	}
+	} 
 
     public void Clicked()
     {
         MailController mc = MailController.Instance;
         var s = mc.MakeImage(Content, 400);
         Target.sprite = s;
+        Target.GetComponent<UnityEngine.UI.LayoutElement>().preferredHeight = s.texture.height * 268 / s.texture.width;
     }
 }

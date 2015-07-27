@@ -5,7 +5,7 @@ public class SelectReplyButtonController : MonoBehaviour {
 
     public GameObject Parent = null;
     public GameObject MainPanel = null;
-
+    public UnityEngine.UI.Image Image = null;
     private Vector3 _pv;
 
     public TimePauser Pauser = null;
@@ -30,5 +30,6 @@ public class SelectReplyButtonController : MonoBehaviour {
         {
             srList[i].enabled = true;
         }
+        Image.sprite = null;
     }
 }
