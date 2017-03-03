@@ -1,0 +1,38 @@
+﻿<Window x:Class="MascotWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfSandboxApplication"
+        mc:Ignorable="d"
+        Title="MascotWindow" Height="303.888" Width="347.3" ShowInTaskbar="false"
+        AllowsTransparency="True"
+        Background="Transparent"
+        WindowStyle="None">
+    <Window.Resources>
+        <Style TargetType="Image">
+            <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality" />
+        </Style>
+    </Window.Resources>
+    <Window.ContextMenu>
+        <ContextMenu >
+            <MenuItem Header="タイマー" />
+            <MenuItem Header="いろいろなツール？" />
+            <Separator/>
+            <MenuItem Header="設定" />
+            <Separator/>
+            <MenuItem Header="メーラーにもどるよ(_X)" Click="QuitClicked" Background="#FFE0E0" />
+        </ContextMenu>
+    </Window.ContextMenu>
+    <Grid>
+        <Image x:Name="image" Margin="0" />
+
+    </Grid>
+    <!--<Storyboard>
+        <ObjectAnimationUsingKeyFrames x:Name="sb1"  AutoReverse="=false">
+            <DiscreteObjectKeyFrame KeyTime="0:0:0" >
+                
+            </DiscreteObjectKeyFrame>
+        </ObjectAnimationUsingKeyFrames>
+    </Storyboard>-->
+</Window>

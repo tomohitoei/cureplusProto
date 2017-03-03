@@ -1,0 +1,108 @@
+﻿<Window x:Class="TestView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfSandboxApplication"
+        xmlns:cal="http://www.caliburnproject.org"
+        mc:Ignorable="d"
+        Title="TestView" Width="627" Height="519" Background="#FFE0D0" WindowStyle="None" BorderThickness="1" ResizeMode="NoResize" ShowInTaskbar="True">
+    <Window.Resources>
+        <ContextMenu x:Key="cm">
+            <MenuItem Header="挿入">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <cal:ActionMessage MethodName="IncrementCount">
+                            <cal:Parameter Value="1" />
+                        </cal:ActionMessage>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </MenuItem>
+            <MenuItem Header="削除" />
+        </ContextMenu>
+        <Style TargetType="Border" x:Key="FAButtonBorder">
+            <Setter Property="Width"  Value="200"></Setter>
+            <Setter Property="Height" Value="200"></Setter>
+            <Setter Property="CornerRadius" Value="10"></Setter>
+            <Setter Property="BorderBrush" Value="#999"></Setter>
+            <Setter Property="BorderThickness" Value="1"></Setter>
+            <Setter Property="Padding" Value="0"></Setter>
+            <Setter Property="Margin" Value="5"></Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="FAButton">
+            <Setter Property="Background"  Value="{x:Null}"></Setter>
+            <Setter Property="BorderBrush"  Value="{x:Null}"></Setter>
+            <Setter Property="Padding" Value="3"></Setter>
+        </Style>
+        <Style TargetType="Image">
+            <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality" />
+        </Style>
+    </Window.Resources>
+    <Grid Margin="0,0,2,2" Background="#FFE0D0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="563*"/>
+            <ColumnDefinition Width="60*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="27*"/>
+            <RowDefinition Height="488*"/>
+        </Grid.RowDefinitions>
+        <Canvas Grid.Column="0" Grid.Row="1" Margin="10,10,0,10" Background="#FFD0D0">
+            <Label Content="受信トレイ" Foreground="White" FontSize="10" FontStyle="Normal" FontWeight="Bold" />
+            <ListBox x:Name="listBox" Height="438" Canvas.Top="30" Width="274" Background="#FFF9FF" SelectionChanged="listBox_SelectionChanged">
+                <ListBox.Resources>
+                    <!-- 選択行・フォーカス時の背景色 -->
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Pink" />
+                    <!-- 選択行・非フォーカス時の背景色 -->
+                    <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Pink" />
+                </ListBox.Resources>
+            </ListBox>
+
+            <Canvas x:Name="mailContent" Width="274" Height="438" Canvas.Left="279" Canvas.Top="30" Background="#FFE0E0">
+                <Canvas Width="274" Height="54" Background="#FFF9F9">
+                    <Label Content="{Binding CharacterName}"  FontSize="16" FontWeight="Heavy" Height="28" />
+                    <Label Content="{Binding Title}" FontSize="12" RenderTransformOrigin="3.5,2.2" Canvas.Top="24" />
+                </Canvas>
+                <Canvas Width="274" Height="320" Canvas.Top="59" Background="#FFF9F9">
+                    <!--<ScrollViewer Height="320" Width="274" >
+                       
+                    </ScrollViewer>-->
+                    <TextBox IsReadOnly="true" Text="{Binding Content}" Height="320" Width="274" TextWrapping="WrapWithOverflow" ScrollViewer.VerticalScrollBarVisibility="Visible" />
+                </Canvas>
+                <Canvas Width="274" Height="54" Canvas.Top="384" Background="#FFF9F9">
+                    <Button x:Name="addfavorite" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Height="54" Style="{StaticResource FAButton}" BorderThickness="0" Canvas.Left="164" >
+                        <Image x:Name="addfavoriteimage" Height="40" Width="40" Source="{Binding AddFavoriteIcon}" Margin="0" />
+                    </Button>
+                    <Button x:Name="reply" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Height="54" Style="{StaticResource FAButton}" BorderThickness="0" Canvas.Left="218" >
+                        <Image x:Name="replyimage1" Height="40" Width="40" Source="{Binding ReplyIcon}" Margin="0" />
+                    </Button>
+                </Canvas>
+            </Canvas>
+        </Canvas>
+        <Canvas HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="617" Grid.ColumnSpan="2" Grid.RowSpan="2">
+            <Label x:Name="label" Content="キュアぷらす" Foreground="White" RenderTransformOrigin="0.146,0.286" Height="26" Width="626" FontSize="14" FontWeight="Bold" Background="LightPink"/>
+            <Button x:Name="button" Content="×" Canvas.Left="600" Width="26" Height="26" FontSize="14" FontWeight="Bold" />
+        </Canvas>
+        <Canvas Grid.Column="1" Grid.Row="1" Background="#FFE0E0">
+            <Button x:Name="change" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="60" Height="60" Style="{StaticResource FAButton}" BorderThickness="0" Margin="0,0,-21,0" >
+                <Image x:Name="changeimage" Height="40" Width="40" Source="file:///c:/cureplus/切り替えアイコン.png" Margin="0" />
+            </Button>
+            <Button x:Name="newmail" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="60" Height="60" Style="{StaticResource FAButton}" BorderThickness="0" Margin="1,75,-1,0" Grid.Column="1" >
+                <Image x:Name="newmailimage" Height="40" Width="40" Source="file:///c:/cureplus/新規メールアイコン.png" Margin="0" />
+            </Button>
+            <Button x:Name="favorite" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="60" Height="60" Style="{StaticResource FAButton}" BorderThickness="0" Margin="0,229,0,0" Grid.Column="1" >
+                <Image x:Name="favoriteimage" Height="40" Width="40" Source="file:///c:/cureplus/お気に入りアイコン.png" Margin="0" />
+            </Button>
+            <Button x:Name="memento" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="60" Height="60" Style="{StaticResource FAButton}" BorderThickness="0" Margin="0,289,0,0" Grid.Column="1" >
+                <Image x:Name="mementoimage" Height="40" Width="40" Source="file:///c:/cureplus/想い出アイコン.png" Margin="0" />
+            </Button>
+            <Button x:Name="settings" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="60" Height="60" Style="{StaticResource FAButton}" BorderThickness="0" Margin="1,349,-1,0" Grid.Column="1" >
+                <Image x:Name="settingsimage" Height="40" Width="40" Source="file:///c:/cureplus/設定アイコン.png" Margin="0" />
+            </Button>
+            <Button x:Name="minimize" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="60" Height="60" Style="{StaticResource FAButton}" BorderThickness="0" Margin="1,419,-1,0" Grid.Column="1" >
+                <Image x:Name="minimizeimage" Height="40" Width="40" Source="file:///c:/cureplus/最小化アイコン.png" Margin="0" />
+            </Button>
+        </Canvas>
+    </Grid>
+</Window>

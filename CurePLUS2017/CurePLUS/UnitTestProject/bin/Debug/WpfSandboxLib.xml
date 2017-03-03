@@ -1,0 +1,68 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+WpfSandboxLib
+</name>
+</assembly>
+<members>
+<member name="T:WpfSandboxLib.MainWindow">
+<summary>
+MainWindow
+</summary>
+</member>
+<member name="M:WpfSandboxLib.MainWindow.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:WpfSandboxLib.My.MyWpfExtension">
+ <summary>
+ WPF のマイ名前空間で使用できるプロパティを定義するためのモジュール
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:WpfSandboxLib.My.MyWpfExtension.Application">
+ <summary>
+ 実行中のアプリケーション用のアプリケーション オブジェクトを返します
+ </summary>
+</member>
+<member name="P:WpfSandboxLib.My.MyWpfExtension.Computer">
+ <summary>
+ ホスト コンピューターに関する情報を返します。
+ </summary>
+</member>
+<member name="P:WpfSandboxLib.My.MyWpfExtension.User">
+ <summary>
+ 現在のユーザーに関する情報を返します。現在の
+ Windows ユーザー資格情報でアプリケーションを実行する場合は、My.User.InitializeWithWindowsUser() を呼び出してください。
+ </summary>
+</member>
+<member name="P:WpfSandboxLib.My.MyWpfExtension.Log">
+ <summary>
+ アプリケーション ログを返します。リスナーは、アプリケーションの構成ファイルを使用して構成できます。
+ </summary>
+</member>
+<member name="P:WpfSandboxLib.My.MyWpfExtension.Windows">
+ <summary>
+ プロジェクトで定義されている Windows の集合を返します。
+ </summary>
+</member>
+<member name="T:WpfSandboxLib.My.Resources.Resources">
+<summary>
+  ローカライズされた文字列などを検索するための、厳密に型指定されたリソース クラスです。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources.ResourceManager">
+<summary>
+  このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources.Culture">
+<summary>
+  厳密に型指定されたこのリソース クラスを使用して、すべての検索リソースに対し、
+  現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
+</summary>
+</member>
+</members>
+</doc>
