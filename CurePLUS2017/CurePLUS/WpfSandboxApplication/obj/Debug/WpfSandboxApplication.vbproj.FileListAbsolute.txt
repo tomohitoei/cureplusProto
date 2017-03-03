@@ -47,3 +47,7 @@ C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\WpfSandboxAppli
 C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\WpfSandboxApplication\obj\Debug\MailListItem.baml
 C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\WpfSandboxApplication\obj\Debug\MascotWindow.g.vb
 C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\WpfSandboxApplication\obj\Debug\MascotWindow.baml
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\WpfSandboxApplication\obj\Debug\MinimizedMailWindow.g.vb
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\WpfSandboxApplication\obj\Debug\MinimizedMailWindow.baml
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\WpfSandboxApplication\obj\Debug\SettingWindow.g.vb
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\WpfSandboxApplication\obj\Debug\SettingWindow.baml

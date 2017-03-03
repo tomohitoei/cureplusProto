@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:WpfSandboxApplication"
         xmlns:cal="http://www.caliburnproject.org"
         mc:Ignorable="d"
-        Title="TestView" Width="627" Height="519" Background="#FFE0D0" WindowStyle="None" BorderThickness="1" ResizeMode="NoResize" ShowInTaskbar="True">
+        Title="TestView" Width="627" Height="519" Background="#FFE0D0" WindowStyle="None" BorderThickness="1" ResizeMode="NoResize" ShowInTaskbar="True" Icon="/WpfSandboxApplication;component/52652758e32c67b8092fa6bda2522836_xo.ico">
     <Window.Resources>
         <ContextMenu x:Key="cm">
             <MenuItem Header="挿入">
@@ -72,10 +72,10 @@
                 </Canvas>
                 <Canvas Width="274" Height="54" Canvas.Top="384" Background="#FFF9F9">
                     <Button x:Name="addfavorite" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Height="54" Style="{StaticResource FAButton}" BorderThickness="0" Canvas.Left="164" >
-                        <Image x:Name="addfavoriteimage" Height="40" Width="40" Source="{Binding AddFavoriteIcon}" Margin="0" />
+                        <Image x:Name="addfavoriteimage" Height="40" Width="40" Margin="0" />
                     </Button>
                     <Button x:Name="reply" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Height="54" Style="{StaticResource FAButton}" BorderThickness="0" Canvas.Left="218" >
-                        <Image x:Name="replyimage1" Height="40" Width="40" Source="{Binding ReplyIcon}" Margin="0" />
+                        <Image x:Name="replyimage1" Height="40" Width="40" Margin="0" />
                     </Button>
                 </Canvas>
             </Canvas>
@@ -97,7 +97,7 @@
             <Button x:Name="memento" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="60" Height="60" Style="{StaticResource FAButton}" BorderThickness="0" Margin="0,289,0,0" Grid.Column="1" >
                 <Image x:Name="mementoimage" Height="40" Width="40" Source="file:///c:/cureplus/想い出アイコン.png" Margin="0" />
             </Button>
-            <Button x:Name="settings" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="60" Height="60" Style="{StaticResource FAButton}" BorderThickness="0" Margin="1,349,-1,0" Grid.Column="1" >
+            <Button x:Name="settings" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="60" Height="60" Style="{StaticResource FAButton}" BorderThickness="0" Margin="1,349,-1,0" Grid.Column="1" Click="settings_Click" >
                 <Image x:Name="settingsimage" Height="40" Width="40" Source="file:///c:/cureplus/設定アイコン.png" Margin="0" />
             </Button>
             <Button x:Name="minimize" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="60" Height="60" Style="{StaticResource FAButton}" BorderThickness="0" Margin="1,419,-1,0" Grid.Column="1" >

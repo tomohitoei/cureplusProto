@@ -54,6 +54,12 @@
     <StartupObject>
     </StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>52652758e32c67b8092fa6bda2522836_xo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Autofac, Version=4.3.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.4.3.0\lib\net45\Autofac.dll</HintPath>
@@ -143,6 +149,13 @@
     <Compile Include="MascotWindow.xaml.vb">
       <DependentUpon>MascotWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MinimizedMailWindow.xaml.vb">
+      <DependentUpon>MinimizedMailWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingWindow.xaml.vb">
+      <DependentUpon>SettingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserSettings.vb" />
     <Compile Include="ViewModel\TestViewModel.vb" />
     <Compile Include="View\TestView.xaml.vb">
       <DependentUpon>TestView.xaml</DependentUpon>
@@ -156,6 +169,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MascotWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MinimizedMailWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SettingWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -207,6 +228,7 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <None Include="My Project\app.manifest" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
@@ -318,6 +340,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\kiri_k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="52652758e32c67b8092fa6bda2522836_xo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

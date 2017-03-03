@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:WpfSandboxApplication"
              mc:Ignorable="d" d:DesignWidth="260" Height="53.78">
     <Grid>
-            <Canvas Width="260" Margin="1" Background="#FFFFFF">
+            <Canvas Width="auto" Margin="1" Background="#FFFFFF">
                 <Image Name="faceicon" Source="{Binding CharacterIcon}" Width="40" Height="40" Margin="10,7,100,7" />
                 <Label Name="sender" Content="{Binding CharacterName}" Margin="58,0,0,30" FontSize="16" FontWeight="Heavy" Height="28" />
                 <Label Name="title" Content="{Binding Title}" Margin="58,28,0,2" FontSize="12" />

@@ -26,6 +26,26 @@ MascotWindow
 InitializeComponent
 </summary>
 </member>
+<member name="T:WpfSandboxApplication.MinimizedMailWindow">
+<summary>
+MinimizedMailWindow
+</summary>
+</member>
+<member name="M:WpfSandboxApplication.MinimizedMailWindow.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:WpfSandboxApplication.SettingWindow">
+<summary>
+SettingWindow
+</summary>
+</member>
+<member name="M:WpfSandboxApplication.SettingWindow.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
 <member name="T:WpfSandboxApplication.TestView">
 <summary>
 TestView

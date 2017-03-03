@@ -10,11 +10,11 @@ none
 false
 
 C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\WpfSandboxApplication\Application.xaml
-3-1856718736
+5-553064733
 
-13929305451
+161959788439
 802146261182
-MailListItem.xaml;MascotWindow.xaml;View\TestView.xaml;
+MailListItem.xaml;MascotWindow.xaml;MinimizedMailWindow.xaml;SettingWindow.xaml;View\TestView.xaml;
 
-True
+False
 

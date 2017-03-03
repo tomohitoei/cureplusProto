@@ -46,3 +46,8 @@ C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\WpfSandboxAppli
 C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\WpfSandboxApplication\obj\Release\WpfSandboxApplication.exe
 C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\WpfSandboxApplication\obj\Release\WpfSandboxApplication.xml
 C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\WpfSandboxApplication\obj\Release\WpfSandboxApplication.pdb
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\WpfSandboxApplication\obj\Release\WpfSandboxApplication.vbprojResolveAssemblyReference.cache
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\WpfSandboxApplication\obj\Release\MinimizedMailWindow.g.vb
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\WpfSandboxApplication\obj\Release\MinimizedMailWindow.baml
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\WpfSandboxApplication\obj\Release\SettingWindow.g.vb
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\WpfSandboxApplication\obj\Release\SettingWindow.baml

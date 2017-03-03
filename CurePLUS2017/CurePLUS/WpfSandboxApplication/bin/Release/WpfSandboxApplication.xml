@@ -26,6 +26,26 @@ MascotWindow
 InitializeComponent
 </summary>
 </member>
+<member name="T:WpfSandboxApplication.MinimizedMailWindow">
+<summary>
+MinimizedMailWindow
+</summary>
+</member>
+<member name="M:WpfSandboxApplication.MinimizedMailWindow.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:WpfSandboxApplication.SettingWindow">
+<summary>
+SettingWindow
+</summary>
+</member>
+<member name="M:WpfSandboxApplication.SettingWindow.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
 <member name="T:WpfSandboxApplication.TestView">
 <summary>
 TestView
@@ -267,6 +287,36 @@ Application Entry Point.
 <member name="P:WpfSandboxApplication.My.Resources.Resources.返信メールアイコン">
 <summary>
   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="T:WpfSandboxApplication.XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+<summary>
+GeneratedInternalTypeHelper
+</summary>
+</member>
+<member name="M:WpfSandboxApplication.XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+<summary>
+CreateInstance
+</summary>
+</member>
+<member name="M:WpfSandboxApplication.XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+<summary>
+GetPropertyValue
+</summary>
+</member>
+<member name="M:WpfSandboxApplication.XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+<summary>
+SetPropertyValue
+</summary>
+</member>
+<member name="M:WpfSandboxApplication.XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+<summary>
+CreateDelegate
+</summary>
+</member>
+<member name="M:WpfSandboxApplication.XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+<summary>
+AddEventHandler
 </summary>
 </member>
 </members>

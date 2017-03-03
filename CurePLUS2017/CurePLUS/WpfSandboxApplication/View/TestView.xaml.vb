@@ -1,9 +1,23 @@
-﻿<Autofac.AttributedComponent.Component()> Public Class TestView
+﻿Imports System.ComponentModel
+Imports System.Runtime.Serialization
+Imports System.Xml
 
+<Autofac.AttributedComponent.Component()> Public Class TestView
+
+    Private _userSettings As New UserSettings
+    Private _mutex As Threading.Mutex = Nothing
     Public Sub New()
 
         ' この呼び出しはデザイナーで必要です。
         InitializeComponent()
+
+        Dim createdNew As Boolean = False
+        _mutex = New System.Threading.Mutex(True, "cureplusMutex", createdNew)
+        If Not createdNew Then
+            MessageBox.Show("キュアぷらすがすでに起動しています", "通知", MessageBoxButton.OK, MessageBoxImage.Stop)
+            _mutex.Close()
+            End
+        End If
     End Sub
 
     Private Function CreateImageSource(source As System.Drawing.Bitmap) As ImageSource
@@ -22,9 +36,17 @@
         mementoimage.Source = CreateImageSource(My.Resources.想い出アイコン)
         settingsimage.Source = CreateImageSource(My.Resources.設定アイコン)
         minimizeimage.Source = CreateImageSource(My.Resources.最小化アイコン)
+        addfavoriteimage.Source = CreateImageSource(My.Resources.お気に入り追加アイコン)
+        replyimage1.Source = CreateImageSource(My.Resources.返信メールアイコン)
 
-        DataContext = New With {.AddFavoriteIcon = CreateImageSource(My.Resources.お気に入り追加アイコン),
-                                .ReplyIcon = CreateImageSource(My.Resources.返信メールアイコン)}
+        Try
+            Dim serializer As New DataContractSerializer(GetType(UserSettings))
+            Dim settings As New XmlReaderSettings()
+            Dim xw As XmlReader = XmlReader.Create(New IO.StringReader(My.Settings.UserSetting), settings)
+            _userSettings = DirectCast(serializer.ReadObject(xw), UserSettings)
+            xw.Close()
+        Catch ex As Exception
+        End Try
 
         For i = 0 To 10
             Dim mi1 As New MailItem
@@ -47,6 +69,26 @@
             listBox.Items.Add(mli1)
             listBox.Items.Add(mli2)
         Next
+
+
+    End Sub
+
+    Protected Overrides Sub OnClosed(e As EventArgs)
+        MyBase.OnClosed(e)
+
+        Try
+            Dim serializer As New DataContractSerializer(GetType(UserSettings))
+            Dim settings As New XmlWriterSettings()
+            settings.Encoding = New System.Text.UTF8Encoding(False)
+            Dim s As New System.Text.StringBuilder
+            Dim xw As XmlWriter = XmlWriter.Create(s, settings)
+            serializer.WriteObject(xw, _userSettings)
+            xw.Close()
+            My.Settings.UserSetting = s.ToString()
+            My.Settings.Save()
+        Catch ex As Exception
+        End Try
+        _mutex.Close()
     End Sub
 
     Protected Overrides Sub OnMouseDown(e As MouseButtonEventArgs)
@@ -59,14 +101,10 @@
     End Sub
 
     Private Sub minimize_Click(sender As Object, e As RoutedEventArgs) Handles minimize.Click
-        Debug.WriteLine("1")
         Me.Visibility = Visibility.Hidden
-        Debug.WriteLine("2")
-        Dim mv As New MascotWindow()
-        Debug.WriteLine("3")
+        Dim mv As New MinimizedMailWindow()
         mv.Left = Left - (mv.Width - Width) / 2
         mv.Top = Top - (mv.Height - Height) / 2
-        Debug.WriteLine("4")
         mv.ShowDialog()
         Me.Visibility = Visibility.Visible
     End Sub
@@ -75,5 +113,20 @@
         Dim i = listBox.SelectedIndex
         If i < 0 Then Return
         mailContent.DataContext = DirectCast(listBox.Items(i), MailListItem).DataContext
+    End Sub
+
+    Private Sub settings_Click(sender As Object, e As RoutedEventArgs)
+        Dim sw As New SettingWindow
+        sw.DataContext = _userSettings.Clone
+        If sw.ShowDialog Then
+            _userSettings = DirectCast(sw.DataContext, UserSettings)
+        End If
+    End Sub
+
+    Protected Overrides Sub OnClosing(e As CancelEventArgs)
+        If MessageBox.Show("キュアぷらすを終了します、よろしいですか", "確認", MessageBoxButton.YesNo, MessageBoxImage.Question) = MessageBoxResult.No Then
+            e.Cancel = True
+        End If
+        MyBase.OnClosing(e)
     End Sub
 End Class
