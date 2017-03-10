@@ -54,20 +54,22 @@ Imports System.Xml
             mi1.CharacterName = "ひめ"
             mi1.Title = "聞いて聞いて！"
             mi1.Content = "聞いて聞いて！" & vbCrLf & "めぐみがね" & vbCrLf & vbCrLf & "aaaaa"
+            mi1.ReceivedDate = New Date(2017, 3, i + 1)
             Dim mli1 = New MailListItem() With {.DataContext = mi1}
             Dim mi2 As New MailItem
             mi2.CharacterIcon = CreateImageSource(My.Resources._01_011_響_アイコン)
             mi2.CharacterName = "響"
             mi2.Title = "今日さ、学校で"
             mi2.Content = "AAAAAあああああ" & vbCrLf & "カップケーキいっぱい" & vbCrLf & "aaaaa"
+            mi2.ReceivedDate = New Date(2017, 3, i + 1)
             For j = 0 To 30
                 mi2.Content &= vbCrLf & j & "長いメール"
             Next
             mi2.Content &= vbCrLf & "長い行　あああああああああああああああああああああああああああああああああああ"
 
             Dim mli2 = New MailListItem() With {.DataContext = mi2}
-            listBox.Items.Add(mli1)
-            listBox.Items.Add(mli2)
+            listBox.Items.Insert(0, mli1)
+            listBox.Items.Insert(0, mli2)
         Next
 
 

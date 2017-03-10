@@ -6,71 +6,6 @@ WpfSandboxApplication
 </name>
 </assembly>
 <members>
-<member name="T:WpfSandboxApplication.MailListItem">
-<summary>
-MailListItem
-</summary>
-</member>
-<member name="M:WpfSandboxApplication.MailListItem.InitializeComponent">
-<summary>
-InitializeComponent
-</summary>
-</member>
-<member name="T:WpfSandboxApplication.MascotWindow">
-<summary>
-MascotWindow
-</summary>
-</member>
-<member name="M:WpfSandboxApplication.MascotWindow.InitializeComponent">
-<summary>
-InitializeComponent
-</summary>
-</member>
-<member name="T:WpfSandboxApplication.MinimizedMailWindow">
-<summary>
-MinimizedMailWindow
-</summary>
-</member>
-<member name="M:WpfSandboxApplication.MinimizedMailWindow.InitializeComponent">
-<summary>
-InitializeComponent
-</summary>
-</member>
-<member name="T:WpfSandboxApplication.SettingWindow">
-<summary>
-SettingWindow
-</summary>
-</member>
-<member name="M:WpfSandboxApplication.SettingWindow.InitializeComponent">
-<summary>
-InitializeComponent
-</summary>
-</member>
-<member name="T:WpfSandboxApplication.TestView">
-<summary>
-TestView
-</summary>
-</member>
-<member name="M:WpfSandboxApplication.TestView.InitializeComponent">
-<summary>
-InitializeComponent
-</summary>
-</member>
-<member name="T:WpfSandboxApplication.Application">
-<summary>
-Application
-</summary>
-</member>
-<member name="M:WpfSandboxApplication.Application.InitializeComponent">
-<summary>
-InitializeComponent
-</summary>
-</member>
-<member name="M:WpfSandboxApplication.Application.Main">
-<summary>
-Application Entry Point.
-</summary>
-</member>
 <member name="T:WpfSandboxApplication.My.MyWpfExtension">
  <summary>
  WPF のマイ名前空間で使用できるプロパティを定義するためのモジュール
@@ -287,6 +222,71 @@ Application Entry Point.
 <member name="P:WpfSandboxApplication.My.Resources.Resources.返信メールアイコン">
 <summary>
   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="T:WpfSandboxApplication.MailListItem">
+<summary>
+MailListItem
+</summary>
+</member>
+<member name="M:WpfSandboxApplication.MailListItem.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:WpfSandboxApplication.MascotWindow">
+<summary>
+MascotWindow
+</summary>
+</member>
+<member name="M:WpfSandboxApplication.MascotWindow.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:WpfSandboxApplication.MinimizedMailWindow">
+<summary>
+MinimizedMailWindow
+</summary>
+</member>
+<member name="M:WpfSandboxApplication.MinimizedMailWindow.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:WpfSandboxApplication.SettingWindow">
+<summary>
+SettingWindow
+</summary>
+</member>
+<member name="M:WpfSandboxApplication.SettingWindow.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:WpfSandboxApplication.TestView">
+<summary>
+TestView
+</summary>
+</member>
+<member name="M:WpfSandboxApplication.TestView.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:WpfSandboxApplication.Application">
+<summary>
+Application
+</summary>
+</member>
+<member name="M:WpfSandboxApplication.Application.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="M:WpfSandboxApplication.Application.Main">
+<summary>
+Application Entry Point.
 </summary>
 </member>
 <member name="T:WpfSandboxApplication.XamlGeneratedNamespace.GeneratedInternalTypeHelper">

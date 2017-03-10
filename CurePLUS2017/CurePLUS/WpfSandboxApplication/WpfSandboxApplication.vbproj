@@ -141,6 +141,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AppBootstrapper.vb" />
+    <Compile Include="DateConverter.vb" />
     <Compile Include="ITest.vb" />
     <Compile Include="MailItem.vb" />
     <Compile Include="MailListItem.xaml.vb">
