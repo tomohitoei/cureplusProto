@@ -220,4 +220,34 @@
   <data name="返信メールアイコン" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\返信メールアイコン.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="mail_icon_free5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mail-icon-free5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mark_face_angry" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mark_face_angry.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mark_face_ase" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mark_face_ase.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mark_face_cry" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mark_face_cry.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mark_face_hehe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mark_face_hehe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mark_face_jito" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mark_face_jito.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mark_face_laugh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mark_face_laugh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mark_face_odoroki" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mark_face_odoroki.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mark_face_smile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mark_face_smile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mark_face_tere" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mark_face_tere.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

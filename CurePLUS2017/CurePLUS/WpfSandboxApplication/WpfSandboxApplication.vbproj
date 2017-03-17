@@ -142,6 +142,8 @@
     </ApplicationDefinition>
     <Compile Include="AppBootstrapper.vb" />
     <Compile Include="DateConverter.vb" />
+    <Compile Include="Entity\Character.vb" />
+    <Compile Include="Entity\Mail.vb" />
     <Compile Include="ITest.vb" />
     <Compile Include="MailItem.vb" />
     <Compile Include="MailListItem.xaml.vb">
@@ -158,6 +160,9 @@
     </Compile>
     <Compile Include="UserSettings.vb" />
     <Compile Include="ViewModel\TestViewModel.vb" />
+    <Compile Include="View\MailContentView.xaml.vb">
+      <DependentUpon>MailContentView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\TestView.xaml.vb">
       <DependentUpon>TestView.xaml</DependentUpon>
     </Compile>
@@ -178,6 +183,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SettingWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MailContentView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -344,6 +353,41 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="52652758e32c67b8092fa6bda2522836_xo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mark_face_angry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mark_face_ase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mark_face_cry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mark_face_hehe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mark_face_jito.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mark_face_laugh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mark_face_odoroki.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mark_face_smile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mark_face_tere.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail-icon-free5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="mailtest.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

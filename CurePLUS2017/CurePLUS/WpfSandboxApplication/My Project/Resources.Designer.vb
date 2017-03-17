@@ -263,6 +263,106 @@ Namespace My.Resources
         '''<summary>
         '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         '''</summary>
+        Friend ReadOnly Property mail_icon_free5() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("mail_icon_free5", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        '''</summary>
+        Friend ReadOnly Property mark_face_angry() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("mark_face_angry", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        '''</summary>
+        Friend ReadOnly Property mark_face_ase() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("mark_face_ase", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        '''</summary>
+        Friend ReadOnly Property mark_face_cry() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("mark_face_cry", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        '''</summary>
+        Friend ReadOnly Property mark_face_hehe() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("mark_face_hehe", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        '''</summary>
+        Friend ReadOnly Property mark_face_jito() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("mark_face_jito", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        '''</summary>
+        Friend ReadOnly Property mark_face_laugh() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("mark_face_laugh", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        '''</summary>
+        Friend ReadOnly Property mark_face_odoroki() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("mark_face_odoroki", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        '''</summary>
+        Friend ReadOnly Property mark_face_smile() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("mark_face_smile", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        '''</summary>
+        Friend ReadOnly Property mark_face_tere() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("mark_face_tere", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        '''</summary>
         Friend ReadOnly Property お気に入りアイコン() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("お気に入りアイコン", resourceCulture)
