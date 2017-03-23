@@ -7,11 +7,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <TextBlock x:Name="_view">
-            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal"  >
-                <TextBlock Text="aaaaaaaaaaaaaaaaaaaaaaaaaaaa"/>
-                <Image Source="pack://siteoforigin:,,,/Resources/mark_face_angry.png" Width="24"/>
-            </StackPanel>
-        </TextBlock>
+        <ScrollViewer>
+            <TextBlock x:Name="_view" TextWrapping="WrapWithOverflow">
+            </TextBlock>
+       </ScrollViewer>
+        <StackPanel x:Name="hoge">
+            
+        </StackPanel>
     </Grid>
 </UserControl>

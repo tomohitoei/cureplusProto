@@ -50,10 +50,36 @@ Public Class MascotWindow
 
     Private Shared sb1 As New Storyboard() With {.RepeatBehavior = RepeatBehavior.Forever, .AutoReverse = False}
     Private Shared sb2 As New Storyboard() With {.RepeatBehavior = RepeatBehavior.Forever, .AutoReverse = False}
-    Private Sub OnLoaded(sender As Object, e As RoutedEventArgs) Handles Me.Loaded
-        sb1.Begin(image)
-        stat = 0
+
+    Private _timer As New Timers.Timer() With {.Interval = 100}
+
+    Private Sub OnLoaded(sender As Object, e As RoutedEventArgs)
+        'sb1.Begin(image)
+        stat = -1
+
+        AddHandler _timer.Elapsed,
+            Sub()
+                '_count += 1
+                Dispatcher.Invoke(
+                    Sub()
+                        If 0 = TestView.NewMailCount Then
+                            If stat <> 0 Then
+                                sb2.Stop()
+                                sb1.Begin(image)
+                            End If
+                            stat = 0
+                        Else
+                            If stat <> 1 Then
+                                sb1.Stop()
+                                sb2.Begin(image)
+                            End If
+                            stat = 1
+                        End If
+                    End Sub)
+            End Sub
+        _timer.Start()
     End Sub
+
     Private _mx As Double = 0
     Private [_my] As Double = 0
     Protected Overrides Sub OnMouseLeftButtonDown(e As MouseButtonEventArgs)
@@ -67,19 +93,20 @@ Public Class MascotWindow
 
     Protected Overrides Sub OnMouseLeftButtonUp(e As MouseButtonEventArgs)
         MyBase.OnMouseLeftButtonUp(e)
-        If _mx = Left And _my = Top Then
-            If stat = 0 Then
-                sb1.Stop()
-                sb2.Begin(image)
-                stat = 1
-            Else
-                sb2.Stop()
-                sb1.Begin(image)
-                stat = 0
-            End If
-        End If
+        'If _mx = Left And _my = Top Then
+        '    If stat = 0 Then
+        '        sb1.Stop()
+        '        sb2.Begin(image)
+        '        stat = 1
+        '    Else
+        '        sb2.Stop()
+        '        sb1.Begin(image)
+        '        stat = 0
+        '    End If
+        'End If
         ' TODO : アニメーションさせる
     End Sub
+
 
     Protected Overrides Sub OnMouseWheel(e As MouseWheelEventArgs)
         MyBase.OnMouseWheel(e)

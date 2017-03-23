@@ -6,16 +6,6 @@ WpfSandboxLib
 </name>
 </assembly>
 <members>
-<member name="T:WpfSandboxLib.MainWindow">
-<summary>
-MainWindow
-</summary>
-</member>
-<member name="M:WpfSandboxLib.MainWindow.InitializeComponent">
-<summary>
-InitializeComponent
-</summary>
-</member>
 <member name="T:WpfSandboxLib.My.MyWpfExtension">
  <summary>
  WPF のマイ名前空間で使用できるプロパティを定義するためのモジュール
@@ -62,6 +52,231 @@ InitializeComponent
 <summary>
   厳密に型指定されたこのリソース クラスを使用して、すべての検索リソースに対し、
   現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources._01_011_響_アイコン">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources._02_021_ひめ_アイコン">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources._02_021_ひめ_冬服_ポーズ１_ジト目_150418_00s">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources._02_021_ひめ_冬服_ポーズ１_喜_150418_00s">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources._02_021_ひめ_冬服_ポーズ１_照_150418_00s">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources._02_021_ひめ_冬服_ポーズ１_通常１_150418_00s">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources._02_021_ひめ_冬服_ポーズ１_通常２_150418_00s">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources._04_031_せつな_アイコン">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources._04_031_せつな立ち絵きょとんs">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources._04_031_せつな立ち絵微笑みs">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources._04_031_せつな立ち絵笑顔s">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources.chara">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources.chara_a">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources.chara_k">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources.chara_w">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources.hibiki_icon">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources.hibiki_normal">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources.hime_iya">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources.hime_kanasii">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources.hime_ko">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources.hime_love">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources.hime_okoru">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources.hime_tanosii">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources.hime_yorokobu">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources.kiri">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources.kiri_a">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources.kiri_k">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources.mail_icon_free5">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources.mark_face_angry">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources.mark_face_ase">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources.mark_face_cry">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources.mark_face_hehe">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources.mark_face_jito">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources.mark_face_laugh">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources.mark_face_odoroki">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources.mark_face_smile">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources.mark_face_tere">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources.ひめミニキャラ１">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources.ひめミニキャラ2">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources.ひめミニキャラ3">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources.ひめミニキャラ4">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources.ひめミニキャラ5">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxLib.My.Resources.Resources.ひめミニキャラ6">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="T:WpfSandboxLib.MainWindow">
+<summary>
+MainWindow
+</summary>
+</member>
+<member name="M:WpfSandboxLib.MainWindow.InitializeComponent">
+<summary>
+InitializeComponent
 </summary>
 </member>
 </members>

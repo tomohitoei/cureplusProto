@@ -12,3 +12,4 @@ C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\UnitTestProject
 C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\UnitTestProject\obj\Debug\UnitTestProject.dll
 C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\UnitTestProject\obj\Debug\UnitTestProject.xml
 C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\UnitTestProject\obj\Debug\UnitTestProject.pdb
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\UnitTestProject\bin\Debug\WpfSandboxLib.dll.config

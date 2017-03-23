@@ -14,6 +14,16 @@
             <Label Name="sender" Content="{Binding CharacterName}" Margin="58,0,0,30" FontSize="16" FontWeight="Heavy" Height="28" />
             <Label Name="date" Content="{Binding ReceivedDate, Converter={StaticResource DateConv}}" FontSize="10"  Height="23" Canvas.Left="58" Width="190" HorizontalContentAlignment="Right" HorizontalAlignment="Right" />
             <Label Name="title" Content="{Binding Title}" Margin="58,28,0,2" FontSize="12" />
+            <Label Name="state" Foreground="Red" FontWeight="Heavy" Content="{Binding State,UpdateSourceTrigger=PropertyChanged}" Width="50" RenderTransformOrigin="0.5,0.5" Height="29" Canvas.Top="-6" Canvas.Left="-7" >
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-8.802"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
         </Canvas>
     </Grid>
 </UserControl>

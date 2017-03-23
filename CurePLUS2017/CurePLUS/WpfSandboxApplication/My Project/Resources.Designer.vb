@@ -233,6 +233,76 @@ Namespace My.Resources
         '''<summary>
         '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         '''</summary>
+        Friend ReadOnly Property hime_iya() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("hime_iya", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        '''</summary>
+        Friend ReadOnly Property hime_kanasii() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("hime_kanasii", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        '''</summary>
+        Friend ReadOnly Property hime_ko() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("hime_ko", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        '''</summary>
+        Friend ReadOnly Property hime_love() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("hime_love", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        '''</summary>
+        Friend ReadOnly Property hime_okoru() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("hime_okoru", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        '''</summary>
+        Friend ReadOnly Property hime_tanosii() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("hime_tanosii", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        '''</summary>
+        Friend ReadOnly Property hime_yorokobu() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("hime_yorokobu", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        '''</summary>
         Friend ReadOnly Property kiri() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("kiri", resourceCulture)

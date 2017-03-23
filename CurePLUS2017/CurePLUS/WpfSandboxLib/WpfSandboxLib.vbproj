@@ -53,6 +53,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System" />
@@ -71,6 +72,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="MailContent\Parser.vb" />
     <Compile Include="MainApplicationClass.vb" />
     <Compile Include="MainWindow.xaml.vb">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -127,6 +129,135 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mark_face_angry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mark_face_ase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mark_face_cry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mark_face_hehe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mark_face_jito.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mark_face_laugh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mark_face_odoroki.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mark_face_smile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mark_face_tere.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\02_021_ひめ_冬服_ポーズ１_通常１_150418_00s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\02_021_ひめ_冬服_ポーズ１_通常２_150418_00s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chara.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chara_a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chara_k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chara_w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hibiki_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hibiki_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kiri.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kiri_a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kiri_k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail-icon-free5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ひめミニキャラ１.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ひめミニキャラ2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ひめミニキャラ3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ひめミニキャラ4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ひめミニキャラ5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ひめミニキャラ6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_04_031_せつな_アイコン.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_04_031_せつな立ち絵きょとんs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_04_031_せつな立ち絵笑顔s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_04_031_せつな立ち絵微笑みs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\01_011_響_アイコン.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\02_021_ひめ_アイコン.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\02_021_ひめ_冬服_ポーズ１_ジト目_150418_00s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\02_021_ひめ_冬服_ポーズ１_喜_150418_00s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\02_021_ひめ_冬服_ポーズ１_照_150418_00s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hime-iya.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hime-kanasii.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hime-ko.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hime-love.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hime-okoru.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hime-tanosii.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hime-yorokobu.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

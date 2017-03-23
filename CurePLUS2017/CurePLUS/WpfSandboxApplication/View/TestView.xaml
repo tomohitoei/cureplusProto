@@ -69,7 +69,7 @@
                     <!--<ScrollViewer Height="320" Width="274" >
                        
                     </ScrollViewer>-->
-                    <local:MailContentView x:Name="_mailView" Text="{Binding Content}" Height="320" Width="274"/>
+                    <local:MailContentView x:Name="_mailView" Text="{Binding Content}" Stamp="{Binding Stamp}" AdventurePart="{Binding AdventurePart}" Height="320" Width="274"/>
                 </Canvas>
                 <Canvas Width="274" Height="54" Canvas.Top="384" Background="#FFF9F9">
                     <Button x:Name="addfavorite" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Height="54" Style="{StaticResource FAButton}" BorderThickness="0" Canvas.Left="164" >

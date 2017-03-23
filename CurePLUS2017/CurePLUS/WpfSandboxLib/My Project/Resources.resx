@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +69,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -109,9 +112,139 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="chara" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chara.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chara_a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chara_a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chara_k" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chara_k.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chara_w" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chara_w.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hibiki_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hibiki_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hibiki_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hibiki_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hime_iya" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hime-iya.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hime_kanasii" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hime-kanasii.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hime_ko" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hime-ko.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hime_love" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hime-love.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hime_okoru" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hime-okoru.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hime_tanosii" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hime-tanosii.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hime_yorokobu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hime-yorokobu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kiri" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kiri.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kiri_a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kiri_a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kiri_k" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kiri_k.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mail_icon_free5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mail-icon-free5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mark_face_angry" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mark_face_angry.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mark_face_ase" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mark_face_ase.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mark_face_cry" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mark_face_cry.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mark_face_hehe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mark_face_hehe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mark_face_jito" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mark_face_jito.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mark_face_laugh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mark_face_laugh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mark_face_odoroki" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mark_face_odoroki.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mark_face_smile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mark_face_smile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mark_face_tere" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mark_face_tere.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_01_011_響_アイコン" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\01_011_響_アイコン.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_02_021_ひめ_アイコン" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\02_021_ひめ_アイコン.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_02_021_ひめ_冬服_ポーズ１_ジト目_150418_00s" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\02_021_ひめ_冬服_ポーズ１_ジト目_150418_00s.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_02_021_ひめ_冬服_ポーズ１_喜_150418_00s" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\02_021_ひめ_冬服_ポーズ１_喜_150418_00s.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_02_021_ひめ_冬服_ポーズ１_照_150418_00s" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\02_021_ひめ_冬服_ポーズ１_照_150418_00s.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_02_021_ひめ_冬服_ポーズ１_通常１_150418_00s" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\02_021_ひめ_冬服_ポーズ１_通常１_150418_00s.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_02_021_ひめ_冬服_ポーズ１_通常２_150418_00s" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\02_021_ひめ_冬服_ポーズ１_通常２_150418_00s.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_04_031_せつな_アイコン" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\_04_031_せつな_アイコン.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_04_031_せつな立ち絵きょとんs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\_04_031_せつな立ち絵きょとんs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_04_031_せつな立ち絵微笑みs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\_04_031_せつな立ち絵微笑みs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_04_031_せつな立ち絵笑顔s" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\_04_031_せつな立ち絵笑顔s.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ひめミニキャラ2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ひめミニキャラ2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ひめミニキャラ3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ひめミニキャラ3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ひめミニキャラ4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ひめミニキャラ4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ひめミニキャラ5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ひめミニキャラ5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ひめミニキャラ6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ひめミニキャラ6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ひめミニキャラ１" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ひめミニキャラ１.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

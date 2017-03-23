@@ -6,6 +6,52 @@ Imports System.Xml
 
     Private _userSettings As New UserSettings
     Private _mutex As Threading.Mutex = Nothing
+
+
+    Private _mainLoopTimer As Timers.Timer
+
+    Private _count As Integer = 0
+    Private _mailIndex As Integer = 0
+
+    Public Shared NewMailCount As Integer
+
+    Private Sub MainLoop(sender As Object, e As Timers.ElapsedEventArgs)
+        _count += 1
+        If _count Mod 5 = 0 Then
+            If _mailIndex < _ml.Count Then
+                Dim setCharacter = Sub(id As Integer, mi As MailItem)
+                                       Select Case id
+                                           Case 1
+                                               mi.CharacterIcon = CreateImageSource(My.Resources._02_021_ひめ_アイコン)
+                                               mi.CharacterName = "ひめ"
+                                           Case 2
+                                               mi.CharacterIcon = CreateImageSource(My.Resources._01_011_響_アイコン)
+                                               mi.CharacterName = "響"
+                                       End Select
+                                   End Sub
+
+                Dispatcher.Invoke(Sub()
+                                      Dim mi1 As New MailItem
+                                      setCharacter(_ml(_mailIndex).Sender, mi1)
+                                      mi1.Title = _ml(_mailIndex).Title
+                                      mi1.Content = _ml(_mailIndex).Content
+                                      mi1.Stamp = _ml(_mailIndex).Stamp
+                                      mi1.AdventurePart = _ml(_mailIndex).AdventurePart
+                                      mi1.ReceivedDate = Now
+                                      Dim mli1 = New MailListItem() With {.DataContext = mi1}
+                                      listBox.Items.Insert(0, mli1)
+                                  End Sub)
+            End If
+            _mailIndex += 1
+        End If
+
+        Dim count = 0
+        For i = 0 To listBox.Items.Count - 1
+            Dispatcher.Invoke(Sub() If Not String.IsNullOrEmpty(DirectCast(DirectCast(listBox.Items(i), MailListItem).DataContext, MailItem).State) Then count += 1)
+        Next
+        NewMailCount = count
+    End Sub
+
     Public Sub New()
 
         ' この呼び出しはデザイナーで必要です。
@@ -27,28 +73,14 @@ Imports System.Xml
         Catch ex As Exception
 
         End Try
-        'ml.Add(New Entity.Mail() With {.Sender = 1, .Title = "test", .Content = "hoge"})
-        'ml.Add(New Entity.Mail() With {.Sender = 2, .Title = "test", .Content = "hoge"})
-        'ml.Add(New Entity.Mail() With {.Sender = 3, .Title = "test", .Content = "hoge"})
-        'ml.Add(New Entity.Mail() With {.Sender = 1, .Title = "test", .Content = "hoge"})
-        'Try
-        '    'XmlSerializerオブジェクトを作成
-        '    'オブジェクトの型を指定する
-        '    Dim serializer As New System.Xml.Serialization.XmlSerializer(GetType(List(Of Entity.Mail)))
-        '    '書き込むファイルを開く（UTF-8 BOM無し）
-        '    Dim sw As New System.IO.StreamWriter(
-        '    "d:\mailtest.txt", False, New System.Text.UTF8Encoding(False))
-        '    'シリアル化し、XMLファイルに保存する
-        '    serializer.Serialize(sw, ml)
-        '    'ファイルを閉じる
-        '    sw.Close()
-        'Catch ex As Exception
-        'End Try
+
+        _mainLoopTimer = New Timers.Timer(1000)
+        AddHandler _mainLoopTimer.Elapsed, AddressOf MainLoop
+        _mainLoopTimer.Start()
 
     End Sub
 
     Private _ml As New List(Of Entity.Mail)
-
 
     Private Function CreateImageSource(source As System.Drawing.Bitmap) As ImageSource
         Dim ms As IO.Stream = New IO.MemoryStream()
@@ -88,15 +120,15 @@ Imports System.Xml
                                        mi.CharacterName = "響"
                                End Select
                            End Sub
-        For i = 0 To _ml.Count - 1
-            Dim mi1 As New MailItem
-            setCharacter(_ml(i).Sender, mi1)
-            mi1.Title = _ml(i).Title
-            mi1.Content = _ml(i).Content
-            mi1.ReceivedDate = New Date(2017, 3, i + 1)
-            Dim mli1 = New MailListItem() With {.DataContext = mi1}
-            listBox.Items.Insert(0, mli1)
-        Next
+        'For i = 0 To _ml.Count - 1
+        '    Dim mi1 As New MailItem
+        '    setCharacter(_ml(i).Sender, mi1)
+        '    mi1.Title = _ml(i).Title
+        '    mi1.Content = _ml(i).Content
+        '    mi1.ReceivedDate = New Date(2017, 3, i + 1)
+        '    Dim mli1 = New MailListItem() With {.DataContext = mi1}
+        '    listBox.Items.Insert(0, mli1)
+        'Next
 
         'For i = 0 To 10
         '    Dim mi1 As New MailItem
@@ -125,6 +157,8 @@ Imports System.Xml
 
     Protected Overrides Sub OnClosed(e As EventArgs)
         MyBase.OnClosed(e)
+
+        RemoveHandler _mainLoopTimer.Elapsed, AddressOf MainLoop
 
         Try
             Dim serializer As New DataContractSerializer(GetType(UserSettings))
@@ -163,8 +197,13 @@ Imports System.Xml
         Dim i = listBox.SelectedIndex
         If i < 0 Then Return
         Dim mli = DirectCast(listBox.Items(i), MailListItem)
+        DirectCast(mli.DataContext, MailItem).State = ""
+        mli.state.Content = ""
         mailContent.DataContext = mli.DataContext
         _mailView.Text = DirectCast(mli.DataContext, MailItem).Content
+        _mailView.Stamp = DirectCast(mli.DataContext, MailItem).Stamp
+        _mailView.AdventurePart = DirectCast(mli.DataContext, MailItem).AdventurePart
+        _mailView.LayoutParts()
     End Sub
 
     Private Sub settings_Click(sender As Object, e As RoutedEventArgs)

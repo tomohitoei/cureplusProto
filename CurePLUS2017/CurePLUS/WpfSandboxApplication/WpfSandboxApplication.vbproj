@@ -388,6 +388,19 @@
     <Content Include="mailtest.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\hime-yorokobu.png" />
+    <None Include="Resources\hime-tanosii.png" />
+    <None Include="Resources\hime-okoru.png" />
+    <None Include="Resources\hime-love.png" />
+    <None Include="Resources\hime-ko.png" />
+    <None Include="Resources\hime-kanasii.png" />
+    <None Include="Resources\hime-iya.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WpfSandboxLib\WpfSandboxLib.vbproj">
+      <Project>{373433aa-62e3-4db5-ae31-4f80e9d17f17}</Project>
+      <Name>WpfSandboxLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

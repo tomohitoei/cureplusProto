@@ -12,7 +12,7 @@ Public Class MinimizedMailWindow
     Private _my As Double = 0.0
 
     Private Shared _count As Integer = 12
-    Private _timer As New Timers.Timer() With {.Interval = 5000}
+    Private _timer As New Timers.Timer() With {.Interval = 100}
 
     Protected Overrides Sub OnMouseLeftButtonDown(e As MouseButtonEventArgs)
         MyBase.OnMouseLeftButtonDown(e)
@@ -53,8 +53,8 @@ Public Class MinimizedMailWindow
                                    End Sub
 
         AddHandler _timer.Elapsed, Sub()
-                                       _count += 1
-                                       Dispatcher.Invoke(Sub() _mailCount.Content = _count.ToString())
+                                       '_count += 1
+                                       Dispatcher.Invoke(Sub() _mailCount.Content = TestView.NewMailCount.ToString)
                                    End Sub
         _timer.Start()
     End Sub

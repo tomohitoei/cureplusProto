@@ -8,7 +8,7 @@
         Title="MascotWindow" Height="303.888" Width="347.3" ShowInTaskbar="false"
         AllowsTransparency="True"
         Background="Transparent"
-        WindowStyle="None">
+        WindowStyle="None" Loaded="OnLoaded">
     <Window.Resources>
         <Style TargetType="Image">
             <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality" />

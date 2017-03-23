@@ -139,6 +139,41 @@ WpfSandboxApplication
   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
 </summary>
 </member>
+<member name="P:WpfSandboxApplication.My.Resources.Resources.hime_iya">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxApplication.My.Resources.Resources.hime_kanasii">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxApplication.My.Resources.Resources.hime_ko">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxApplication.My.Resources.Resources.hime_love">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxApplication.My.Resources.Resources.hime_okoru">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxApplication.My.Resources.Resources.hime_tanosii">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:WpfSandboxApplication.My.Resources.Resources.hime_yorokobu">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
 <member name="P:WpfSandboxApplication.My.Resources.Resources.kiri">
 <summary>
   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
