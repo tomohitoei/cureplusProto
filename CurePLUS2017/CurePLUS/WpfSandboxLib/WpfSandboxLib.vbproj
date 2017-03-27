@@ -68,16 +68,34 @@
     <Reference Include="System.Net.Http" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="View\MailContentView.xaml.vb">
+      <DependentUpon>MailContentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ReplyWindow.xaml.vb">
+      <DependentUpon>ReplyWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="ApplicationContext.vb" />
+    <Compile Include="Entity\Character.vb" />
+    <Compile Include="Entity\Mail.vb" />
+    <Compile Include="IMailManager.vb" />
     <Compile Include="MailContent\Parser.vb" />
     <Compile Include="MainApplicationClass.vb" />
     <Compile Include="MainWindow.xaml.vb">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\MailContentView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ReplyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Import Include="System.Threading.Tasks" />

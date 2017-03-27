@@ -1,7 +1,6 @@
 C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\SandboxClassLibrary\bin\Debug\SandboxClassLibrary.dll
 C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\SandboxClassLibrary\bin\Debug\SandboxClassLibrary.pdb
 C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\SandboxClassLibrary\bin\Debug\SandboxClassLibrary.xml
-C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\SandboxClassLibrary\obj\Debug\SandboxClassLibrary.vbprojResolveAssemblyReference.cache
 C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\SandboxClassLibrary\obj\Debug\SandboxClassLibrary.Resources.resources
 C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\SandboxClassLibrary\obj\Debug\SandboxClassLibrary.vbproj.GenerateResource.Cache
 C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\SandboxClassLibrary\obj\Debug\SandboxClassLibrary.dll

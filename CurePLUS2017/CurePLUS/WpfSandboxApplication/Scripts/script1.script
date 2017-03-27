@@ -1,0 +1,58 @@
+﻿using System;
+using System.Collections.Generic;
+using WpfSandboxLib;
+
+public class HimeMail001_01
+{
+    public bool canReceive(ApplicationContext context)
+    {
+		var d1 = context.GetValue<DateTime>("起動日時");
+		var d2 = context.GetValue<DateTime>("現在日時");
+		var dd = d2 - d1;
+		return 5 < dd.TotalSeconds;
+    }
+
+    public void onReceived(ApplicationContext context)
+	{
+	}
+
+    public void onRead(ApplicationContext context)
+	{
+	}
+}
+
+public class HimeMail001_02
+{
+    public bool canReceive(ApplicationContext context)
+    {
+		var d1 = context.GetValue<DateTime>("起動日時");
+		var d2 = context.GetValue<DateTime>("現在日時");
+		var dd = d2 - d1;
+		return 15 < dd.TotalSeconds;
+    }
+
+    public void onReceived(ApplicationContext context)
+	{
+	}
+
+    public void onRead(ApplicationContext context)
+	{
+	}
+}
+
+
+public class HimeMail001_03
+{
+    public bool canReceive(ApplicationContext context)
+    {
+		return false;
+    }
+
+    public void onReceived(ApplicationContext context)
+	{
+	}
+
+    public void onRead(ApplicationContext context)
+	{
+	}
+}

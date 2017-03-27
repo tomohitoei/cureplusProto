@@ -11,5 +11,6 @@
 Option Strict Off
 Option Explicit On
 
-<Assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("mailtest.txt")> 
+<Assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("maildata/hime.txt"),  _
+ Assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("scripts/script1.script")> 
 

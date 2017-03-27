@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfMail xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Mail>
+    <Sender>2</Sender>
+    <Title>test</Title>
+    <Content>testmail</Content>
+    <Stamp></Stamp>
+    <AdventurePart></AdventurePart>
+    <Script>HimeMail001_03</Script>
+  </Mail>
+  <Mail>
+    <Sender>2</Sender>
+    <Title>test</Title>
+    <Content>testmail3</Content>
+    <Stamp></Stamp>
+    <AdventurePart></AdventurePart>
+    <Script>HimeMail001_03</Script>
+  </Mail>
+</ArrayOfMail>

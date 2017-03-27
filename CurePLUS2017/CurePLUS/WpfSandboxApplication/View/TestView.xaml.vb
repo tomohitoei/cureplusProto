@@ -1,6 +1,8 @@
 ﻿Imports System.ComponentModel
 Imports System.Runtime.Serialization
 Imports System.Xml
+Imports Microsoft.CSharp
+Imports WpfSandboxLib
 
 <Autofac.AttributedComponent.Component()> Public Class TestView
 
@@ -11,39 +13,45 @@ Imports System.Xml
     Private _mainLoopTimer As Timers.Timer
 
     Private _count As Integer = 0
-    Private _mailIndex As Integer = 0
+    Private _scripts As New Dictionary(Of String, Reflection.Assembly)
+    Private _plugins As New Dictionary(Of String, Reflection.Assembly)
+
+    Private _ml As New Dictionary(Of String, Entity.Mail)
 
     Public Shared NewMailCount As Integer
 
-    Private Sub MainLoop(sender As Object, e As Timers.ElapsedEventArgs)
-        _count += 1
-        If _count Mod 5 = 0 Then
-            If _mailIndex < _ml.Count Then
-                Dim setCharacter = Sub(id As Integer, mi As MailItem)
-                                       Select Case id
-                                           Case 1
-                                               mi.CharacterIcon = CreateImageSource(My.Resources._02_021_ひめ_アイコン)
-                                               mi.CharacterName = "ひめ"
-                                           Case 2
-                                               mi.CharacterIcon = CreateImageSource(My.Resources._01_011_響_アイコン)
-                                               mi.CharacterName = "響"
-                                       End Select
-                                   End Sub
+    Private Sub setCharacter(id As Integer, mi As MailItem)
+        Select Case id
+            Case 1
+                mi.CharacterIcon = CreateImageSource(My.Resources._02_021_ひめ_アイコン)
+                mi.CharacterName = "ひめ"
+            Case 2
+                mi.CharacterIcon = CreateImageSource(My.Resources._01_011_響_アイコン)
+                mi.CharacterName = "響"
+        End Select
+    End Sub
 
+    Private Sub MainLoop(sender As Object, e As Timers.ElapsedEventArgs)
+        _context.SetValue(Of DateTime)("現在日時", Now)
+        For Each mi In _ml.values
+            If mi.Received Then Continue For
+            Dim canReceive = mi.Manager.GetType().GetMethod("canReceive")
+            Dim rr = CBool(canReceive.Invoke(mi.Manager, New Object() {_context}))
+            If rr Then
                 Dispatcher.Invoke(Sub()
                                       Dim mi1 As New MailItem
-                                      setCharacter(_ml(_mailIndex).Sender, mi1)
-                                      mi1.Title = _ml(_mailIndex).Title
-                                      mi1.Content = _ml(_mailIndex).Content
-                                      mi1.Stamp = _ml(_mailIndex).Stamp
-                                      mi1.AdventurePart = _ml(_mailIndex).AdventurePart
+                                      setCharacter(mi.Sender, mi1)
+                                      mi1.Title = mi.Title
+                                      mi1.Content = mi.Content
+                                      mi1.Stamp = mi.Stamp
+                                      mi1.AdventurePart = mi.AdventurePart
                                       mi1.ReceivedDate = Now
+                                      mi.Received = True
                                       Dim mli1 = New MailListItem() With {.DataContext = mi1}
                                       listBox.Items.Insert(0, mli1)
                                   End Sub)
             End If
-            _mailIndex += 1
-        End If
+        Next
 
         Dim count = 0
         For i = 0 To listBox.Items.Count - 1
@@ -65,14 +73,93 @@ Imports System.Xml
             End
         End If
 
-        Try
-            Dim serializer As New System.Xml.Serialization.XmlSerializer(GetType(List(Of Entity.Mail)))
-            Using sr As New IO.StreamReader("mailtest.txt")
-                _ml = DirectCast(serializer.Deserialize(sr), List(Of Entity.Mail))
-            End Using
-        Catch ex As Exception
+        InitializeApplication()
 
-        End Try
+        _ml.Clear()
+        _plugins.Clear()
+
+        ' プラグインの読み込み
+        For Each f In IO.Directory.GetFiles(IO.Path.Combine(IO.Directory.GetCurrentDirectory, "Plugins"), "*.dll")
+            Dim fi As New IO.FileInfo(f)
+            Dim asm = Reflection.Assembly.LoadFrom(f)
+            _plugins.Add(fi.Name, asm)
+
+            Dim resources = asm.GetManifestResourceNames()
+            Dim serializer As New System.Xml.Serialization.XmlSerializer(GetType(List(Of Entity.Mail)))
+            For Each rs In resources
+                If Not rs.ToLower().EndsWith("xml") Then Continue For
+                Using sr As New IO.StreamReader(asm.GetManifestResourceStream(rs))
+                    Dim cml = DirectCast(serializer.Deserialize(sr), List(Of Entity.Mail))
+                    For i = 0 To cml.Count - 1
+                        cml(i).ID = String.Format("{0}/{1}", rs, i + 1)
+                        _ml.Add(cml(i).ID, cml(i))
+                    Next
+                End Using
+            Next
+            For Each mi In _ml.Values
+                If String.IsNullOrEmpty(mi.Script) Then
+                    MessageBox.Show(String.Format("メールにスクリプトが設定されていません : {0}", mi.Title), "エラー", MessageBoxButton.OK, MessageBoxImage.Error)
+                    End
+                End If
+                Dim mgrName = mi.Script
+                Dim mgr = asm.CreateInstance(mgrName)
+                If IsNothing(mgr) Then
+                    MessageBox.Show(String.Format("メールに設定されているマネージャに該当するクラスありません : {0}/{1}", mi.Title, mgrName), "エラー", MessageBoxButton.OK, MessageBoxImage.Error)
+                    End
+                End If
+                mi.Manager = mgr
+            Next
+        Next
+
+        ' スクリプトの読み込み
+        'Dim provider As New CSharpCodeProvider()
+        'Dim cp As New System.CodeDom.Compiler.CompilerParameters()
+        'cp.ReferencedAssemblies.Add(IO.Path.Combine(IO.Path.Combine(IO.Directory.GetCurrentDirectory), "WpfSandboxLib.dll"))
+        'For Each sf In IO.Directory.GetFiles(IO.Path.Combine(IO.Directory.GetCurrentDirectory, "Scripts"), "*.script")
+        '    Dim fi As New IO.FileInfo(sf)
+        '    Dim source = fi.OpenText.ReadToEnd
+        '    Dim result = provider.CompileAssemblyFromSource(cp, source)
+        '    Dim asm = result.CompiledAssembly
+        '    _scripts.Add(fi.Name, asm)
+        'Next
+
+        'Try
+        '    Dim serializer As New System.Xml.Serialization.XmlSerializer(GetType(List(Of Entity.Mail)))
+        '    For Each mf In IO.Directory.GetFiles(IO.Path.Combine(IO.Directory.GetCurrentDirectory, "MailData"), "*.txt")
+        '        Dim fi As New IO.FileInfo(mf)
+        '        Using sr As New IO.StreamReader(mf)
+        '            Dim cml = DirectCast(serializer.Deserialize(sr), List(Of Entity.Mail))
+        '            For i = 0 To cml.Count - 1
+        '                cml(i).ID = String.Format("{0}/{1}", fi.Name, i + 1)
+        '                _ml.add(cml(i).ID, cml(i))
+        '            Next
+        '        End Using
+        '    Next
+
+        '    For Each mi In _ml.values
+        '        If String.IsNullOrEmpty(mi.Script) Then
+        '            MessageBox.Show(String.Format("メールにスクリプトが設定されていません : {0}", mi.Title), "エラー", MessageBoxButton.OK, MessageBoxImage.Error)
+        '            End
+        '        End If
+        '        Dim s = mi.Script.Split("/"c)
+        '        If s.Length < 2 Then
+        '            MessageBox.Show(String.Format("メールに設定されているスクリプトの記載が不正です : {0}", mi.Title), "エラー", MessageBoxButton.OK, MessageBoxImage.Error)
+        '            End
+        '        End If
+        '        If Not _scripts.ContainsKey(s(0)) Then
+        '            MessageBox.Show(String.Format("メールに設定されているスクリプトに該当するファイルがありません : {0}/{1}", mi.Title, s(0)), "エラー", MessageBoxButton.OK, MessageBoxImage.Error)
+        '            End
+        '        End If
+        '        Dim asm = _scripts(s(0))
+        '        Dim mgr = asm.CreateInstance(s(1))
+        '        If IsNothing(mgr) Then
+        '            MessageBox.Show(String.Format("メールに設定されているマネージャに該当するクラスありません : {0}/{1}/{2}", mi.Title, s(0), s(1)), "エラー", MessageBoxButton.OK, MessageBoxImage.Error)
+        '            End
+        '        End If
+        '        mi.Manager = mgr
+        '    Next
+        'Catch ex As Exception
+        'End Try
 
         _mainLoopTimer = New Timers.Timer(1000)
         AddHandler _mainLoopTimer.Elapsed, AddressOf MainLoop
@@ -80,7 +167,11 @@ Imports System.Xml
 
     End Sub
 
-    Private _ml As New List(Of Entity.Mail)
+    Private _context As ApplicationContext = ApplicationContext.Instance()
+
+    Private Sub InitializeApplication()
+        _context.SetValue(Of DateTime)("初回起動日時", Now)
+    End Sub
 
     Private Function CreateImageSource(source As System.Drawing.Bitmap) As ImageSource
         Dim ms As IO.Stream = New IO.MemoryStream()

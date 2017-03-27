@@ -1,8 +1,18 @@
 ﻿Imports System.Text
 Imports Microsoft.VisualStudio.TestTools.UnitTesting
 Imports WpfSandboxLib.MailContent
+Imports WpfSandboxLib
 
 <TestClass()> Public Class MailContentParserUnitTest
+
+    <TestMethod()> Public Sub MailSerializeTest()
+        Dim serializer As New System.Xml.Serialization.XmlSerializer(GetType(Entity.Mail))
+        Using sw As New IO.StreamWriter("d:\aaamailtest.txt")
+            Dim mi As New Entity.Mail
+            mi.Replies.Add(New Entity.Reply() With {.Content = "aaa"})
+            serializer.Serialize(sw, mi)
+        End Using
+    End Sub
 
     <TestMethod()> Public Sub TestMethod1()
         Dim hoge As New LineParser("ほげほげふがふが\{icon_name}ぴよぴよ")

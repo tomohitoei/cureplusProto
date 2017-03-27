@@ -32,17 +32,19 @@ Public Class MinimizedMailWindow
 
     Private _mascot As New MascotWindow
 
+    Private Function CreateImageSource(source As System.Drawing.Bitmap) As ImageSource
+        Dim ms As IO.Stream = New IO.MemoryStream()
+        ms.Seek(0, IO.SeekOrigin.Begin)
+        source.Save(ms, System.Drawing.Imaging.ImageFormat.Png)
+        Dim [is] = New WriteableBitmap(BitmapFrame.Create(ms))
+        ms.Close()
+        Return [is]
+    End Function
+
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
 
         _mailCount.Content = _count.ToString()
-
-        Dim bmp As New RenderTargetBitmap(CInt(image.Width), CInt(image.Height), 96, 96, PixelFormats.Default)
-        Dim dv As New DrawingVisual()
-        Dim dc = dv.RenderOpen()
-        dc.DrawRectangle(Brushes.White, New Pen(Brushes.Black, 5), New Rect(0, 0, bmp.Width, bmp.Height))
-        dc.Close()
-        bmp.Render(dv)
-        image.Source = bmp
+        image.Source = CreateImageSource(My.Resources.mail_icon_free5)
 
         _mascot.Top = Top
         _mascot.Left = Left + Width

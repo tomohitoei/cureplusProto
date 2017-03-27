@@ -269,6 +269,16 @@ WpfSandboxLib
   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
 </summary>
 </member>
+<member name="T:WpfSandboxLib.MailContentView">
+<summary>
+MailContentView
+</summary>
+</member>
+<member name="M:WpfSandboxLib.MailContentView.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
 <member name="T:WpfSandboxLib.MainWindow">
 <summary>
 MainWindow

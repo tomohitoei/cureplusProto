@@ -142,8 +142,6 @@
     </ApplicationDefinition>
     <Compile Include="AppBootstrapper.vb" />
     <Compile Include="DateConverter.vb" />
-    <Compile Include="Entity\Character.vb" />
-    <Compile Include="Entity\Mail.vb" />
     <Compile Include="ITest.vb" />
     <Compile Include="MailItem.vb" />
     <Compile Include="MailListItem.xaml.vb">
@@ -160,9 +158,6 @@
     </Compile>
     <Compile Include="UserSettings.vb" />
     <Compile Include="ViewModel\TestViewModel.vb" />
-    <Compile Include="View\MailContentView.xaml.vb">
-      <DependentUpon>MailContentView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\TestView.xaml.vb">
       <DependentUpon>TestView.xaml</DependentUpon>
     </Compile>
@@ -183,10 +178,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SettingWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\MailContentView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -385,9 +376,9 @@
     <None Include="Resources\mail-icon-free5.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="mailtest.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Resource Include="MailData\hibiki.txt" />
+    <Content Include="MailData\hime.txt" />
+    <Content Include="Scripts\script1.script" />
     <None Include="Resources\hime-yorokobu.png" />
     <None Include="Resources\hime-tanosii.png" />
     <None Include="Resources\hime-okoru.png" />
@@ -401,6 +392,9 @@
       <Project>{373433aa-62e3-4db5-ae31-4f80e9d17f17}</Project>
       <Name>WpfSandboxLib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Plugins\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
