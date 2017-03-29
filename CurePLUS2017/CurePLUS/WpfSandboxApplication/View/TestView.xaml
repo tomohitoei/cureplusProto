@@ -2,15 +2,12 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfSandboxApplication"
         xmlns:cpLib="clr-namespace:WpfSandboxLib;assembly=WpfSandboxLib"
-        xmlns:cal="http://www.caliburnproject.org"
         mc:Ignorable="d"
-        Title="TestView" Width="627" Height="519" Background="#FFE0D0" WindowStyle="None" BorderThickness="1" ResizeMode="NoResize" ShowInTaskbar="True" Icon="/WpfSandboxApplication;component/52652758e32c67b8092fa6bda2522836_xo.ico">
+        Title="TestView" Width="627" Height="519" Background="#FFE0D0" WindowStyle="None" BorderThickness="1" ResizeMode="NoResize" ShowInTaskbar="True" >
     <Window.Resources>
-        <ContextMenu x:Key="cm">
+        <!--<ContextMenu x:Key="cm">
             <MenuItem Header="挿入">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="Click">
@@ -22,7 +19,7 @@
             </MenuItem>
             <MenuItem Header="削除" />
         </ContextMenu>
-        <local:DateConverter x:Key="DateConv"/>
+        <local:DateConverter x:Key="DateConv"/>-->
         <Style TargetType="Border" x:Key="FAButtonBorder">
             <Setter Property="Width"  Value="200"></Setter>
             <Setter Property="Height" Value="200"></Setter>
@@ -52,7 +49,7 @@
         </Grid.RowDefinitions>
         <Canvas Grid.Column="0" Grid.Row="1" Margin="10,10,0,10" Background="#FFD0D0">
             <Label Content="受信トレイ" Foreground="White" FontSize="10" FontStyle="Normal" FontWeight="Bold" />
-            <ListBox x:Name="listBox" Height="438" Canvas.Top="30" Width="274" Background="#FFF9FF" SelectionChanged="listBox_SelectionChanged">
+            <ListBox x:Name="_listBox" Height="438" Canvas.Top="30" Width="274" Background="#FFF9FF" SelectionChanged="listBox_SelectionChanged">
                 <ListBox.Resources>
                     <!-- 選択行・フォーカス時の背景色 -->
                     <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Pink" />
@@ -76,7 +73,7 @@
                     <Button x:Name="addfavorite" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Height="54" Style="{StaticResource FAButton}" BorderThickness="0" Canvas.Left="164" >
                         <Image x:Name="addfavoriteimage" Height="40" Width="40" Margin="0" />
                     </Button>
-                    <Button x:Name="reply" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Height="54" Style="{StaticResource FAButton}" BorderThickness="0" Canvas.Left="218" >
+                    <Button x:Name="reply" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Height="54" Style="{StaticResource FAButton}" BorderThickness="0" Canvas.Left="218" Click="reply_Click">
                         <Image x:Name="replyimage1" Height="40" Width="40" Margin="0" />
                     </Button>
                 </Canvas>

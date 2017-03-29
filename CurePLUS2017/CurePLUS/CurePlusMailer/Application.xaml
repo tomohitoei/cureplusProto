@@ -1,0 +1,9 @@
+﻿<Application x:Class="Application"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:CurePlusMailer"
+    xmlns:mailLib="clr-namespace:CurePLUSMailerLib;assembly=CurePLUSMailerLib"
+    StartupUri="pack://application:,,,/CurePLUSMailerLib;component/View/MailerWindow.xaml">
+    <Application.Resources>
+    </Application.Resources>
+</Application>

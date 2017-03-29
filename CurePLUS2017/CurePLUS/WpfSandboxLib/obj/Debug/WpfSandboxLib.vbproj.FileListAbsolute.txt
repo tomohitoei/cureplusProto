@@ -14,3 +14,13 @@ C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\WpfSandboxLib\o
 C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\WpfSandboxLib\obj\Debug\WpfSandboxLib.pdb
 C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\WpfSandboxLib\obj\Debug\View\MailContentView.g.vb
 C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\WpfSandboxLib\obj\Debug\View\MailContentView.baml
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\WpfSandboxLib\obj\Debug\WpfSandboxLib.vbprojResolveAssemblyReference.cache
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\WpfSandboxLib\obj\Debug\View\ReplyWindow.g.vb
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\WpfSandboxLib\obj\Debug\View\ReplyWindow.baml
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\WpfSandboxLib\obj\Debug\GeneratedInternalTypeHelper.g.vb
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\WpfSandboxLib\obj\Debug\View\SettingWindow.g.vb
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\WpfSandboxLib\obj\Debug\View\SettingWindow.baml
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\WpfSandboxLib\obj\Debug\View\MailListItem.g.vb
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\WpfSandboxLib\obj\Debug\View\MascotWindow.g.vb
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\WpfSandboxLib\obj\Debug\View\MinimizedMailWindow.g.vb
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\WpfSandboxLib\obj\Debug\View\MailListItem.baml

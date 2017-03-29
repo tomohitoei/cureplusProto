@@ -59,14 +59,5 @@ namespace HimeMails.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///    に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string test {
-            get {
-                return ResourceManager.GetString("test", resourceCulture);
-            }
-        }
     }
 }

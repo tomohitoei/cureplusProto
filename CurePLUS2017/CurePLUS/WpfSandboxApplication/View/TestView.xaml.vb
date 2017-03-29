@@ -1,10 +1,13 @@
 ﻿Imports System.ComponentModel
+Imports System.Reflection
 Imports System.Runtime.Serialization
+Imports System.Windows.Threading
 Imports System.Xml
 Imports Microsoft.CSharp
 Imports WpfSandboxLib
 
-<Autofac.AttributedComponent.Component()> Public Class TestView
+'<Autofac.AttributedComponent.Component()>
+Public Class TestView
 
     Private _userSettings As New UserSettings
     Private _mutex As Threading.Mutex = Nothing
@@ -33,7 +36,7 @@ Imports WpfSandboxLib
 
     Private Sub MainLoop(sender As Object, e As Timers.ElapsedEventArgs)
         _context.SetValue(Of DateTime)("現在日時", Now)
-        For Each mi In _ml.values
+        For Each mi In _ml.Values
             If mi.Received Then Continue For
             Dim canReceive = mi.Manager.GetType().GetMethod("canReceive")
             Dim rr = CBool(canReceive.Invoke(mi.Manager, New Object() {_context}))
@@ -46,18 +49,34 @@ Imports WpfSandboxLib
                                       mi1.Stamp = mi.Stamp
                                       mi1.AdventurePart = mi.AdventurePart
                                       mi1.ReceivedDate = Now
+                                      mi1.Mail = mi
                                       mi.Received = True
                                       Dim mli1 = New MailListItem() With {.DataContext = mi1}
-                                      listBox.Items.Insert(0, mli1)
+                                      _ListBox.Items.Insert(0, mli1)
                                   End Sub)
             End If
         Next
 
         Dim count = 0
-        For i = 0 To listBox.Items.Count - 1
-            Dispatcher.Invoke(Sub() If Not String.IsNullOrEmpty(DirectCast(DirectCast(listBox.Items(i), MailListItem).DataContext, MailItem).State) Then count += 1)
+        For i = 0 To _ListBox.Items.Count - 1
+            Dispatcher.Invoke(Sub() If Not String.IsNullOrEmpty(DirectCast(DirectCast(_listBox.Items(i), MailListItem).DataContext, MailItem).State) Then count += 1)
         Next
         NewMailCount = count
+    End Sub
+
+    Private Sub SetMember(source As CustomAttributeData, target As Object, ignore() As String)
+        Dim props As New Dictionary(Of String, PropertyInfo)
+        For Each pi In target.GetType().GetProperties
+            props.Add(pi.Name, pi)
+        Next
+
+        For Each na In source.NamedArguments
+            If ignore.Contains(na.MemberName) Then Continue For
+            If props.ContainsKey(na.MemberName) Then
+                Dim tp = props(na.MemberName)
+                tp.SetValue(target, na.TypedValue.Value)
+            End If
+        Next
     End Sub
 
     Public Sub New()
@@ -84,82 +103,52 @@ Imports WpfSandboxLib
             Dim asm = Reflection.Assembly.LoadFrom(f)
             _plugins.Add(fi.Name, asm)
 
-            Dim resources = asm.GetManifestResourceNames()
-            Dim serializer As New System.Xml.Serialization.XmlSerializer(GetType(List(Of Entity.Mail)))
-            For Each rs In resources
-                If Not rs.ToLower().EndsWith("xml") Then Continue For
-                Using sr As New IO.StreamReader(asm.GetManifestResourceStream(rs))
-                    Dim cml = DirectCast(serializer.Deserialize(sr), List(Of Entity.Mail))
-                    For i = 0 To cml.Count - 1
-                        cml(i).ID = String.Format("{0}/{1}", rs, i + 1)
-                        _ml.Add(cml(i).ID, cml(i))
-                    Next
-                End Using
+            ' メール・リプライマネージャ作成
+            Dim mmList As New Dictionary(Of Type, Entity.Mail)
+            Dim rmList As New List(Of IReplyManager)
+            For Each typ In asm.GetExportedTypes()
+                Try
+                    Dim obj = asm.CreateInstance(typ.FullName)
+                    If TypeOf obj Is IMailManager Then
+                        Dim mmgr = DirectCast(obj, IMailManager)
+                        Dim mail As New Entity.Mail
+                        Dim al = typ.CustomAttributes()
+                        If al.Count = 0 Then Continue For ' 属性の付いていないマネージャはスキップ
+                        For Each a In al
+                            SetMember(a, mail, {})
+                        Next
+                        mail.Manager = mmgr
+                        mmList.Add(typ, mail)
+                        _ml.Add(typ.Name, mail)
+                    ElseIf TypeOf obj Is IReplyManager Then
+                        rmList.Add(DirectCast(obj, IReplyManager))
+                    End If
+                Catch ex As Exception
+                End Try
             Next
-            For Each mi In _ml.Values
-                If String.IsNullOrEmpty(mi.Script) Then
-                    MessageBox.Show(String.Format("メールにスクリプトが設定されていません : {0}", mi.Title), "エラー", MessageBoxButton.OK, MessageBoxImage.Error)
-                    End
+
+            ' リプライとメールを関連付ける
+            For Each rmgr In rmList
+                Dim al = rmgr.GetType().CustomAttributes()
+                Dim target As Type = Nothing
+                Dim temp As New With {.Parent = Nothing}
+                For Each a In al
+                    SetMember(a, temp, {})
+                    If Not IsNothing(temp.Parent) Then Exit For
+                Next
+                If IsNothing(temp.Parent) Then Continue For ' 属性の付いていないマネージャはスキップ
+                If mmList.ContainsKey(DirectCast(temp.Parent, Type)) Then
+                    Dim reply As New Entity.Reply
+                    For Each a In al
+                        SetMember(a, reply, {"Parent"})
+                    Next
+                    reply.Manager = rmgr
+                    Dim parent = mmList(DirectCast(temp.Parent, Type))
+                    parent.Replies.Add(reply)
+                    reply.Parent = parent
                 End If
-                Dim mgrName = mi.Script
-                Dim mgr = asm.CreateInstance(mgrName)
-                If IsNothing(mgr) Then
-                    MessageBox.Show(String.Format("メールに設定されているマネージャに該当するクラスありません : {0}/{1}", mi.Title, mgrName), "エラー", MessageBoxButton.OK, MessageBoxImage.Error)
-                    End
-                End If
-                mi.Manager = mgr
             Next
         Next
-
-        ' スクリプトの読み込み
-        'Dim provider As New CSharpCodeProvider()
-        'Dim cp As New System.CodeDom.Compiler.CompilerParameters()
-        'cp.ReferencedAssemblies.Add(IO.Path.Combine(IO.Path.Combine(IO.Directory.GetCurrentDirectory), "WpfSandboxLib.dll"))
-        'For Each sf In IO.Directory.GetFiles(IO.Path.Combine(IO.Directory.GetCurrentDirectory, "Scripts"), "*.script")
-        '    Dim fi As New IO.FileInfo(sf)
-        '    Dim source = fi.OpenText.ReadToEnd
-        '    Dim result = provider.CompileAssemblyFromSource(cp, source)
-        '    Dim asm = result.CompiledAssembly
-        '    _scripts.Add(fi.Name, asm)
-        'Next
-
-        'Try
-        '    Dim serializer As New System.Xml.Serialization.XmlSerializer(GetType(List(Of Entity.Mail)))
-        '    For Each mf In IO.Directory.GetFiles(IO.Path.Combine(IO.Directory.GetCurrentDirectory, "MailData"), "*.txt")
-        '        Dim fi As New IO.FileInfo(mf)
-        '        Using sr As New IO.StreamReader(mf)
-        '            Dim cml = DirectCast(serializer.Deserialize(sr), List(Of Entity.Mail))
-        '            For i = 0 To cml.Count - 1
-        '                cml(i).ID = String.Format("{0}/{1}", fi.Name, i + 1)
-        '                _ml.add(cml(i).ID, cml(i))
-        '            Next
-        '        End Using
-        '    Next
-
-        '    For Each mi In _ml.values
-        '        If String.IsNullOrEmpty(mi.Script) Then
-        '            MessageBox.Show(String.Format("メールにスクリプトが設定されていません : {0}", mi.Title), "エラー", MessageBoxButton.OK, MessageBoxImage.Error)
-        '            End
-        '        End If
-        '        Dim s = mi.Script.Split("/"c)
-        '        If s.Length < 2 Then
-        '            MessageBox.Show(String.Format("メールに設定されているスクリプトの記載が不正です : {0}", mi.Title), "エラー", MessageBoxButton.OK, MessageBoxImage.Error)
-        '            End
-        '        End If
-        '        If Not _scripts.ContainsKey(s(0)) Then
-        '            MessageBox.Show(String.Format("メールに設定されているスクリプトに該当するファイルがありません : {0}/{1}", mi.Title, s(0)), "エラー", MessageBoxButton.OK, MessageBoxImage.Error)
-        '            End
-        '        End If
-        '        Dim asm = _scripts(s(0))
-        '        Dim mgr = asm.CreateInstance(s(1))
-        '        If IsNothing(mgr) Then
-        '            MessageBox.Show(String.Format("メールに設定されているマネージャに該当するクラスありません : {0}/{1}/{2}", mi.Title, s(0), s(1)), "エラー", MessageBoxButton.OK, MessageBoxImage.Error)
-        '            End
-        '        End If
-        '        mi.Manager = mgr
-        '    Next
-        'Catch ex As Exception
-        'End Try
 
         _mainLoopTimer = New Timers.Timer(1000)
         AddHandler _mainLoopTimer.Elapsed, AddressOf MainLoop
@@ -200,50 +189,6 @@ Imports WpfSandboxLib
             xw.Close()
         Catch ex As Exception
         End Try
-
-        Dim setCharacter = Sub(id As Integer, mi As MailItem)
-                               Select Case id
-                                   Case 1
-                                       mi.CharacterIcon = CreateImageSource(My.Resources._02_021_ひめ_アイコン)
-                                       mi.CharacterName = "ひめ"
-                                   Case 2
-                                       mi.CharacterIcon = CreateImageSource(My.Resources._01_011_響_アイコン)
-                                       mi.CharacterName = "響"
-                               End Select
-                           End Sub
-        'For i = 0 To _ml.Count - 1
-        '    Dim mi1 As New MailItem
-        '    setCharacter(_ml(i).Sender, mi1)
-        '    mi1.Title = _ml(i).Title
-        '    mi1.Content = _ml(i).Content
-        '    mi1.ReceivedDate = New Date(2017, 3, i + 1)
-        '    Dim mli1 = New MailListItem() With {.DataContext = mi1}
-        '    listBox.Items.Insert(0, mli1)
-        'Next
-
-        'For i = 0 To 10
-        '    Dim mi1 As New MailItem
-        '    mi1.CharacterIcon = CreateImageSource(My.Resources._02_021_ひめ_アイコン)
-        '    mi1.CharacterName = "ひめ"
-        '    mi1.Title = "聞いて聞いて！"
-        '    mi1.Content = "聞いて聞いて！" & vbCrLf & "めぐみがね" & vbCrLf & vbCrLf & "aaaaa"
-        '    mi1.ReceivedDate = New Date(2017, 3, i + 1)
-        '    Dim mli1 = New MailListItem() With {.DataContext = mi1}
-        '    Dim mi2 As New MailItem
-        '    mi2.CharacterIcon = CreateImageSource(My.Resources._01_011_響_アイコン)
-        '    mi2.CharacterName = "響"
-        '    mi2.Title = "今日さ、学校で"
-        '    mi2.Content = "AAAAAあああああ" & vbCrLf & "カップケーキいっぱい" & vbCrLf & "aaaaa"
-        '    mi2.ReceivedDate = New Date(2017, 3, i + 1)
-        '    For j = 0 To 30
-        '        mi2.Content &= vbCrLf & j & "長いメール"
-        '    Next
-        '    mi2.Content &= vbCrLf & "長い行　あああああああああああああああああああああああああああああああああああ"
-
-        '    Dim mli2 = New MailListItem() With {.DataContext = mi2}
-        '    listBox.Items.Insert(0, mli1)
-        '    listBox.Items.Insert(0, mli2)
-        'Next
     End Sub
 
     Protected Overrides Sub OnClosed(e As EventArgs)
@@ -278,23 +223,62 @@ Imports WpfSandboxLib
     Private Sub minimize_Click(sender As Object, e As RoutedEventArgs) Handles minimize.Click
         Me.Visibility = Visibility.Hidden
         Dim mv As New MinimizedMailWindow()
-        mv.Left = Left - (mv.Width - Width) / 2
+        mv.Left = Left() - (mv.Width - Width) / 2
         mv.Top = Top - (mv.Height - Height) / 2
         mv.ShowDialog()
         Me.Visibility = Visibility.Visible
     End Sub
 
     Private Sub listBox_SelectionChanged(sender As Object, e As SelectionChangedEventArgs)
-        Dim i = listBox.SelectedIndex
+        Dim i = _listBox.SelectedIndex
         If i < 0 Then Return
-        Dim mli = DirectCast(listBox.Items(i), MailListItem)
-        DirectCast(mli.DataContext, MailItem).State = ""
-        mli.state.Content = ""
+        Dim mli = DirectCast(_listBox.Items(i), MailListItem)
+        Dim mail = DirectCast(mli.DataContext, MailItem)
+        mail.State = ""
+        mli.State = ""
         mailContent.DataContext = mli.DataContext
         _mailView.Text = DirectCast(mli.DataContext, MailItem).Content
         _mailView.Stamp = DirectCast(mli.DataContext, MailItem).Stamp
         _mailView.AdventurePart = DirectCast(mli.DataContext, MailItem).AdventurePart
         _mailView.LayoutParts()
+        _currentMail = mail.Mail
+        'If 0 < mail.Mail.Replies.Count Then
+        '    reply.IsEnabled = True
+        'Else
+        '    reply.IsEnabled = False
+        'End If
+    End Sub
+
+    Private _currentMail As Entity.Mail = Nothing
+
+    Private Sub reply_Click(sender As Object, e As RoutedEventArgs)
+        If IsNothing(_currentMail) Then Return
+
+        ' TODO : すでに返信したメールについての処理（返信した選択肢の未表示して送信ボタンは押せない感じ？）
+
+        Dim rl As New List(Of Entity.Reply)
+        If IsNothing(_currentMail.SelectedReply) Then
+            For i = 0 To Math.Min(2, _currentMail.Replies.Count - 1)
+                Dim rm = DirectCast(_currentMail.Replies(i).Manager, IReplyManager)
+                If rm.canSelect(ApplicationContext.Instance) Then
+                    rl.Add(_currentMail.Replies(i))
+                End If
+            Next
+            If rl.Count = 0 Then Return
+        Else
+            ' 送信済みの場合
+            rl = Nothing
+        End If
+
+        Dim rw As New ReplyWindow(rl, _currentMail.SelectedReply)
+
+        If rw.ShowDialog() Then
+            ' リプライ送信処理
+            _currentMail.SelectedReply = rw.SelectedReply
+            Dim mgr = DirectCast(rw.SelectedReply.Manager, IReplyManager)
+            mgr.onSent(_context)
+            MessageBox.Show(String.Format("{0}を送信しました", rw.SelectedReply.Title, "情報"))
+        End If
     End Sub
 
     Private Sub settings_Click(sender As Object, e As RoutedEventArgs)
@@ -311,4 +295,5 @@ Imports WpfSandboxLib
         End If
         MyBase.OnClosing(e)
     End Sub
+
 End Class

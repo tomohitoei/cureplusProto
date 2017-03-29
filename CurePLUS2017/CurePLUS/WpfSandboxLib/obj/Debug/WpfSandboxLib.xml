@@ -279,6 +279,36 @@ MailContentView
 InitializeComponent
 </summary>
 </member>
+<member name="T:WpfSandboxLib.MailListItem">
+<summary>
+MailListItem
+</summary>
+</member>
+<member name="M:WpfSandboxLib.MailListItem.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:WpfSandboxLib.ReplyWindow">
+<summary>
+ReplyWindow
+</summary>
+</member>
+<member name="M:WpfSandboxLib.ReplyWindow.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:WpfSandboxLib.SettingWindow">
+<summary>
+SettingWindow
+</summary>
+</member>
+<member name="M:WpfSandboxLib.SettingWindow.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
 <member name="T:WpfSandboxLib.MainWindow">
 <summary>
 MainWindow

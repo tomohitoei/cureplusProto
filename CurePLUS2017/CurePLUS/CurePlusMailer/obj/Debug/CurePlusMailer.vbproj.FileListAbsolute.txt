@@ -1,0 +1,16 @@
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\CurePlusMailer\bin\Debug\CurePlusMailer.exe.config
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\CurePlusMailer\bin\Debug\CurePlusMailer.exe
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\CurePlusMailer\bin\Debug\CurePlusMailer.pdb
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\CurePlusMailer\bin\Debug\CurePlusMailer.xml
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\CurePlusMailer\bin\Debug\CurePLUSMailerLib.dll
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\CurePlusMailer\bin\Debug\CurePLUSMailerLib.pdb
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\CurePlusMailer\bin\Debug\CurePLUSMailerLib.xml
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\CurePlusMailer\obj\Debug\CurePlusMailer.vbprojResolveAssemblyReference.cache
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\CurePlusMailer\obj\Debug\CurePlusMailer_MarkupCompile.cache
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\CurePlusMailer\obj\Debug\CurePlusMailer.Resources.resources
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\CurePlusMailer\obj\Debug\CurePlusMailer.vbproj.GenerateResource.Cache
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\CurePlusMailer\obj\Debug\CurePlusMailer.exe
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\CurePlusMailer\obj\Debug\CurePlusMailer.xml
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\CurePlusMailer\obj\Debug\CurePlusMailer.pdb
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\CurePlusMailer\obj\Debug\Application.g.vb
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\CurePlusMailer\bin\Debug\CurePLUSMailerLib.dll.config

@@ -10,11 +10,11 @@ none
 false
 
 
-31702879219
+51937146102
 
-13-615314663
+20-1233902051
 12-1871599920
-MainWindow.xaml;View\MailContentView.xaml;View\ReplyWindow.xaml;
+MainWindow.xaml;View\MailContentView.xaml;View\MailListItem.xaml;View\ReplyWindow.xaml;View\SettingWindow.xaml;
 
 True
 

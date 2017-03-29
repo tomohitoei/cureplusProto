@@ -38,9 +38,6 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="WpfSandboxLib">
-      <HintPath>..\WpfSandboxApplication\bin\Debug\WpfSandboxLib.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
@@ -51,24 +48,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SampleScript1.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\test.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\hime.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\hibiki.xml" />
+    <ProjectReference Include="..\CurePLUSMailerLib\CurePLUSMailerLib.vbproj">
+      <Project>{9f7ddbcb-9e8a-4b73-a9ce-a595e7e867f7}</Project>
+      <Name>CurePLUSMailerLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy $(TargetFileName) $(SolutionDir)WpfSandboxApplication\bin\Debug\Plugins\</PostBuildEvent>
+    <PostBuildEvent>copy $(TargetFileName) $(SolutionDir)CurePLUSMailer\bin\Debug\Plugins\</PostBuildEvent>
   </PropertyGroup>
 </Project>

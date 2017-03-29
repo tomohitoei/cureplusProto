@@ -68,11 +68,22 @@
     <Reference Include="System.Net.Http" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DateConverter.vb" />
+    <Compile Include="Entity\MailItem.vb" />
+    <Compile Include="IReplyManager.vb" />
+    <Compile Include="MailInformationAttribute.vb" />
+    <Compile Include="UserSettings.vb" />
     <Compile Include="View\MailContentView.xaml.vb">
       <DependentUpon>MailContentView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\MailListItem.xaml.vb">
+      <DependentUpon>MailListItem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ReplyWindow.xaml.vb">
       <DependentUpon>ReplyWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SettingWindow.xaml.vb">
+      <DependentUpon>SettingWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -92,9 +103,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\MailListItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\ReplyWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SettingWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -278,4 +297,7 @@
     <None Include="Resources\hime-yorokobu.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetPath) $(SolutionDir)ClassLibraly1\$(TargetFileName)</PostBuildEvent>
+  </PropertyGroup>
 </Project>

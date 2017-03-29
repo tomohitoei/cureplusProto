@@ -1,0 +1,343 @@
+﻿<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <RootNamespace>CurePLUSMailerLib</RootNamespace>
+    <AssemblyName>CurePLUSMailerLib</AssemblyName>
+    <OutputType>Library</OutputType>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <ProjectGuid>{9F7DDBCB-9E8A-4B73-A9CE-A595E7E867F7}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <IncrementalBuild>true</IncrementalBuild>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>CurePLUSMailerLib.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42314</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <IncrementalBuild>false</IncrementalBuild>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>CurePLUSMailerLib.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42314</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationContext.vb" />
+    <Compile Include="DateConverter.vb" />
+    <Compile Include="Entity\Character.vb" />
+    <Compile Include="Entity\Mail.vb" />
+    <Compile Include="Entity\MailItem.vb" />
+    <Compile Include="Entity\ReceivedMail.vb" />
+    <Compile Include="Entity\Reply.vb" />
+    <Compile Include="GameData.vb" />
+    <Compile Include="IMailManager.vb" />
+    <Compile Include="IReplyManager.vb" />
+    <Compile Include="MailContent\Parser.vb" />
+    <Compile Include="MailInformationAttribute.vb" />
+    <Compile Include="Support\PluginViewerWindow.xaml.vb">
+      <DependentUpon>PluginViewerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserSettings.vb" />
+    <Compile Include="Util.vb" />
+    <Compile Include="View\MailContentView.xaml.vb">
+      <DependentUpon>MailContentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MailerWindow.xaml.vb">
+      <DependentUpon>MailerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MailListItem.xaml.vb">
+      <DependentUpon>MailListItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MascotWindow.xaml.vb">
+      <DependentUpon>MascotWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MinimizedMailWindow.xaml.vb">
+      <DependentUpon>MinimizedMailWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ReplyWindow.xaml.vb">
+      <DependentUpon>ReplyWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SettingWindow.xaml.vb">
+      <DependentUpon>SettingWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Support\PluginViewerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="UserControl1.xaml.vb">
+      <DependentUpon>UserControl1.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\MailContentView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\MailerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MailListItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\MascotWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\MinimizedMailWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ReplyWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SettingWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="System.Threading.Tasks" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows" />
+    <Import Include="System.Windows.Controls" />
+    <Import Include="System.Windows.Data" />
+    <Import Include="System.Windows.Documents" />
+    <Import Include="System.Windows.Input" />
+    <Import Include="System.Windows.Shapes" />
+    <Import Include="System.Windows.Media" />
+    <Import Include="System.Windows.Media.Imaging" />
+    <Import Include="System.Windows.Navigation" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="My Project\AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\お気に入りアイコン.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ひめミニキャラ6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_04_031_せつな_アイコン.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_04_031_せつな立ち絵きょとんs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_04_031_せつな立ち絵笑顔s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_04_031_せつな立ち絵微笑みs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\01_011_響_アイコン.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\02_021_ひめ_アイコン.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\02_021_ひめ_冬服_ポーズ１_ジト目_150418_00s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\02_021_ひめ_冬服_ポーズ１_喜_150418_00s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\02_021_ひめ_冬服_ポーズ１_照_150418_00s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\02_021_ひめ_冬服_ポーズ１_通常１_150418_00s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\02_021_ひめ_冬服_ポーズ１_通常２_150418_00s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chara.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chara_a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chara_k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chara_w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hibiki_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hibiki_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hime-iya.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hime-kanasii.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hime-ko.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hime-love.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hime-okoru.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hime-tanosii.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hime-yorokobu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kiri.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kiri_a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kiri_k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail-icon-free5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mark_face_angry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mark_face_ase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mark_face_cry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mark_face_hehe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mark_face_jito.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mark_face_laugh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mark_face_odoroki.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mark_face_smile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mark_face_tere.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ひめミニキャラ１.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ひめミニキャラ2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ひめミニキャラ3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ひめミニキャラ4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ひめミニキャラ5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\お気に入り追加アイコン.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\最小化アイコン.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\新規メールアイコン.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\切り替えアイコン.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\設定アイコン.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\想い出アイコン.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\返信メールアイコン.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>

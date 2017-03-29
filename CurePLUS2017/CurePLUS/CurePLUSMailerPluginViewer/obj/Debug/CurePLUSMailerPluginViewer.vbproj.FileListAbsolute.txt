@@ -1,0 +1,15 @@
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\CurePLUSMailerPluginViewer\bin\Debug\CurePLUSMailerPluginViewer.exe.config
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\CurePLUSMailerPluginViewer\bin\Debug\CurePLUSMailerPluginViewer.exe
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\CurePLUSMailerPluginViewer\bin\Debug\CurePLUSMailerPluginViewer.pdb
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\CurePLUSMailerPluginViewer\bin\Debug\CurePLUSMailerPluginViewer.xml
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\CurePLUSMailerPluginViewer\obj\Debug\MainWindow.g.vb
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\CurePLUSMailerPluginViewer\obj\Debug\Application.g.vb
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\CurePLUSMailerPluginViewer\obj\Debug\CurePLUSMailerPluginViewer_MarkupCompile.cache
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\CurePLUSMailerPluginViewer\obj\Debug\CurePLUSMailerPluginViewer_MarkupCompile.lref
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\CurePLUSMailerPluginViewer\obj\Debug\MainWindow.baml
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\CurePLUSMailerPluginViewer\obj\Debug\CurePLUSMailerPluginViewer.g.resources
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\CurePLUSMailerPluginViewer\obj\Debug\CurePLUSMailerPluginViewer.Resources.resources
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\CurePLUSMailerPluginViewer\obj\Debug\CurePLUSMailerPluginViewer.vbproj.GenerateResource.Cache
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\CurePLUSMailerPluginViewer\obj\Debug\CurePLUSMailerPluginViewer.exe
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\CurePLUSMailerPluginViewer\obj\Debug\CurePLUSMailerPluginViewer.xml
+C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\CurePLUSMailerPluginViewer\obj\Debug\CurePLUSMailerPluginViewer.pdb

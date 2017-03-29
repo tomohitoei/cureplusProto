@@ -143,48 +143,20 @@
     <Compile Include="AppBootstrapper.vb" />
     <Compile Include="DateConverter.vb" />
     <Compile Include="ITest.vb" />
-    <Compile Include="MailItem.vb" />
-    <Compile Include="MailListItem.xaml.vb">
-      <DependentUpon>MailListItem.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MascotWindow.xaml.vb">
-      <DependentUpon>MascotWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MinimizedMailWindow.xaml.vb">
-      <DependentUpon>MinimizedMailWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="SettingWindow.xaml.vb">
-      <DependentUpon>SettingWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserSettings.vb" />
     <Compile Include="ViewModel\TestViewModel.vb" />
-    <Compile Include="View\TestView.xaml.vb">
-      <DependentUpon>TestView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Application.xaml.vb">
       <DependentUpon>Application.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="MailListItem.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MascotWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MinimizedMailWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="SettingWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\TestView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <Compile Include="View\MascotWindow.xaml.vb">
+      <DependentUpon>MascotWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MinimizedMailWindow.xaml.vb">
+      <DependentUpon>MinimizedMailWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TestView.xaml.vb">
+      <DependentUpon>TestView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Import Include="System.Threading.Tasks" />
@@ -395,6 +367,20 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Plugins\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="View\MascotWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\MinimizedMailWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\TestView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

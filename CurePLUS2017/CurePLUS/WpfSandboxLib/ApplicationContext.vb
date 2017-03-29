@@ -8,7 +8,8 @@
         Return _i
     End Function
 
-    Private _settings As New Dictionary(Of String, Object)
+    Friend _settings As New Dictionary(Of String, Object)
+
 
     Public ReadOnly Property ContainsKey(key As String) As Boolean
         Get
@@ -31,4 +32,9 @@
     Public Sub SetCurrentTime(key As String)
         SetValue(Of DateTime)(key, Now)
     End Sub
+
+    Public Function 起動からの経過秒() As Integer
+        Return (Now - GetValue(Of DateTime)("初回起動日時")).TotalSeconds
+    End Function
+
 End Class
