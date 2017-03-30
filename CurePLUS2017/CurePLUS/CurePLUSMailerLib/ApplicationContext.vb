@@ -11,14 +11,16 @@
     Friend _settings As New Dictionary(Of String, Object)
 
 
-    Public ReadOnly Property ContainsKey(key As String) As Boolean
-        Get
-            Return _settings.ContainsKey(key)
-        End Get
-    End Property
+    Public Function ContainsKey(key As String) As Boolean
+        Return _settings.ContainsKey(key)
+    End Function
 
     Public Function GetValue(Of T)(key As String) As T
         Return DirectCast(_settings(key), T)
+    End Function
+
+    Public Function GetString(key As String) As String
+        Return CStr(_settings(key))
     End Function
 
     Public Sub SetValue(Of T)(key As String, value As T)
@@ -34,7 +36,10 @@
     End Sub
 
     Public Function 初回起動からの経過秒() As Integer
-        Return (Now - GetValue(Of DateTime)("初回起動日時")).TotalSeconds
+        Return 経過秒("初回起動日時")
     End Function
 
+    Public Function 経過秒(key As String) As Integer
+        Return (Now - GetValue(Of DateTime)(key)).TotalSeconds
+    End Function
 End Class

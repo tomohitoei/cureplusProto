@@ -24,22 +24,27 @@ Public Class MailerWindow
     Private _forceClose As Boolean = False
 
     Private Sub MainLoop(sender As Object, e As Timers.ElapsedEventArgs)
-        _context.SetValue(Of DateTime)("現在日時", Now)
-        _context.SetValue(Of Integer)("累積起動時間", _context.GetValue(Of Integer)("累積起動時間"))
+        _mainLoopTimer.Stop()
+        Try
+            _context.SetValue(Of DateTime)("現在日時", Now)
+            _context.SetValue(Of Integer)("累積起動時間", _context.GetValue(Of Integer)("累積起動時間"))
 
-        For Each mi In _gameData.MailTriggerList.Values
-            If mi.Received Then Continue For
-            If mi.Manager.canReceive(_context) Then
-                Dispatcher.Invoke(Sub() ReceiveMail(mi))
-            End If
-        Next
+            For Each mi In _gameData.MailTriggerList.Values
+                If mi.Received Then Continue For
+                If mi.Manager.canReceive(_context) Then
+                    Dispatcher.Invoke(Sub() ReceiveMail(mi))
+                End If
+            Next
 
-        Dim count = 0
-        For i = 0 To _mailTitleList.Items.Count - 1
-            Dim ii = i
-            Dispatcher.Invoke(Sub() If Not String.IsNullOrEmpty(DirectCast(DirectCast(_mailTitleList.Items(ii), MailListItem).DataContext, MailItem).State) Then count += 1)
-        Next
-        NewMailCount = count
+            Dim count = 0
+            For i = 0 To _mailTitleList.Items.Count - 1
+                Dim ii = i
+                Dispatcher.Invoke(Sub() If Not String.IsNullOrEmpty(DirectCast(DirectCast(_mailTitleList.Items(ii), MailListItem).DataContext, MailItem).State) Then count += 1)
+            Next
+            NewMailCount = count
+        Finally
+            _mainLoopTimer.Start()
+        End Try
     End Sub
 
     Private Function MakeMailItem(rm As Entity.ReceivedMail) As MailListItem
@@ -67,7 +72,7 @@ Public Class MailerWindow
     Private Sub ReadPlugins()
         _plugins.Clear()
 
-        ' Pluginsフォルダが無い場合・プラグインのｄｌｌが無い場合の対処
+        ' Pluginsフォルダが無い場合・プラグインのdllが無い場合の対処
         Dim pd = IO.Path.Combine(IO.Directory.GetCurrentDirectory, "Plugins")
         If Not IO.Directory.Exists(pd) Then
             MessageBox.Show("プラグインフォルダが見つかりません", "エラー", MessageBoxButton.OK, MessageBoxImage.Error)
@@ -97,6 +102,14 @@ Public Class MailerWindow
         Next
     End Sub
 
+    Private Sub WriteUserSettingInContext()
+        _context.SetValue("UserSettings/Username", _gameData.UserSettings.Username)
+        _context.SetValue("UserSettings/Nickname1", _gameData.UserSettings.Nickname1)
+        _context.SetValue("UserSettings/Nickname2", _gameData.UserSettings.Nickname2)
+        _context.SetValue("UserSettings/BirthMonth", _gameData.UserSettings.BirthMonth)
+        _context.SetValue("UserSettings/BirthDay", _gameData.UserSettings.BirthDay)
+    End Sub
+
     Private Sub NewGame()
         _mainLoopTimer.Stop()
         Threading.Thread.Sleep(1000)
@@ -119,7 +132,10 @@ Public Class MailerWindow
             For Each typ In asm.GetExportedTypes()
                 Try
                     Dim obj = asm.CreateInstance(typ.FullName)
-                    If TypeOf obj Is IMailManager Then
+                    If TypeOf obj Is IThreadDatainitializer Then
+                        Dim ti = DirectCast(obj, IThreadDatainitializer)
+                        ti.Initialize(_context)
+                    ElseIf TypeOf obj Is IMailManager Then
                         Dim mmgr = DirectCast(obj, IMailManager)
                         Dim mail As New Entity.Mail
                         Dim al = typ.CustomAttributes()
@@ -127,7 +143,7 @@ Public Class MailerWindow
                         For Each a In al
                             Util.SetMember(a, mail, {})
                         Next
-                        mail.ID = typ.FullName
+                        mail.ID = typ.Name
                         mail.Manager = mmgr
                         mmList.Add(typ, mail)
                         _gameData.MailTriggerList.Add(typ.Name, mail)
@@ -164,6 +180,7 @@ Public Class MailerWindow
         _context.SetValue(Of DateTime)("初回起動日時", Now)
         _context.SetValue(Of Integer)("累積起動時間", 0)
         _context.SetValue(Of Integer)("起動回数", 1)
+        WriteUserSettingInContext()
 
         _mainLoopTimer.Start()
     End Sub
@@ -365,6 +382,7 @@ retry:
                 NewGame()
             Else
                 _gameData.UserSettings = DirectCast(sw.DataContext, UserSettings)
+                WriteUserSettingInContext()
             End If
         End If
     End Sub

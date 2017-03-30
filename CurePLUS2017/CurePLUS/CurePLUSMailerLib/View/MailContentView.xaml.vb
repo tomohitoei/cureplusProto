@@ -18,6 +18,8 @@
                                     GetType(MailContentView),
                                     New FrameworkPropertyMetadata("アドベンチャーパート"))
 
+    Private _context As ApplicationContext = ApplicationContext.Instance()
+
     Private _text As String
     Public Property Text As String
         Get
@@ -72,6 +74,12 @@
                         _view.Inlines.Add(New TextBlock() With {.Text = t.Value, .TextWrapping = TextWrapping.Wrap})
                     Case MailContent.LineParser.Token.TokenType.Emoji
                         _view.Inlines.Add(New Image() With {.Source = Util.CreateImageSource(t.Value), .Width = 24, .Height = 24})
+                    Case MailContent.LineParser.Token.TokenType.EmbeddedValue
+                        If _context.ContainsKey(t.Value) Then
+                            _view.Inlines.Add(New TextBlock() With {.Text = _context.GetString(t.Value), .TextWrapping = TextWrapping.Wrap})
+                        Else
+                            _view.Inlines.Add(New TextBlock() With {.Text = String.Format("埋め込み文字列が見つかりません:\[{0}]", t.Value), .TextWrapping = TextWrapping.Wrap})
+                        End If
                 End Select
             Loop
             _view.Inlines.Add(New LineBreak())

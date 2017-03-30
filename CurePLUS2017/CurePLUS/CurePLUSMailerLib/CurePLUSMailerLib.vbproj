@@ -80,6 +80,7 @@
     </Compile>
     <Compile Include="UserSettings.vb" />
     <Compile Include="Util.vb" />
+    <Compile Include="IThreadDatainitializer.vb" />
     <Compile Include="View\MailContentView.xaml.vb">
       <DependentUpon>MailContentView.xaml</DependentUpon>
     </Compile>

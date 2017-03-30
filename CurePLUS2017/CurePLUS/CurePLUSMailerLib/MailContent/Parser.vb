@@ -35,12 +35,25 @@
                     _index = i + 1
                     Return New Token() With {.Value = value, .Type = Token.TokenType.Emoji}
 
+                ElseIf _index <= _buf.Length - 2 AndAlso _buf.Substring(_index, 2).Equals("\[") Then
+                    ' 埋め込み文字列
+                    Dim i = _index + 2
+                    Do
+                        If _buf.Length <= i Then Exit Do
+                        If _buf.Substring(i, 1).Equals("]") Then Exit Do
+                        i += 1
+                    Loop
+
+                    Dim value = _buf.Substring(_index + 2, i - _index - 2)
+                    _index = i + 1
+                    Return New Token() With {.Value = value, .Type = Token.TokenType.EmbeddedValue}
+
                 Else
                     ' テキスト
                     Dim i = _index + 1
                     Do
                         If _buf.Length <= i Then Exit Do
-                        If i <= _buf.Length - 2 AndAlso _buf.Substring(i, 2).Equals("\{") Then Exit Do
+                        If i <= _buf.Length - 2 AndAlso (_buf.Substring(i, 2).Equals("\{") Or _buf.Substring(i, 2).Equals("\[")) Then Exit Do
                         i += 1
                     Loop
                     Dim value = _buf.Substring(_index, i - _index)
@@ -56,6 +69,7 @@
             Public Enum TokenType
                 Text
                 Emoji
+                EmbeddedValue
             End Enum
         End Class
     End Class

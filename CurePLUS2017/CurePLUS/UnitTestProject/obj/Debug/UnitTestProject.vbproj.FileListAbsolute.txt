@@ -1,4 +1,3 @@
-C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\UnitTestProject\obj\Debug\UnitTestProject.vbprojResolveAssemblyReference.cache
 C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\UnitTestProject\obj\Debug\UnitTestProject.Resources.resources
 C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\UnitTestProject\obj\Debug\UnitTestProject.vbproj.GenerateResource.Cache
 C:\Users\ei\Documents\GitHub\cureplusProto\CurePLUS2017\CurePLUS\UnitTestProject\bin\Debug\UnitTestProject.dll

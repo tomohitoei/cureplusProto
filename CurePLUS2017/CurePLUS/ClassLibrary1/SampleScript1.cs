@@ -7,6 +7,18 @@ using CurePLUSMailerLib;
 
 #region "サンプル1"
 
+public class SampleMailThreadInitializer : CurePLUSMailerLib.IThreadDatainitializer
+{
+    // ゲームデータ初期化時にコールされます
+    public void Initialize(ApplicationContext context)
+    {
+        // スレッドが進行するために必要なデータを設定します
+        context.SetValue("リプライ説明スレッドステージ", 0);
+        context.SetValue("SampleMailThreadParameter1", 1);
+        context.SetValue("SampleMailThreadParameter2", "hoge");
+    }
+}
+
 [CurePLUSMailerLib.MailInformation(
 Sender = CurePLUSMailerLib.Entity.Character.CharacterID.Hime, // メールの送信者
 Title = "sample mail 1", // メールのタイトル
@@ -15,6 +27,14 @@ Content = // メール本文を下の行から記述，以下の行頭の「@"�
 
 このメールはシステムからユーザへ
 送信されるメールとしては最小単位のメールになります
+
+ゲームパラメータの埋め込みは
+以下のように指定します：
+\[UserSettings/Username]
+\[UserSettings/Nickname1]
+\[UserSettings/Nickname2]
+\[UserSettings/BirthMonth]
+\[UserSettings/BirthDay]
 ", // 行末の「",」は削除しないでください
 Stamp = "", // 空白でスタンプ無しになります
 AdventurePart = "")] // アドベンチャーパートのシナリオ名．空白でジャンプボタン無しになります
@@ -133,6 +153,9 @@ public class SampleMailReply1_Rep1 : CurePLUSMailerLib.IReplyManager
     public void onSent(ApplicationContext context)
     {
         // パラメータの更新等
+        context.SetValue("リプライ説明スレッドステージ", 1);
+        context.SetValue("リプライ説明スレッド応答日時", DateTime.Now);
+        context.SetValue("リプライ説明汎用パラメータ", "返信1");
     }
 }
 
@@ -154,6 +177,9 @@ public class SampleMailReply1_Rep2 : CurePLUSMailerLib.IReplyManager
     public void onSent(ApplicationContext context)
     {
         // パラメータの更新等
+        context.SetValue("リプライ説明スレッドステージ", 1);
+        context.SetValue("リプライ説明スレッド応答日時", DateTime.Now);
+        context.SetValue("リプライ説明汎用パラメータ", "返信2");
     }
 }
 
@@ -175,6 +201,42 @@ public class SampleMailReply1_Rep3 : CurePLUSMailerLib.IReplyManager
     public void onSent(ApplicationContext context)
     {
         // パラメータの更新等
+        context.SetValue("リプライ説明スレッドステージ", 1);
+        context.SetValue("リプライ説明スレッド応答日時", DateTime.Now);
+        context.SetValue("リプライ説明汎用パラメータ", "返信3");
+    }
+
+[CurePLUSMailerLib.MailInformation(
+Sender = CurePLUSMailerLib.Entity.Character.CharacterID.Hime, // メールの送信者
+Title = "sample mail reply 1", // メールのタイトル
+Content = // メール本文を下の行から記述，以下の行頭の「@"」は削除しないでください
+@"test mail content
+
+\(リプライ説明汎用パラメータ)が返信として選択されました
+", // 行末の「",」は削除しないでください
+    Stamp = "", // スタンプ画像名を指定、空白でスタンプ無しになります
+    AdventurePart = "")] // アドベンチャーパートのシナリオ名．空白でジャンプボタン無しになります
+    public class SampleMailReply1_Mail2 : CurePLUSMailerLib.IMailManager
+    {
+        // メールが受信可能かどうかのチェックを行い、結果をbool型で返却します
+        public bool canReceive(ApplicationContext context)
+        {
+            if (context.GetValue<int>("リプライ説明スレッドステージ")!=1) return false;
+
+            return 5 < context.経過秒("リプライ説明スレッド応答日時"); // 返信があってから5秒後に送信
+        }
+
+        // メールを受信したタイミングでコールされます
+        public void onReceived(ApplicationContext context)
+        {
+            // パラメータの更新等
+        }
+
+        // 初めてメールを開いたタイミングでコールされます
+        public void onRead(ApplicationContext context)
+        {
+            // パラメータの更新等
+        }
     }
 }
 
