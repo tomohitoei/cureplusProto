@@ -39,7 +39,9 @@ Public Class MailerWindow
             Dim count = 0
             For i = 0 To _mailTitleList.Items.Count - 1
                 Dim ii = i
-                Dispatcher.Invoke(Sub() If Not String.IsNullOrEmpty(DirectCast(DirectCast(_mailTitleList.Items(ii), MailListItem).DataContext, MailItem).State) Then count += 1)
+                Dispatcher.Invoke(Sub()
+                                      If Not String.IsNullOrEmpty(DirectCast(DirectCast(_mailTitleList.Items(ii), MailListItem).DataContext, MailItem).State) Then count += 1
+                                  End Sub)
             Next
             NewMailCount = count
         Finally
@@ -111,7 +113,7 @@ Public Class MailerWindow
     End Sub
 
     Private Sub NewGame()
-        _mainLoopTimer.Stop()
+        If Not IsNothing(_mainLoopTimer) Then _mainLoopTimer.Stop()
         Threading.Thread.Sleep(1000)
 
         mailContent.DataContext = Nothing
@@ -132,8 +134,8 @@ Public Class MailerWindow
             For Each typ In asm.GetExportedTypes()
                 Try
                     Dim obj = asm.CreateInstance(typ.FullName)
-                    If TypeOf obj Is IThreadDatainitializer Then
-                        Dim ti = DirectCast(obj, IThreadDatainitializer)
+                    If TypeOf obj Is IThreadDataInitializer Then
+                        Dim ti = DirectCast(obj, IThreadDataInitializer)
                         ti.Initialize(_context)
                     ElseIf TypeOf obj Is IMailManager Then
                         Dim mmgr = DirectCast(obj, IMailManager)
@@ -182,7 +184,7 @@ Public Class MailerWindow
         _context.SetValue(Of Integer)("起動回数", 1)
         WriteUserSettingInContext()
 
-        _mainLoopTimer.Start()
+        If Not IsNothing(_mainLoopTimer) Then _mainLoopTimer.Start()
     End Sub
 
     Private Sub RestoreGame()
@@ -194,11 +196,15 @@ Public Class MailerWindow
             Next
         Next
         '受信済みメール一覧
+        NewMailCount = 0
         For i = 0 To _gameData.ReceivedMailList.Count - 1
             Dim rm = _gameData.ReceivedMailList(i)
             Dim mli1 = MakeMailItem(rm)
             If rm.Read Then
                 mli1.State = ""
+                DirectCast(mli1.DataContext, MailItem).State = ""
+            Else
+                NewMailCount += 1
             End If
             _mailTitleList.Items.Insert(0, mli1)
         Next
@@ -214,34 +220,43 @@ Public Class MailerWindow
         Try
             ReadPlugins()
 
-            Dim serializer As New DataContractSerializer(GetType(GameData), _pluginedTypes)
-            Dim settings As New XmlReaderSettings()
-            Dim xw As XmlReader = XmlReader.Create(New IO.StringReader(My.Settings.UserSetting), settings)
-            _gameData = DirectCast(serializer.ReadObject(xw), GameData)
-            xw.Close()
-            _context._settings = _gameData.GameParameters
+            Dim stg As Dictionary(Of String, Object) = Nothing
+            Try
+                Dim serializer As New DataContractSerializer(GetType(GameData), _pluginedTypes)
+                Dim settings As New XmlReaderSettings()
+                Dim xw As XmlReader = XmlReader.Create(New IO.StringReader(My.Settings.UserSetting), settings)
+                _gameData = DirectCast(serializer.ReadObject(xw), GameData)
+                xw.Close()
+                stg = _gameData.GameParameters
+            Catch ex As Exception
+            End Try
 retry:
-            If IsNothing(_context._settings) OrElse Not _context._settings.ContainsKey("初回起動日時") OrElse _gameData.MailTriggerList.Count = 0 Then
+            _context._settings = stg
+            If IsNothing(stg) OrElse Not _context._settings.ContainsKey("初回起動日時") OrElse _gameData.MailTriggerList.Count = 0 Then
                 NewGame()
             Else
+                _context._settings = stg
                 Try
-                    _context.SetValue(Of Integer)("起動回数", _context.GetValue(Of Integer)("起動回数"))
-                    RestoreGame()
-                Catch ex As Exception
-                    MessageBox.Show("前回起動時のゲーム状態を回復できないのでゲームデータを初期化します", "エラー", MessageBoxButton.OK, MessageBoxImage.Error)
-                    _context._settings = Nothing
-                    GoTo retry
-                End Try
-            End If
+                        _context.SetValue(Of Integer)("起動回数", _context.GetValue(Of Integer)("起動回数"))
+                        RestoreGame()
+                    Catch ex As Exception
+                        MessageBox.Show("前回起動時のゲーム状態を回復できないのでゲームデータを初期化します", "エラー", MessageBoxButton.OK, MessageBoxImage.Error)
+                        _context._settings = Nothing
+                        GoTo retry
+                    End Try
+                End If
 
-            If _gameData.MailTriggerList.Count = 0 Then
-                MessageBox.Show("メール送信キューにデータがないため、ゲームを起動できません", "エラー", MessageBoxButton.OK, MessageBoxImage.Error)
-                _forceClose = True
-                Close()
-            End If
+                If _gameData.MailTriggerList.Count = 0 Then
+                    MessageBox.Show("メール送信キューにデータがないため、ゲームを起動できません", "エラー", MessageBoxButton.OK, MessageBoxImage.Error)
+                    _forceClose = True
+                    Close()
+                End If
 
-            Icon = Util.CreateImageSource(My.Resources.ひめミニキャラ１)
-        Catch ex As Exception
+                Icon = Util.CreateImageSource(My.Resources.ひめミニキャラ1)
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString(), "エラー", MessageBoxButton.OK, MessageBoxImage.Error)
+            Close()
+            Return
         End Try
 
         Dim createdNew As Boolean = False

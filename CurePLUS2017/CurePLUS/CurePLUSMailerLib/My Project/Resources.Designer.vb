@@ -433,6 +433,76 @@ Namespace My.Resources
         '''<summary>
         '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         '''</summary>
+        Friend ReadOnly Property meroakireru() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("meroakireru", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        '''</summary>
+        Friend ReadOnly Property merolove() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("merolove", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        '''</summary>
+        Friend ReadOnly Property merook() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("merook", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        '''</summary>
+        Friend ReadOnly Property merookoru() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("merookoru", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        '''</summary>
+        Friend ReadOnly Property merotanosii() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("merotanosii", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        '''</summary>
+        Friend ReadOnly Property meroykanasii() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("meroykanasii", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        '''</summary>
+        Friend ReadOnly Property meroyorokobi() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("meroyorokobi", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        '''</summary>
         Friend ReadOnly Property お気に入りアイコン() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("お気に入りアイコン", resourceCulture)
@@ -453,9 +523,9 @@ Namespace My.Resources
         '''<summary>
         '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         '''</summary>
-        Friend ReadOnly Property ひめミニキャラ１() As System.Drawing.Bitmap
+        Friend ReadOnly Property ひめミニキャラ1() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("ひめミニキャラ１", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("ひめミニキャラ1", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -566,6 +636,66 @@ Namespace My.Resources
         Friend ReadOnly Property 返信メールアイコン() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("返信メールアイコン", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        '''</summary>
+        Friend ReadOnly Property 響ミニキャラ1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("響ミニキャラ1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        '''</summary>
+        Friend ReadOnly Property 響ミニキャラ2() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("響ミニキャラ2", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        '''</summary>
+        Friend ReadOnly Property 響ミニキャラ3() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("響ミニキャラ3", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        '''</summary>
+        Friend ReadOnly Property 響ミニキャラ4() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("響ミニキャラ4", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        '''</summary>
+        Friend ReadOnly Property 響ミニキャラ5() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("響ミニキャラ5", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        '''</summary>
+        Friend ReadOnly Property 響ミニキャラ6() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("響ミニキャラ6", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

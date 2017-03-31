@@ -5,13 +5,12 @@ Public Class MinimizedMailWindow
 
         ' この呼び出しはデザイナーで必要です。
         InitializeComponent()
-
+        _mailCount.Content = MailerWindow.NewMailCount.ToString
     End Sub
 
     Private _mx As Double = 0.0
     Private _my As Double = 0.0
 
-    Private Shared _count As Integer = 12
     Private _timer As New Timers.Timer() With {.Interval = 100}
 
     Protected Overrides Sub OnMouseLeftButtonDown(e As MouseButtonEventArgs)
@@ -24,12 +23,14 @@ Public Class MinimizedMailWindow
     Protected Overrides Sub OnMouseLeftButtonUp(e As MouseButtonEventArgs)
         If Math.Abs(_mx - Left) < 5 And Math.Abs(_my - Top) < 5 Then
             ' ウィンドウを動かさずにクリックしただけの場合
-            _mascot.Close()
+            _mascot1.Close()
+            _mascot2.Close()
         End If
         MyBase.OnMouseLeftButtonUp(e)
     End Sub
 
-    Private _mascot As New MascotWindow
+    Private _mascot1 As New MascotWindow(0)
+    Private _mascot2 As New MascotWindow(1)
 
     Private Function CreateImageSource(source As System.Drawing.Bitmap) As ImageSource
         Dim ms As IO.Stream = New IO.MemoryStream()
@@ -41,17 +42,23 @@ Public Class MinimizedMailWindow
     End Function
 
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
-
-        _mailCount.Content = _count.ToString()
         image.Source = CreateImageSource(My.Resources.mail_icon_free5)
 
-        _mascot.Top = Top
-        _mascot.Left = Left + Width
-        _mascot.Show()
+        _mascot1.Top = Top
+        _mascot1.Left = Left + Width
+        _mascot1.Show()
+        _mascot2.Top = Top
+        _mascot2.Left = Left + Width + _mascot1.Width
+        _mascot2.Show()
 
-        AddHandler _mascot.Closed, Sub()
-                                       Me.Close()
-                                   End Sub
+        AddHandler _mascot1.Closed, Sub()
+                                        _mascot2.Close()
+                                        Me.Close()
+                                    End Sub
+        AddHandler _mascot2.Closed, Sub()
+                                        _mascot1.Close()
+                                        Me.Close()
+                                    End Sub
 
         AddHandler _timer.Elapsed, Sub()
                                        Dispatcher.Invoke(Sub() _mailCount.Content = MailerWindow.NewMailCount.ToString)

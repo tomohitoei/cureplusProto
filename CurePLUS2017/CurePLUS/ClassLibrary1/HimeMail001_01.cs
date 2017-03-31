@@ -56,7 +56,7 @@ Content = // メール本文を下の行から記述，以下の行頭の「@"�
 ト",
 Stamp = "hime_love", // 空白でスタンプ無しになります
 AdventurePart = "adventure_part_name")
-] public class HimeMail001_01 : CurePLUSMailerLib.IMailManager // 各種タイミングでパラメータ等の確認変更を行うスクリプトは以下に記述
+] public class ひめ001 : CurePLUSMailerLib.IMailManager // 各種タイミングでパラメータ等の確認変更を行うスクリプトは以下に記述
 {
     // メールを受信可能かどうかをbool値で返却します
     public bool canReceive(ApplicationContext context)
@@ -82,9 +82,9 @@ AdventurePart = "adventure_part_name")
 Title ="返信１", // メールのタイトル
 Content = // メール本文を下の行から記述，以下の行頭の「@"」は削除しないでください
 @"返信内容１", // 行末の「",」は削除しないでください
-Parent =typeof(HimeMail001_01) // 返信元のメールを指定します
+Parent =typeof(ひめ001) // 返信元のメールを指定します
 )]
-public class HimeMail001_01_Reply1 : CurePLUSMailerLib.IReplyManager
+public class ひめ001_Reply1 : CurePLUSMailerLib.IReplyManager
 {
     // 選択肢として表示できるかどうかをbool値で返却します
     public bool canSelect(ApplicationContext context)
@@ -103,9 +103,9 @@ public class HimeMail001_01_Reply1 : CurePLUSMailerLib.IReplyManager
 Title = "返信２", // メールのタイトル
 Content = // メール本文を下の行から記述，以下の行頭の「@"」は削除しないでください
 @"返信内容２", // 行末の「",」は削除しないでください
-Parent = typeof(HimeMail001_01) // 返信元のメールを指定します
+Parent = typeof(ひめ001) // 返信元のメールを指定します
 )]
-public class HimeMail001_01_Reply2 : CurePLUSMailerLib.IReplyManager
+public class ひめ001_Reply2 : CurePLUSMailerLib.IReplyManager
 {
     public bool canSelect(ApplicationContext context)
     {
@@ -122,9 +122,9 @@ public class HimeMail001_01_Reply2 : CurePLUSMailerLib.IReplyManager
 Title = "返信３", // メールのタイトル
 Content = // メール本文を下の行から記述，以下の行頭の「@"」は削除しないでください
 @"返信内容３", // 行末の「",」は削除しないでください
-Parent = typeof(HimeMail001_01) // 返信元のメールを指定します
+Parent = typeof(ひめ001) // 返信元のメールを指定します
 )]
-public class HimeMail001_01_Reply3 : CurePLUSMailerLib.IReplyManager
+public class ひめ001_Reply3 : CurePLUSMailerLib.IReplyManager
 {
     public bool canSelect(ApplicationContext context)
     {
@@ -146,7 +146,7 @@ Content = // メール本文を下の行から記述，以下の行頭の「@"�
 @"test mail content", // 行末の「",」は削除しないでください
 Stamp = "", // 空白でスタンプ無しになります
 AdventurePart = "")] // アドベンチャーパートのシナリオ名．空白でジャンプボタン無しになります
-public class HimeMail001_02 : CurePLUSMailerLib.IMailManager
+public class ひめ002 : CurePLUSMailerLib.IMailManager
 {
     public bool canReceive(ApplicationContext context)
     {
@@ -164,7 +164,7 @@ public class HimeMail001_02 : CurePLUSMailerLib.IMailManager
         //
     }
 }
-
+/*
 public class HimeMail001_03 : CurePLUSMailerLib.IMailManager
 {
     public bool canReceive(ApplicationContext context)
@@ -180,3 +180,5 @@ public class HimeMail001_03 : CurePLUSMailerLib.IMailManager
     {
     }
 }
+*/
+

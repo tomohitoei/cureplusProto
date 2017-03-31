@@ -7,7 +7,7 @@ Public Class MascotWindow
                        Storyboard.SetTargetName(animation, "image")
                        Storyboard.SetTargetProperty(animation, New PropertyPath("Source"))
 
-                       animation.KeyFrames.Add(New DiscreteObjectKeyFrame(CreateImageSource(My.Resources.ひめミニキャラ１), TimeSpan.Zero))
+                       animation.KeyFrames.Add(New DiscreteObjectKeyFrame(CreateImageSource(My.Resources.ひめミニキャラ1), TimeSpan.Zero))
                        animation.KeyFrames.Add(New DiscreteObjectKeyFrame(CreateImageSource(My.Resources.ひめミニキャラ2), TimeSpan.FromSeconds(1)))
                        animation.KeyFrames.Add(New DiscreteObjectKeyFrame(CreateImageSource(My.Resources.ひめミニキャラ3), TimeSpan.FromSeconds(2)))
                        animation.KeyFrames.Add(New DiscreteObjectKeyFrame(CreateImageSource(My.Resources.ひめミニキャラ4), TimeSpan.FromSeconds(3)))
@@ -15,9 +15,25 @@ Public Class MascotWindow
                        animation.Duration = TimeSpan.FromSeconds(4) ' Duration.Forever
                        animation.RepeatBehavior = RepeatBehavior.Forever
 
-                       sb1.Children.Add(animation)
-                       sb1.Duration = TimeSpan.FromSeconds(4) ' Duration.Forever
-                       sb1.RepeatBehavior = RepeatBehavior.Forever
+                       sb11.Children.Add(animation)
+                       sb11.Duration = TimeSpan.FromSeconds(4) ' Duration.Forever
+                       sb11.RepeatBehavior = RepeatBehavior.Forever
+
+                       Dim animation2 As New ObjectAnimationUsingKeyFrames()
+                       Storyboard.SetTargetName(animation2, "image")
+                       Storyboard.SetTargetProperty(animation2, New PropertyPath("Source"))
+
+                       animation2.KeyFrames.Add(New DiscreteObjectKeyFrame(CreateImageSource(My.Resources.響ミニキャラ1), TimeSpan.Zero))
+                       animation2.KeyFrames.Add(New DiscreteObjectKeyFrame(CreateImageSource(My.Resources.響ミニキャラ2), TimeSpan.FromSeconds(1)))
+                       animation2.KeyFrames.Add(New DiscreteObjectKeyFrame(CreateImageSource(My.Resources.響ミニキャラ3), TimeSpan.FromSeconds(2)))
+                       animation2.KeyFrames.Add(New DiscreteObjectKeyFrame(CreateImageSource(My.Resources.響ミニキャラ4), TimeSpan.FromSeconds(3)))
+
+                       animation2.Duration = TimeSpan.FromSeconds(4) ' Duration.Forever
+                       animation2.RepeatBehavior = RepeatBehavior.Forever
+
+                       sb21.Children.Add(animation2)
+                       sb21.Duration = TimeSpan.FromSeconds(4) ' Duration.Forever
+                       sb21.RepeatBehavior = RepeatBehavior.Forever
                    End Sub
         anm1()
 
@@ -32,9 +48,23 @@ Public Class MascotWindow
                        animation.Duration = TimeSpan.FromSeconds(2) ' Duration.Forever
                        animation.RepeatBehavior = RepeatBehavior.Forever
 
-                       sb2.Children.Add(animation)
-                       sb2.Duration = TimeSpan.FromSeconds(2) ' Duration.Forever
-                       sb2.RepeatBehavior = RepeatBehavior.Forever
+                       sb12.Children.Add(animation)
+                       sb12.Duration = TimeSpan.FromSeconds(2) ' Duration.Forever
+                       sb12.RepeatBehavior = RepeatBehavior.Forever
+
+                       Dim animation2 As New ObjectAnimationUsingKeyFrames()
+                       Storyboard.SetTargetName(animation2, "image")
+                       Storyboard.SetTargetProperty(animation2, New PropertyPath("Source"))
+
+                       animation2.KeyFrames.Add(New DiscreteObjectKeyFrame(CreateImageSource(My.Resources.響ミニキャラ5), TimeSpan.Zero))
+                       animation2.KeyFrames.Add(New DiscreteObjectKeyFrame(CreateImageSource(My.Resources.響ミニキャラ6), TimeSpan.FromSeconds(1)))
+
+                       animation2.Duration = TimeSpan.FromSeconds(2) ' Duration.Forever
+                       animation2.RepeatBehavior = RepeatBehavior.Forever
+
+                       sb22.Children.Add(animation2)
+                       sb22.Duration = TimeSpan.FromSeconds(2) ' Duration.Forever
+                       sb22.RepeatBehavior = RepeatBehavior.Forever
                    End Sub
         anm2()
     End Sub
@@ -48,10 +78,29 @@ Public Class MascotWindow
         Return [is]
     End Function
 
-    Private Shared sb1 As New Storyboard() With {.RepeatBehavior = RepeatBehavior.Forever, .AutoReverse = False}
-    Private Shared sb2 As New Storyboard() With {.RepeatBehavior = RepeatBehavior.Forever, .AutoReverse = False}
+    Private Shared sb11 As New Storyboard() With {.RepeatBehavior = RepeatBehavior.Forever, .AutoReverse = False}
+    Private Shared sb12 As New Storyboard() With {.RepeatBehavior = RepeatBehavior.Forever, .AutoReverse = False}
+    Private Shared sb21 As New Storyboard() With {.RepeatBehavior = RepeatBehavior.Forever, .AutoReverse = False}
+    Private Shared sb22 As New Storyboard() With {.RepeatBehavior = RepeatBehavior.Forever, .AutoReverse = False}
+
+    Private sb1 As Storyboard
+    Private sb2 As Storyboard
 
     Private _timer As New Timers.Timer() With {.Interval = 100}
+
+    Public Sub New(id As Integer)
+
+        ' この呼び出しはデザイナーで必要です。
+        InitializeComponent()
+
+        sb1 = sb11
+        sb2 = sb12
+        If id = 1 Then
+            sb1 = sb21
+            sb2 = sb22
+        End If
+
+    End Sub
 
     Private Sub OnLoaded(sender As Object, e As RoutedEventArgs)
         'sb1.Begin(image)

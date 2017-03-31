@@ -207,6 +207,41 @@ CurePLUSMailerLib
   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
 </summary>
 </member>
+<member name="P:CurePLUSMailerLib.My.Resources.Resources.meroakireru">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:CurePLUSMailerLib.My.Resources.Resources.merolove">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:CurePLUSMailerLib.My.Resources.Resources.merook">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:CurePLUSMailerLib.My.Resources.Resources.merookoru">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:CurePLUSMailerLib.My.Resources.Resources.merotanosii">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:CurePLUSMailerLib.My.Resources.Resources.meroykanasii">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:CurePLUSMailerLib.My.Resources.Resources.meroyorokobi">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
 <member name="P:CurePLUSMailerLib.My.Resources.Resources.お気に入りアイコン">
 <summary>
   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
@@ -217,7 +252,7 @@ CurePLUSMailerLib
   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
 </summary>
 </member>
-<member name="P:CurePLUSMailerLib.My.Resources.Resources.ひめミニキャラ１">
+<member name="P:CurePLUSMailerLib.My.Resources.Resources.ひめミニキャラ1">
 <summary>
   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
 </summary>
@@ -273,6 +308,36 @@ CurePLUSMailerLib
 </summary>
 </member>
 <member name="P:CurePLUSMailerLib.My.Resources.Resources.返信メールアイコン">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:CurePLUSMailerLib.My.Resources.Resources.響ミニキャラ1">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:CurePLUSMailerLib.My.Resources.Resources.響ミニキャラ2">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:CurePLUSMailerLib.My.Resources.Resources.響ミニキャラ3">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:CurePLUSMailerLib.My.Resources.Resources.響ミニキャラ4">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:CurePLUSMailerLib.My.Resources.Resources.響ミニキャラ5">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:CurePLUSMailerLib.My.Resources.Resources.響ミニキャラ6">
 <summary>
   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
 </summary>

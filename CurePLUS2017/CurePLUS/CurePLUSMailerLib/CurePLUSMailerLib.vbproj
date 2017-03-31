@@ -80,7 +80,7 @@
     </Compile>
     <Compile Include="UserSettings.vb" />
     <Compile Include="Util.vb" />
-    <Compile Include="IThreadDatainitializer.vb" />
+    <Compile Include="IThreadDataInitializer.vb" />
     <Compile Include="View\MailContentView.xaml.vb">
       <DependentUpon>MailContentView.xaml</DependentUpon>
     </Compile>
@@ -339,6 +339,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\返信メールアイコン.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\響ミニキャラ3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\響ミニキャラ4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\響ミニキャラ5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\響ミニキャラ6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\響ミニキャラ1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\響ミニキャラ2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\meroakireru.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\merolove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\merook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\merookoru.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\merotanosii.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\meroykanasii.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\meroyorokobi.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
