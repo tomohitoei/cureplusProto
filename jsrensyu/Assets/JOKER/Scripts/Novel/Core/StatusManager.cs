@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using ExpressionParser;
 using System;
-using NCalc;
+//using NCalc;
 
 namespace Novel{
 

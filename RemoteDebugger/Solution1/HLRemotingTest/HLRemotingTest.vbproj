@@ -65,7 +65,9 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
+          <Private>False</Private>
+        </Reference>
       </ItemGroup>
     </Otherwise>
   </Choose>
@@ -98,6 +100,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="GrammarTest.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -120,6 +123,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Irony_2013_12_12\Irony\010.Irony.2012.csproj">
+      <Project>{d81f5c91-d7db-46e5-bc99-49488fb6814c}</Project>
+      <Name>010.Irony.2012</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\RemoteDebugger\SandBoxLib\SandBoxLib.csproj">
+      <Project>{38cd18c5-b98b-4d37-8327-767aa0a3af84}</Project>
+      <Name>SandBoxLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HLRemoting\HLRemoting.csproj">
       <Project>{aa9927bc-37cb-4b5a-a6a8-a678050f3c64}</Project>
       <Name>HLRemoting</Name>

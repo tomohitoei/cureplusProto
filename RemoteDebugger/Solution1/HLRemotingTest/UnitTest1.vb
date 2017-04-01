@@ -16,4 +16,9 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
         Process.Start("d:\image.png")
     End Sub
 
+
+    <TestMethod()> Public Sub UtilTest001()
+        Dim result = HLRemoting.Util.calc("abc+1")
+    End Sub
+
 End Class

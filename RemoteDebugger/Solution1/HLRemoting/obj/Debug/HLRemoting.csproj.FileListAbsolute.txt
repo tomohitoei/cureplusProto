@@ -12,3 +12,14 @@ C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\HLRemoting\o
 C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\HLRemoting\obj\Debug\HLRemoting.pdb
 C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\HLRemoting\bin\Debug\HLRemoting.dll
 C:\Users\ei\Documents\GitHub\cureplusProto\RemoteDebugger\Solution1\HLRemoting\bin\Debug\HLRemoting.pdb
+D:\Github\cureplusProto\RemoteDebugger\Solution1\HLRemoting\bin\Debug\HLRemoting.dll
+D:\Github\cureplusProto\RemoteDebugger\Solution1\HLRemoting\bin\Debug\HLRemoting.pdb
+D:\Github\cureplusProto\RemoteDebugger\Solution1\HLRemoting\bin\Debug\UnityEngine.dll
+D:\Github\cureplusProto\RemoteDebugger\Solution1\HLRemoting\bin\Debug\UnityEngine.UI.dll
+D:\Github\cureplusProto\RemoteDebugger\Solution1\HLRemoting\bin\Debug\UnityEngine.xml
+D:\Github\cureplusProto\RemoteDebugger\Solution1\HLRemoting\bin\Debug\UnityEngine.UI.xml
+D:\Github\cureplusProto\RemoteDebugger\Solution1\HLRemoting\obj\Debug\HLRemoting.dll
+D:\Github\cureplusProto\RemoteDebugger\Solution1\HLRemoting\obj\Debug\HLRemoting.pdb
+D:\Github\cureplusProto\RemoteDebugger\Solution1\HLRemoting\bin\Debug\Irony.dll
+D:\Github\cureplusProto\RemoteDebugger\Solution1\HLRemoting\bin\Debug\Irony.pdb
+D:\Github\cureplusProto\RemoteDebugger\Solution1\HLRemoting\obj\Debug\HLRemoting.csprojResolveAssemblyReference.cache

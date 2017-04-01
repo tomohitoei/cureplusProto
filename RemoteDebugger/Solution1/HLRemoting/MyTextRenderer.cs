@@ -117,7 +117,7 @@ namespace HLRemoting
             {
                 if (_imageDic.ContainsKey(key)) return _imageDic[key];
             }
-            var log=new System.IO.StreamWriter("d:\\log.txt",true);
+            var log=new System.IO.StreamWriter("log.txt",true);
             log.WriteLine(string.Format("1:{0}.{1}",DateTime.Now.Second, DateTime.Now.Millisecond));
             var targets = moji.Trim(new Char[] { '\r', '\n' });
             System.IO.StringReader sr = new System.IO.StringReader(targets);

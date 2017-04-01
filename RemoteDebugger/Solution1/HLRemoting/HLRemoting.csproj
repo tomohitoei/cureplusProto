@@ -48,12 +48,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dialog.cs" />
+    <Compile Include="GameContext.cs" />
+    <Compile Include="GameEngine.cs" />
+    <Compile Include="GameSettings.cs" />
     <Compile Include="IHoge.cs" />
     <Compile Include="ModalDialog.cs" />
     <Compile Include="MyTextRenderer.cs" />
+    <Compile Include="Novel\AbstractComponent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scripting\MailScriptExecuter.cs" />
+    <Compile Include="Scripting\MailScriptGrammar.cs" />
     <Compile Include="SystemModalDialog.cs" />
     <Compile Include="TimePauser.cs" />
+    <Compile Include="User\State.cs" />
+    <Compile Include="Util.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Irony_2013_12_12\Irony\010.Irony.2012.csproj">
+      <Project>{d81f5c91-d7db-46e5-bc99-49488fb6814c}</Project>
+      <Name>010.Irony.2012</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

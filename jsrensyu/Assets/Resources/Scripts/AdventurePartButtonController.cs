@@ -5,14 +5,15 @@ public class AdventurePartButtonController : MonoBehaviour {
 
     public string AdventurePartFile = "";
 
-	// Use this for initialization
+    private HLRemoting.GameEngine _ge = null;
+    // Use this for initialization
 	void Start () {
-	
+        _ge = HLRemoting.GameEngine.Instance();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+        _ge.Progress(Time.deltaTime);
 	}
 
     public void Clicked()

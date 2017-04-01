@@ -1,0 +1,7 @@
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\SandBoxLib\bin\Debug\SandBoxLib.dll
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\SandBoxLib\bin\Debug\SandBoxLib.pdb
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\SandBoxLib\bin\Debug\Irony.dll
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\SandBoxLib\bin\Debug\Irony.pdb
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\SandBoxLib\obj\Debug\SandBoxLib.csprojResolveAssemblyReference.cache
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\SandBoxLib\obj\Debug\SandBoxLib.dll
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\SandBoxLib\obj\Debug\SandBoxLib.pdb
