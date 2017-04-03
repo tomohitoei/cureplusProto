@@ -1,0 +1,17 @@
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\CPGameEngineTest\bin\Debug\CPGameEngineTest.exe.config
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\CPGameEngineTest\obj\Debug\CPGameEngineTest.csprojResolveAssemblyReference.cache
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\CPGameEngineTest\obj\Debug\CPGameEngineTest.Form1.resources
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\CPGameEngineTest\obj\Debug\CPGameEngineTest.Properties.Resources.resources
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\CPGameEngineTest\obj\Debug\CPGameEngineTest.csproj.GenerateResource.Cache
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\CPGameEngineTest\bin\Debug\CPGameEngineTest.exe
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\CPGameEngineTest\bin\Debug\CPGameEngineTest.pdb
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\CPGameEngineTest\bin\Debug\HLRemoting.dll
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\CPGameEngineTest\bin\Debug\UnityEngine.dll
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\CPGameEngineTest\bin\Debug\UnityEngine.UI.dll
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\CPGameEngineTest\bin\Debug\HLRemoting.pdb
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\CPGameEngineTest\bin\Debug\UnityEngine.xml
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\CPGameEngineTest\bin\Debug\UnityEngine.UI.xml
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\CPGameEngineTest\obj\Debug\CPGameEngineTest.exe
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\CPGameEngineTest\obj\Debug\CPGameEngineTest.pdb
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\CPGameEngineTest\bin\Debug\Irony.dll
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\CPGameEngineTest\bin\Debug\Irony.pdb

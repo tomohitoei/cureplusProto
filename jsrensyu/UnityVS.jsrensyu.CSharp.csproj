@@ -16,7 +16,7 @@
     <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
-    <UnityVersion>5.1.1f1</UnityVersion>
+    <UnityVersion>5.1.2f1</UnityVersion>
     <RootNamespace></RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -26,7 +26,7 @@
     <IntermediateOutputPath>Temp\UnityVS_obj\Debug\</IntermediateOutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_1_1;UNITY_5_1;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_LICENSE;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_EDITOR_METRICS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_1_2;UNITY_5_1;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_LICENSE;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_EDITOR_METRICS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -36,7 +36,7 @@
     <IntermediateOutputPath>Temp\UnityVS_obj\Release\</IntermediateOutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>TRACE;UNITY_5_1_1;UNITY_5_1;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_LICENSE;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_EDITOR_METRICS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+    <DefineConstants>TRACE;UNITY_5_1_2;UNITY_5_1;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_LICENSE;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_EDITOR_METRICS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
@@ -65,6 +65,18 @@
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="DesktopMascotMaker">
+      <HintPath>Assets\DesktopMascotMaker\Plugins\DesktopMascotMaker.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic">
+      <HintPath>Assets\DesktopMascotMaker\Plugins\Microsoft.VisualBasic.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp">
+      <HintPath>Assets\DesktopMascotMaker\Plugins\OpenCvSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Deployment">
+      <HintPath>Assets\DesktopMascotMaker\Plugins\System.Deployment.dll</HintPath>
     </Reference>
     <Reference Include="HLRemoting">
       <HintPath>Assets\Plugins\HLRemoting.dll</HintPath>
@@ -98,6 +110,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AnimationTestController.cs" />
+    <Compile Include="Assets\CurePlus\GameEngine.cs" />
+    <Compile Include="Assets\DesktopMascotMaker\Examples\Characters\UnityChan2D\Scripts\Demo.cs" />
+    <Compile Include="Assets\DesktopMascotMaker\Examples\ColorCorrection3DLut\ColorCorrectionLookup.cs" />
+    <Compile Include="Assets\DesktopMascotMaker\Examples\ColorCorrection3DLut\PostEffectsBase.cs" />
+    <Compile Include="Assets\DesktopMascotMaker\Examples\Scripts\DMMEventTest.cs" />
+    <Compile Include="Assets\DesktopMascotMaker\Examples\Scripts\DMMOrbitalViewCamera.cs" />
+    <Compile Include="Assets\DesktopMascotMaker\Examples\Scripts\DMMSceneChange.cs" />
+    <Compile Include="Assets\DesktopMascotMaker\Examples\Scripts\DMMShowBackground.cs" />
+    <Compile Include="Assets\DesktopMascotMaker\Examples\Scripts\DMMSimpleFollowCamera.cs" />
+    <Compile Include="Assets\DesktopMascotMaker\Examples\Scripts\DMMTextColorChanger.cs" />
+    <Compile Include="Assets\DesktopMascotMaker\Examples\Scripts\DMMToggleMainWindow.cs" />
+    <Compile Include="Assets\DesktopMascotMaker\Examples\Scripts\DMMUnityChan2DAIForMulti.cs" />
+    <Compile Include="Assets\DesktopMascotMaker\Examples\Scripts\DMMUnityChan2DController.cs" />
+    <Compile Include="Assets\DesktopMascotMaker\Examples\Scripts\DMMUnityChanAI.cs" />
+    <Compile Include="Assets\DesktopMascotMaker\Examples\Scripts\DMMUnityChanController.cs" />
+    <Compile Include="Assets\DesktopMascotMaker\Script\MainWindowOpacity.cs" />
     <Compile Include="Assets\Ferr\Common\Interfaces\IBlendPaintType.cs" />
     <Compile Include="Assets\Ferr\Common\Interfaces\IBlendPaintable.cs" />
     <Compile Include="Assets\Ferr\Common\Interfaces\IProceduralMesh.cs" />
@@ -169,6 +198,7 @@
     <Compile Include="Assets\JOKER\Scripts\Novel\Unity\MessageArea.cs" />
     <Compile Include="Assets\JOKER\Scripts\Novel\Unity\MessageFrame.cs" />
     <Compile Include="Assets\JOKER_GAME\Plugins\PluginComponent.cs" />
+    <Compile Include="Assets\MinimizeButtonController.cs" />
     <Compile Include="Assets\Resources\Scripts\AdventurePartButtonController.cs" />
     <Compile Include="Assets\Resources\Scripts\ContentImageController.cs" />
     <Compile Include="Assets\Resources\Scripts\MailController.cs" />
@@ -196,6 +226,25 @@
   <ItemGroup>
     <None Include="Assets\2D Mine Tileset\Readme.txt" />
     <None Include="Assets\DarkArts Studios\GUI Generator\changes.txt" />
+    <None Include="Assets\DesktopMascotMaker\Documentation\license.txt" />
+    <None Include="Assets\DesktopMascotMaker\Examples\Characters\Readme.txt" />
+    <None Include="Assets\DesktopMascotMaker\Examples\Characters\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
+    <None Include="Assets\DesktopMascotMaker\Examples\Characters\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
+    <None Include="Assets\DesktopMascotMaker\Examples\Characters\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
+    <None Include="Assets\DesktopMascotMaker\Examples\Characters\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
+    <None Include="Assets\DesktopMascotMaker\Examples\Characters\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
+    <None Include="Assets\DesktopMascotMaker\Examples\Characters\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
+    <None Include="Assets\DesktopMascotMaker\Examples\Characters\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada.shader" />
+    <None Include="Assets\DesktopMascotMaker\Examples\Characters\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
+    <None Include="Assets\DesktopMascotMaker\Examples\Characters\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
+    <None Include="Assets\DesktopMascotMaker\Examples\Characters\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
+    <None Include="Assets\DesktopMascotMaker\Examples\Characters\UnityChan\Voice\unity-chan_voice_list.txt" />
+    <None Include="Assets\DesktopMascotMaker\Examples\Characters\UnityChan2D\Sounds\Voice\unity-chan_voice_list.txt" />
+    <None Include="Assets\DesktopMascotMaker\Examples\ColorCorrection3DLut\ColorCorrection3DLut.shader" />
+    <None Include="Assets\DesktopMascotMaker\Examples\Scripts\readme.txt" />
+    <None Include="Assets\DesktopMascotMaker\Examples\readme.txt" />
+    <None Include="Assets\DesktopMascotMaker\Resources\MascotMakerShader.shader" />
+    <None Include="Assets\DesktopMascotMaker\Resources\MascotMakerShaderChromakey.shader" />
     <None Include="Assets\Ferr\Common\Data\cache.txt" />
     <None Include="Assets\Ferr\Common\Shaders\GizmoShader2D.shader" />
     <None Include="Assets\Ferr\Common\Shaders\GizmoShader3D.shader" />

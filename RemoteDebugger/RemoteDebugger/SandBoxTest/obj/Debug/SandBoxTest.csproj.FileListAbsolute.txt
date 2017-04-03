@@ -1,0 +1,10 @@
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\SandBoxTest\bin\Debug\SandBoxTest.dll
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\SandBoxTest\bin\Debug\SandBoxTest.pdb
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\SandBoxTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\SandBoxTest\bin\Debug\SandBoxLib.dll
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\SandBoxTest\bin\Debug\Irony.dll
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\SandBoxTest\bin\Debug\SandBoxLib.pdb
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\SandBoxTest\bin\Debug\Irony.pdb
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\SandBoxTest\obj\Debug\SandBoxTest.csprojResolveAssemblyReference.cache
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\SandBoxTest\obj\Debug\SandBoxTest.dll
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\SandBoxTest\obj\Debug\SandBoxTest.pdb

@@ -1,0 +1,5 @@
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\CPGameCore\bin\Debug\CPGameCore.dll
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\CPGameCore\bin\Debug\CPGameCore.pdb
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\CPGameCore\obj\Debug\CPGameCore.dll
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\CPGameCore\obj\Debug\CPGameCore.pdb
+D:\Github\cureplusProto\RemoteDebugger\RemoteDebugger\CPGameCore\obj\Debug\CPGameCore.csprojResolveAssemblyReference.cache

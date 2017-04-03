@@ -134,7 +134,7 @@ hime-yorokobu
     </Replies>
   </Mail>
 
-  <Mail Author="ひめ" Subject="メール7" Icon="02_021_ひめ_アイコン" Stamp="hime-yorokobu" Adventure="">
+  <Mail Author="ひめ" Subject="メール7" Icon="02_021_ひめ_アイコン" Stamp="hime-yorokobu" Adventure="Tyousa">
     <Content></Content>
     <Replies>
       <Reply Subject="返信1">

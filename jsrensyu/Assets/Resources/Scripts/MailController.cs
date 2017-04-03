@@ -75,6 +75,7 @@ public class MailController : MonoBehaviour {
             var o = Instantiate(prefab);
             var rt = o.GetComponent<RectTransform>();
             o.transform.SetParent(MailList.transform, false);
+            o.transform.SetSiblingIndex(0);
             var c = o.GetComponent<MailItemButtonController>();
             c.Key = key;
             foreach (XmlAttribute a in n.Attributes)
@@ -153,12 +154,12 @@ public class MailController : MonoBehaviour {
         ContentName.text = mic.Name;
         ContentTitle.text = mic.Subject;
 
-        GameObject ci = (GameObject)Resources.Load("Prefabs/ContentImage");
+        //GameObject ci = (GameObject)Resources.Load("Prefabs/ContentImage");
         // 本文
         {
             _tr.EMoji = _emoji;
             var mi = _tr.MakeImage(mic.Key, mic.Content, MailContentWidth, 1.5f);
-            var ms =new System.IO.MemoryStream();
+            var ms = new System.IO.MemoryStream();
             mi.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
             var o = ContentPanel.transform.FindChild("MailContent");
             Texture2D t = new Texture2D(mi.Width, mi.Height);
@@ -166,6 +167,20 @@ public class MailController : MonoBehaviour {
             o.GetComponent<UnityEngine.UI.Image>().sprite = UnityEngine.Sprite.Create(t, new Rect(0, 0, mi.Width, mi.Height), new Vector2(0, 0));
             var le = o.GetComponent<UnityEngine.UI.LayoutElement>();
             le.preferredHeight = (int)(mi.Height * 357 / mi.Width);
+            //var to = o.transform.FindChild("Text");
+            //var tot = to.GetComponent<UnityEngine.UI.Text>();
+            //tot.text = mic.Content;
+            //var lc = 0;
+            //using (System.IO.StringReader sr = new System.IO.StringReader(mic.Content))
+            //{
+            //    for (;;)
+            //    {
+            //        lc++;
+            //        string buf = sr.ReadLine();
+            //        if (null == buf) break;
+            //    }
+            //}
+            //le.preferredHeight = (int)(lc * 35);
         }
         // スタンプ
         var so = ContentPanel.transform.FindChild("StampContent");
@@ -184,7 +199,7 @@ public class MailController : MonoBehaviour {
         var bo = ContentPanel.transform.FindChild("GotoAdventure");
         if (!string.IsNullOrEmpty(mic.AdventurePart))
         {
-            bo.transform.FindChild("Text").gameObject.GetComponent<UnityEngine.UI.Text>().text = string.Format("デートに行く({0})",mic.AdventurePart);
+            bo.transform.FindChild("Text").gameObject.GetComponent<UnityEngine.UI.Text>().text = string.Format("デートに行く",mic.AdventurePart);
             bo.GetComponent<AdventurePartButtonController>().AdventurePartFile = mic.AdventurePart;
             bo.GetComponent<UnityEngine.UI.LayoutElement>().preferredHeight = 30;
         }
@@ -215,6 +230,11 @@ public class MailController : MonoBehaviour {
         }else{
             SRC.GetComponent<UnityEngine.UI.Button>().interactable = true;
         }
+    }
+
+    public void OnMinimizeButtonClicked()
+    {
+        Application.LoadLevel("Mascot");
     }
 
 }
