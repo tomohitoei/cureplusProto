@@ -14,7 +14,8 @@
 
 
 ;[scene file="ScenarioDebugger" ]
-[scene file="MailPart" ]
+;[scene file="MailPart" ]
+[scene file="FromMailApplication" ]
 
 [s]
 

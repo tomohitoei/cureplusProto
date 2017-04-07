@@ -58,6 +58,7 @@ Public Class MailerWindow
         mi.Stamp = mail.Stamp
         mi.AdventurePart = mail.AdventurePart
         mi.ReceivedDate = rm.Timestamp
+        mi.DoneAdventurePart = mail.DoneAdventurePart
         mi.Mail = mail
         mail.Received = True
         Dim mli1 = New MailListItem() With {.DataContext = mi, .Tag = rm}
@@ -211,14 +212,83 @@ Public Class MailerWindow
 
     End Sub
 
-    Public Sub New()
+    'MoveWindow関数の宣言
+    Private Declare Function MoveWindow Lib "user32" Alias "MoveWindow" _
+    (ByVal hwnd As IntPtr, ByVal x As Integer, ByVal y As Integer,
+    ByVal nWidth As Integer, ByVal nHeight As Integer,
+    ByVal bRepaint As Integer) As Integer
 
+    Private Sub KickAdventurePart(scenarioName As String)
+        ' アドベンチャーパート用にゲームパラメータをファイルに書き出す
+        'Dim ocd = IO.Directory.GetCurrentDirectory()
+        Dim tempPath = IO.Path.GetTempPath()
+        Dim cd = IO.Directory.GetCurrentDirectory()
+        Try
+            Dim serializer As New DataContractSerializer(GetType(Dictionary(Of String, Object)))
+            Dim settings As New XmlWriterSettings()
+            settings.Encoding = New System.Text.UTF8Encoding(False)
+            Using sw = New IO.StreamWriter(IO.Path.Combine(tempPath, "params.xml"))
+                Using xw As XmlWriter = XmlWriter.Create(sw, settings)
+                    serializer.WriteObject(xw, _gameData.GameParameters)
+                    xw.Close()
+                End Using
+                sw.Close()
+            End Using
+        Catch ex As Exception
+        End Try
+
+        ' アドベンチャーパート起動
+        IO.Directory.SetCurrentDirectory(cd)
+        IO.File.WriteAllText(IO.Path.Combine(tempPath, "TargetScenario.txt"), scenarioName & vbCrLf)
+        Threading.Thread.Sleep(1000)
+        Dim p = Process.Start(IO.Path.Combine(cd, "キュアぷらす スクリプトデバッガ.exe"))
+
+        'アイドル状態になるまで待機
+        p.WaitForInputIdle()
+        Me.Visibility = Visibility.Hidden
+        Threading.Thread.Sleep(200)
+        System.Windows.Forms.Application.DoEvents()
+        MoveWindow(p.MainWindowHandle, Left, Top, 640, 480, 1)
+        p.WaitForExit()
+        Threading.Thread.Sleep(200)
+
+        ' ゲームパラメータを更新する
+        Try
+            Dim serializer As New DataContractSerializer(GetType(Dictionary(Of String, Object)))
+            Dim settings As New XmlReaderSettings()
+            Using sr = New IO.StreamReader(IO.Path.Combine(tempPath, "params.xml"))
+                Using xr As XmlReader = XmlReader.Create(sr, settings)
+                    _gameData.GameParameters = DirectCast(serializer.ReadObject(xr), Dictionary(Of String, Object))
+                    _context._gameParameters = _gameData.GameParameters
+                    xr.Close()
+                End Using
+                sr.Close()
+            End Using
+        Catch ex As Exception
+        End Try
+
+        _currentMail.Manager.onDoneAdventurePart(_context)
+        Me.Activate()
+
+        ' アドベンチャーパート完了フラグの設定
+        Dim i = _mailTitleList.SelectedIndex
+        Dim mli = DirectCast(_mailTitleList.Items(i), MailListItem)
+        Dim mail = DirectCast(mli.DataContext, MailItem)
+        _mailView.DoneAdventurePart = True
+        mail.DoneAdventurePart = True
+        mail.Mail.DoneAdventurePart = True
+
+        Me.Visibility = Visibility.Visible
+    End Sub
+
+    Public Sub New()
         ' この呼び出しはデザイナーで必要です。
         InitializeComponent()
 
         ' ゲームデータを復元
         Try
             ReadPlugins()
+            AddHandler _mailView.KickScenario, AddressOf KickAdventurePart
 
             Dim stg As Dictionary(Of String, Object) = Nothing
             Try
@@ -231,30 +301,30 @@ Public Class MailerWindow
             Catch ex As Exception
             End Try
 retry:
-            _context._settings = stg
-            If IsNothing(stg) OrElse Not _context._settings.ContainsKey("初回起動日時") OrElse _gameData.MailTriggerList.Count = 0 Then
+            _context._gameParameters = stg
+            If IsNothing(stg) OrElse Not _context._gameParameters.ContainsKey("初回起動日時") OrElse _gameData.MailTriggerList.Count = 0 Then
                 NewGame()
             Else
-                _context._settings = stg
+                _context._gameParameters = stg
                 Try
-                        _context.SetValue(Of Integer)("起動回数", _context.GetValue(Of Integer)("起動回数"))
-                        RestoreGame()
-                    Catch ex As Exception
-                        MessageBox.Show("前回起動時のゲーム状態を回復できないのでゲームデータを初期化します", "エラー", MessageBoxButton.OK, MessageBoxImage.Error)
-                        _context._settings = Nothing
-                        GoTo retry
-                    End Try
-                End If
+                    _context.SetValue(Of Integer)("起動回数", _context.GetValue(Of Integer)("起動回数"))
+                    RestoreGame()
+                Catch ex As Exception
+                    MessageBox.Show("前回起動時のゲーム状態を回復できないのでゲームデータを初期化します", "エラー", MessageBoxButton.OK, MessageBoxImage.Error)
+                    _context._gameParameters = Nothing
+                    GoTo retry
+                End Try
+            End If
 
-                If _gameData.MailTriggerList.Count = 0 Then
-                    MessageBox.Show("メール送信キューにデータがないため、ゲームを起動できません", "エラー", MessageBoxButton.OK, MessageBoxImage.Error)
-                    _forceClose = True
-                    Close()
-                End If
+            If _gameData.MailTriggerList.Count = 0 Then
+                MessageBox.Show("メール送信キューにデータがないため、ゲームを起動できません", "エラー", MessageBoxButton.OK, MessageBoxImage.Error)
+                _forceClose = True
+                Close()
+            End If
 
-                Icon = Util.CreateImageSource(My.Resources.ひめミニキャラ1)
-            Catch ex As Exception
-                MessageBox.Show(ex.ToString(), "エラー", MessageBoxButton.OK, MessageBoxImage.Error)
+            Icon = Util.CreateImageSource(My.Resources.ひめミニキャラ1)
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString(), "エラー", MessageBoxButton.OK, MessageBoxImage.Error)
             Close()
             Return
         End Try
@@ -288,7 +358,7 @@ retry:
         MyBase.OnClosed(e)
 
         Try
-            _gameData.GameParameters = _context._settings
+            _gameData.GameParameters = _context._gameParameters
             Dim serializer As New DataContractSerializer(GetType(GameData), _pluginedTypes)
             Dim settings As New XmlWriterSettings()
             settings.Encoding = New System.Text.UTF8Encoding(False)
@@ -349,6 +419,7 @@ retry:
         _mailView.Stamp = DirectCast(mli.DataContext, MailItem).Stamp
         _mailView.AdventurePart = DirectCast(mli.DataContext, MailItem).AdventurePart
         _mailView.LayoutParts()
+        _mailView.DoneAdventurePart = mail.DoneAdventurePart
         _currentMail = mail.Mail
         'If 0 < mail.Mail.Replies.Count Then
         '    reply.IsEnabled = True
@@ -362,7 +433,7 @@ retry:
     Private Sub reply_Click(sender As Object, e As RoutedEventArgs)
         If IsNothing(_currentMail) Then Return
 
-        ' TODO : すでに返信したメールについての処理（返信した選択肢の未表示して送信ボタンは押せない感じ？）
+        ' TODO : すでに返信したメールについての処理（返信した選択肢のみ表示して送信ボタンは押せない感じ？）
 
         Dim rl As New List(Of Entity.Reply)
         If IsNothing(_currentMail.SelectedReply) Then
@@ -379,6 +450,7 @@ retry:
         End If
 
         Dim rw As New ReplyWindow(rl, _currentMail.SelectedReply)
+        rw.Owner = Me
 
         If rw.ShowDialog() Then
             ' リプライ送信処理
@@ -392,6 +464,7 @@ retry:
     Private Sub settings_Click(sender As Object, e As RoutedEventArgs)
         Dim sw As New SettingWindow
         sw.DataContext = _gameData.UserSettings.Clone
+        sw.Owner = Me
         If sw.ShowDialog Then
             If sw.ClearGameData Then
                 NewGame()

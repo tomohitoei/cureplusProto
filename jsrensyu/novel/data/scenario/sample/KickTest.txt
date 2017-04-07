@@ -1,0 +1,65 @@
+; 行の先頭にセミコロンでその行はコメントになります
+
+@call file=wide/libs/utils
+
+
+
+;メッセージ表示（メッセージを表示するシーンでは必須です）
+[showmessage]
+[call file=wide/system target="*system_setting_buttons"]
+[text_new name=_sp_chara_name layer=ui x="-168" y=-150 val="" color="000000" fontsize=14 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name"] 
+
+
+#説明
+
+メールパートからの起動テスト：{f.テスト}[r]
+
+メールパートと同様に以下のように指定してゲームパラメータを表示することができます
+{f.UserSettings/Username]
+{f.UserSettings/Nickname1]
+{f.UserSettings/Nickname2]
+{f.UserSettings/BirthMonth]
+{f.UserSettings/BirthDay]
+
+
+[calc exp="f.テスト=500"]
+[calc exp="f.てすと2=400"]
+[calc exp="f.てすと2={f.テスト}*3"]
+また、変数を使って条件分岐も記述できます[p]
+
+; 以下でアドベンチャーパートから復帰後にメールが送られる設定をしています
+[calc exp="f.リプライ説明スレッドステージ=4"]
+
+選択肢はselect_newコマンドで作成します[r]
+
+[select_new text="選択肢１" target=*select_a1 ]
+[select_new text="選択肢２" target=*select_a2 ]
+[select_new text="選択肢３" target=*select_a3 ]
+
+[select_show sound=click ]
+
+[s]
+
+*select_a1
+選択肢１が押されました[p]
+[calc exp="f.アドベンチャーパートで設定したパラメータ=選択肢１"]
+@jump target=*a_common
+
+*select_a2
+選択肢２が押されました[p]
+[calc exp="f.アドベンチャーパートで設定したパラメータ=選択肢２"]
+@jump target=*a_common
+
+*select_a3
+選択肢３が押されました[p]
+[calc exp="f.アドベンチャーパートで設定したパラメータ=選択肢３"]
+@jump target=*a_common
+
+*a_common 
+
+
+; 開発中のスクリプトの最後には，ファイル選択に戻るために以下の記載をするようにしてください
+[scene file="ToMailApplication" ]
+
+

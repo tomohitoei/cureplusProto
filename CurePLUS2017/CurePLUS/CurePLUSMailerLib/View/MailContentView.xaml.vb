@@ -1,5 +1,7 @@
 ﻿Public Class MailContentView
 
+    Public Event KickScenario(scenarioName As String)
+
     Public Shared ReadOnly Property TextProperty As DependencyProperty =
         DependencyProperty.Register("Text",
                                     GetType(String),
@@ -56,6 +58,19 @@
         End Set
     End Property
 
+    Private _doneAdventurePart As Boolean = False
+    Public Property DoneAdventurePart As Boolean
+        Get
+            Return _doneAdventurePart
+        End Get
+        Set(value As Boolean)
+            _doneAdventurePart = value
+            If Not IsNothing(_button) Then _button.IsEnabled = Not value
+        End Set
+    End Property
+
+    Private _button As Button = Nothing
+
     Public Sub LayoutParts()
         ' TODO : 処理に少し時間がかかるので改善方法を検討
 
@@ -95,8 +110,9 @@
             Dim b = New Button() With {.Content = "デートに行く", .Width = 128, .Height = 24, .HorizontalAlignment = HorizontalAlignment.Center}
             AddHandler b.Click,
                 Sub(sender, e)
-                    ' TODO : kick adventure part
+                    RaiseEvent KickScenario(AdventurePart)
                 End Sub
+            _button = b
             sp.Children.Add(b)
         End If
         If 0 < sp.Children.Count Then

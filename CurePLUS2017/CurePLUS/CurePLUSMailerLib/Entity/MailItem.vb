@@ -8,6 +8,7 @@
     Public Property State As String = "New!"
     Public Property Stamp As String
     Public Property AdventurePart As String
+    Public Property DoneAdventurePart As Boolean = False
     Public Property Mail As Entity.Mail
 
 End Class

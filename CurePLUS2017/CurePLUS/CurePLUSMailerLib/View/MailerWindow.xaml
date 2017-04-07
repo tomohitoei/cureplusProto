@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CurePLUSMailerLib"
         mc:Ignorable="d"
-        Title="MailerWindow" Width="627" Height="519" Background="#FFE0D0" WindowStyle="None" BorderThickness="1" ResizeMode="NoResize" ShowInTaskbar="True"  >
+        Title="MailerWindow" Width="640" Height="480" Background="#FFE0D0" WindowStyle="None" BorderThickness="1" ResizeMode="NoResize" ShowInTaskbar="True" WindowStartupLocation="CenterScreen" >
     <Window.Resources>
         <!--<ContextMenu x:Key="cm">
             <MenuItem Header="挿入">
@@ -49,7 +49,7 @@
         </Grid.RowDefinitions>
         <Canvas Grid.Column="0" Grid.Row="1" Margin="10,10,0,10" Background="#FFD0D0" >
             <Label Content="受信トレイ" Foreground="White" FontSize="10" FontStyle="Normal" FontWeight="Bold" />
-            <ListBox x:Name="_mailTitleList" Height="438" Canvas.Top="30" Width="274" Background="#FFF9FF" SelectionChanged="_mailTitleList_SelectionChanged">
+            <ListBox x:Name="_mailTitleList" Height="403" Canvas.Top="30" Width="274" Background="#FFF9FF" SelectionChanged="_mailTitleList_SelectionChanged">
                 <ListBox.Resources>
                     <!-- 選択行・フォーカス時の背景色 -->
                     <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Pink" />
@@ -58,18 +58,18 @@
                 </ListBox.Resources>
             </ListBox>
 
-            <Canvas x:Name="mailContent" Width="274" Height="438" Canvas.Left="279" Canvas.Top="30" Background="#FFE0E0">
-                <Canvas Width="274" Height="54" Background="#FFF9F9">
+            <Canvas x:Name="mailContent" Width="284" Height="403" Canvas.Left="279" Canvas.Top="30" Background="#FFE0E0">
+                <Canvas Width="284" Height="54" Background="#FFF9F9">
                     <Label Content="{Binding CharacterName}"  FontSize="16" FontWeight="Heavy" Height="28" />
                     <Label Content="{Binding Title}" FontSize="12" RenderTransformOrigin="3.5,2.2" Canvas.Top="24" />
                 </Canvas>
-                <Canvas Width="274" Height="320" Canvas.Top="59" Background="#FFF9F9">
+                <Canvas Width="284" Height="285" Canvas.Top="59" Background="#FFF9F9">
                     <!--<ScrollViewer Height="320" Width="274" >
                        
                     </ScrollViewer>-->
-                    <local:MailContentView x:Name="_mailView" Text="{Binding Content}" Stamp="{Binding Stamp}" AdventurePart="{Binding AdventurePart}" Height="320" Width="274"/>
+                    <local:MailContentView x:Name="_mailView" Text="{Binding Content}" Stamp="{Binding Stamp}" AdventurePart="{Binding AdventurePart}" Height="285" Width="284"/>
                 </Canvas>
-                <Canvas Width="274" Height="54" Canvas.Top="384" Background="#FFF9F9">
+                <Canvas Width="284" Height="54" Canvas.Top="348" Background="#FFF9F9">
                     <Button x:Name="addfavorite" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Height="54" Style="{StaticResource FAButton}" BorderThickness="0" Canvas.Left="164" >
                         <Image x:Name="addfavoriteimage" Height="40" Width="40" Margin="0" />
                     </Button>
@@ -79,27 +79,27 @@
                 </Canvas>
             </Canvas>
         </Canvas>
-        <Canvas HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="617" Grid.ColumnSpan="2" Grid.RowSpan="2">
-            <Label x:Name="label" Content="キュアぷらす" Foreground="White" RenderTransformOrigin="0.146,0.286" Height="26" Width="626" FontSize="14" FontWeight="Bold" Background="LightPink"/>
-            <Button x:Name="button" Content="×" Canvas.Left="600" Width="26" Height="26" FontSize="14" FontWeight="Bold" />
+        <Canvas HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="638" Grid.ColumnSpan="2" Grid.RowSpan="2">
+            <Label x:Name="label" Content="キュアぷらす" Foreground="White" RenderTransformOrigin="0.146,0.286" Height="26" Width="638" FontSize="14" FontWeight="Bold" Background="LightPink"/>
+            <Button x:Name="button" Content="×" Canvas.Left="613" Width="26" Height="26" FontSize="14" FontWeight="Bold" />
         </Canvas>
-        <Canvas Grid.Column="1" Grid.Row="1" Background="#FFE0E0">
-            <Button x:Name="change" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="60" Height="60" Style="{StaticResource FAButton}" BorderThickness="0" Margin="0,0,-21,0" >
+        <Canvas Grid.Column="1" Grid.Row="1" Background="#FFE0E0" Margin="0,2,0,0">
+            <Button x:Name="change" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="60" Height="60" Style="{StaticResource FAButton}" BorderThickness="0" Canvas.Top="8" >
                 <Image x:Name="changeimage" Height="40" Width="40" Source="file:///c:/cureplus/切り替えアイコン.png" Margin="0" />
             </Button>
             <Button x:Name="newmail" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="60" Height="60" Style="{StaticResource FAButton}" BorderThickness="0" Margin="1,75,-1,0" Grid.Column="1" >
                 <Image x:Name="newmailimage" Height="40" Width="40" Source="file:///c:/cureplus/新規メールアイコン.png" Margin="0" />
             </Button>
-            <Button x:Name="favorite" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="60" Height="60" Style="{StaticResource FAButton}" BorderThickness="0" Margin="0,229,0,0" Grid.Column="1" >
+            <Button x:Name="favorite" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="60" Height="60" Style="{StaticResource FAButton}" BorderThickness="0" Grid.Column="1" Canvas.Top="193" >
                 <Image x:Name="favoriteimage" Height="40" Width="40" Source="file:///c:/cureplus/お気に入りアイコン.png" Margin="0" />
             </Button>
-            <Button x:Name="memento" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="60" Height="60" Style="{StaticResource FAButton}" BorderThickness="0" Margin="0,289,0,0" Grid.Column="1" >
+            <Button x:Name="memento" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="60" Height="60" Style="{StaticResource FAButton}" BorderThickness="0" Grid.Column="1" Canvas.Top="253" >
                 <Image x:Name="mementoimage" Height="40" Width="40" Source="file:///c:/cureplus/想い出アイコン.png" Margin="0" />
             </Button>
-            <Button x:Name="settings" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="60" Height="60" Style="{StaticResource FAButton}" BorderThickness="0" Margin="1,349,-1,0" Grid.Column="1" Click="settings_Click" >
+            <Button x:Name="settings" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="60" Height="60" Style="{StaticResource FAButton}" BorderThickness="0" Grid.Column="1" Click="settings_Click" Canvas.Left="1" Canvas.Top="313" >
                 <Image x:Name="settingsimage" Height="40" Width="40" Source="file:///c:/cureplus/設定アイコン.png" Margin="0" />
             </Button>
-            <Button x:Name="minimize" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="60" Height="60" Style="{StaticResource FAButton}" BorderThickness="0" Margin="1,419,-1,0" Grid.Column="1" >
+            <Button x:Name="minimize" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="60" Height="60" Style="{StaticResource FAButton}" BorderThickness="0" Grid.Column="1" Canvas.Left="1" Canvas.Top="382" >
                 <Image x:Name="minimizeimage" Height="40" Width="40" Source="file:///c:/cureplus/最小化アイコン.png" Margin="0" />
             </Button>
         </Canvas>

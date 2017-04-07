@@ -66,6 +66,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy $(TargetFileName) $(SolutionDir)CurePLUSMailer\bin\Debug\Plugins\</PostBuildEvent>
+    <PostBuildEvent>copy "$(TargetFileName)" "$(SolutionDir)CurePLUSMailer\bin\Debug\Plugins\"
+copy "$(TargetFileName)" "$(SolutionDir)..\..\jsrensyu\Plugins\"
+</PostBuildEvent>
   </PropertyGroup>
 </Project>

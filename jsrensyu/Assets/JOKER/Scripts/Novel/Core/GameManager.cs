@@ -107,7 +107,8 @@ namespace Novel
 		public void showError(string message){
 
 			try{
-
+                System.Windows.Forms.MessageBox.Show(message, "エラー", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                if (null == this.arrayComponents) return;
 				int line_num = this.arrayComponents [this.currentComponentIndex].line_num;
 				string str = "<color=green>Novel</color>["+StatusManager.currentScenario+"]:<color=red>Error:"+line_num+"行目 "+message+"</color>";
                 DC.Error(str);

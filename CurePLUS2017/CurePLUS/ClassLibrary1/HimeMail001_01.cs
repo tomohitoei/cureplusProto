@@ -76,6 +76,12 @@ AdventurePart = "adventure_part_name")
     {
         //
     }
+
+    // アドベンチャーパートから復帰したタイミングでコールされます
+    public void onDoneAdventurePart(ApplicationContext context)
+    {
+        // パラメータの更新等
+    }
 }
 
 [CurePLUSMailerLib.ReplyInformation(
@@ -162,6 +168,12 @@ public class ひめ002 : CurePLUSMailerLib.IMailManager
     public void onReceived(ApplicationContext context)
     {
         //
+    }
+
+    // アドベンチャーパートから復帰したタイミングでコールされます
+    public void onDoneAdventurePart(ApplicationContext context)
+    {
+        // パラメータの更新等
     }
 }
 /*

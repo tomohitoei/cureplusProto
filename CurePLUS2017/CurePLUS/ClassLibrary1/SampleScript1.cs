@@ -54,7 +54,7 @@ meroykanasii
 meroyorokobi
 ", // 行末の「",」は削除しないでください
 Stamp = "merolove", // 空白でスタンプ無しになります
-AdventurePart = "")] // アドベンチャーパートのシナリオ名．空白でジャンプボタン無しになります
+AdventurePart = "sonzaisinai/scenario")] // アドベンチャーパートのシナリオ名．空白でジャンプボタン無しになります
 public class SampleMail1 : CurePLUSMailerLib.IMailManager
 {
     // メールが受信可能かどうかのチェックを行い、結果をbool型で返却します
@@ -71,6 +71,12 @@ public class SampleMail1 : CurePLUSMailerLib.IMailManager
 
     // 初めてメールを開いたタイミングでコールされます
     public void onRead(ApplicationContext context)
+    {
+        // パラメータの更新等
+    }
+
+    // アドベンチャーパートから復帰したタイミングでコールされます
+    public void onDoneAdventurePart(ApplicationContext context)
     {
         // パラメータの更新等
     }
@@ -107,6 +113,12 @@ public class SampleMail2 : CurePLUSMailerLib.IMailManager
 
     // 初めてメールを開いたタイミングでコールされます
     public void onRead(ApplicationContext context)
+    {
+        // パラメータの更新等
+    }
+
+    // アドベンチャーパートから復帰したタイミングでコールされます
+    public void onDoneAdventurePart(ApplicationContext context)
     {
         // パラメータの更新等
     }
@@ -147,6 +159,12 @@ public class SampleMail3HasReply : CurePLUSMailerLib.IMailManager
 
     // 初めてメールを開いたタイミングでコールされます
     public void onRead(ApplicationContext context)
+    {
+        // パラメータの更新等
+    }
+
+    // アドベンチャーパートから復帰したタイミングでコールされます
+    public void onDoneAdventurePart(ApplicationContext context)
     {
         // パラメータの更新等
     }
@@ -257,6 +275,12 @@ public class SampleMail4HasReply : CurePLUSMailerLib.IMailManager
     {
         // パラメータの更新等
     }
+
+    // アドベンチャーパートから復帰したタイミングでコールされます
+    public void onDoneAdventurePart(ApplicationContext context)
+    {
+        // パラメータの更新等
+    }
 }
 
 [CurePLUSMailerLib.ReplyInformation(
@@ -315,10 +339,10 @@ public class SampleMail4HasReply_Rep2 : CurePLUSMailerLib.IReplyManager
 Sender = CurePLUSMailerLib.Entity.Character.CharacterID.Hime, // メールの送信者
 Title = "サンプルメール５（分岐１）", // メールのタイトル
 Content = // メール本文を下の行から記述，以下の行頭の「@"」は削除しないでください
-@"ユーザが選択した返信に対する応答（分岐１）
+@"ユーザが選択した返信に対する応答（分岐１、アドベンチャーパート）
 ", // 行末の「",」は削除しないでください
 Stamp = "", // スタンプ画像名を指定、空白でスタンプ無しになります
-AdventurePart = "")] // アドベンチャーパートのシナリオ名．空白でジャンプボタン無しになります
+AdventurePart = "sample/KickTest")] // アドベンチャーパートのシナリオ名．空白でジャンプボタン無しになります
 public class SampleMail5Branch1 : CurePLUSMailerLib.IMailManager
 {
     // メールが受信可能かどうかのチェックを行い、結果をbool型で返却します
@@ -340,16 +364,25 @@ public class SampleMail5Branch1 : CurePLUSMailerLib.IMailManager
     {
         // パラメータの更新等
     }
+
+    // アドベンチャーパートから復帰したタイミングでコールされます
+    public void onDoneAdventurePart(ApplicationContext context)
+    {
+        // アドベンチャーパート内で現在日時を設定できないのでこちらで設定します
+        context.SetValue("リプライ説明スレッド応答日時", DateTime.Now);
+    }
 }
 
 [CurePLUSMailerLib.MailInformation(
 Sender = CurePLUSMailerLib.Entity.Character.CharacterID.Hime, // メールの送信者
-Title = "サンプルメール５（分岐２）", // メールのタイトル
+Title = "サンプルメール５（分岐２、アドベンチャーパート）", // メールのタイトル
 Content = // メール本文を下の行から記述，以下の行頭の「@"」は削除しないでください
-@"ユーザが選択した返信に対する応答（分岐２）
+@"
+ユーザが選択した返信に対する応答（分岐２）
+
 ", // 行末の「",」は削除しないでください
 Stamp = "", // スタンプ画像名を指定、空白でスタンプ無しになります
-AdventurePart = "")] // アドベンチャーパートのシナリオ名．空白でジャンプボタン無しになります
+AdventurePart = "sample/KickTest")] // アドベンチャーパートのシナリオ名．空白でジャンプボタン無しになります
 public class SampleMail5Branch2 : CurePLUSMailerLib.IMailManager
 {
     // メールが受信可能かどうかのチェックを行い、結果をbool型で返却します
@@ -368,6 +401,51 @@ public class SampleMail5Branch2 : CurePLUSMailerLib.IMailManager
 
     // 初めてメールを開いたタイミングでコールされます
     public void onRead(ApplicationContext context)
+    {
+        // パラメータの更新等
+    }
+
+    // アドベンチャーパートから復帰したタイミングでコールされます
+    public void onDoneAdventurePart(ApplicationContext context)
+    {
+        // アドベンチャーパート内で現在日時を設定できないのでこちらで設定します
+        context.SetValue("リプライ説明スレッド応答日時", DateTime.Now);
+    }
+}
+
+[CurePLUSMailerLib.MailInformation(
+Sender = CurePLUSMailerLib.Entity.Character.CharacterID.Hime, // メールの送信者
+Title = "サンプルメール６（アドベンチャーパートとのやり取り）", // メールのタイトル
+Content = // メール本文を下の行から記述，以下の行頭の「@"」は削除しないでください
+@"
+アドベンチャーパートで”\[アドベンチャーパートで設定したパラメータ]”が選択されました
+", // 行末の「",」は削除しないでください
+Stamp = "", // スタンプ画像名を指定、空白でスタンプ無しになります
+AdventurePart = "")] // アドベンチャーパートのシナリオ名．空白でジャンプボタン無しになります
+public class SampleMail6 : CurePLUSMailerLib.IMailManager
+{
+    // メールが受信可能かどうかのチェックを行い、結果をbool型で返却します
+    public bool canReceive(ApplicationContext context)
+    {
+        if (context.GetValue<int>("リプライ説明スレッドステージ") != 4) return false;
+
+        return 5 < context.経過秒("リプライ説明スレッド応答日時"); // アドベンチャーパート終了から5秒後に送信
+    }
+
+    // メールを受信したタイミングでコールされます
+    public void onReceived(ApplicationContext context)
+    {
+        // パラメータの更新等
+    }
+
+    // 初めてメールを開いたタイミングでコールされます
+    public void onRead(ApplicationContext context)
+    {
+        // パラメータの更新等
+    }
+
+    // アドベンチャーパートから復帰したタイミングでコールされます
+    public void onDoneAdventurePart(ApplicationContext context)
     {
         // パラメータの更新等
     }

@@ -31,6 +31,12 @@ public class 響001 : CurePLUSMailerLib.IMailManager
     {
         //
     }
+
+    // アドベンチャーパートから復帰したタイミングでコールされます
+    public void onDoneAdventurePart(ApplicationContext context)
+    {
+        // パラメータの更新等
+    }
 }
 
 

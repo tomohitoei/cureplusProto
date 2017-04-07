@@ -8,26 +8,26 @@
         Return _i
     End Function
 
-    Friend _settings As New Dictionary(Of String, Object)
+    Friend _gameParameters As New Dictionary(Of String, Object)
 
 
     Public Function ContainsKey(key As String) As Boolean
-        Return _settings.ContainsKey(key)
+        Return _gameParameters.ContainsKey(key)
     End Function
 
     Public Function GetValue(Of T)(key As String) As T
-        Return DirectCast(_settings(key), T)
+        Return DirectCast(_gameParameters(key), T)
     End Function
 
     Public Function GetString(key As String) As String
-        Return CStr(_settings(key))
+        Return CStr(_gameParameters(key))
     End Function
 
     Public Sub SetValue(Of T)(key As String, value As T)
-        If _settings.ContainsKey(key) Then
-            _settings(key) = value
+        If _gameParameters.ContainsKey(key) Then
+            _gameParameters(key) = value
         Else
-            _settings.Add(key, value)
+            _gameParameters.Add(key, value)
         End If
     End Sub
 

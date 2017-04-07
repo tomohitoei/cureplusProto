@@ -8,6 +8,7 @@ Namespace Entity
         Public Property Content As String
         Public Property Stamp As String
         Public Property AdventurePart As String
+        Public Property DoneAdventurePart As Boolean = False
 
         Public Property ID As String
         Public Property Manager As IMailManager = Nothing
